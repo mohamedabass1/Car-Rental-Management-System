@@ -147,7 +147,7 @@ namespace CarRental_DataAccess
             return dt;
         }
 
-        public static async Task<DataTable> ListCustomersPaged(int PageNumber, int RowsPerPage)
+        public static async Task<DataTable> ListCustomersPagedAsync(int PageNumber, int RowsPerPage)
         {
             DataTable dt = new DataTable();
 

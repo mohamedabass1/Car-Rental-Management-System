@@ -13,8 +13,8 @@ namespace CarRental
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMainMenue());
-            Application.Run(new Test());
+            Application.Run(new frmMainMenue());
+            //Application.Run(new Test());
         }
     }
 }

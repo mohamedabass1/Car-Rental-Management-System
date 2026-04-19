@@ -58,11 +58,11 @@
     <Compile Include="Booking\frmBooking.Designer.cs">
       <DependentUpon>frmBooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers\frmCustomers.cs">
+    <Compile Include="Customers\frmListCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customers\frmCustomers.Designer.cs">
-      <DependentUpon>frmCustomers.cs</DependentUpon>
+    <Compile Include="Customers\frmListCustomers.Designer.cs">
+      <DependentUpon>frmListCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\frmDashboard.cs">
       <SubType>Form</SubType>
@@ -125,8 +125,8 @@
     <EmbeddedResource Include="Booking\frmBooking.resx">
       <DependentUpon>frmBooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customers\frmCustomers.resx">
-      <DependentUpon>frmCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="Customers\frmListCustomers.resx">
+      <DependentUpon>frmListCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
@@ -266,6 +266,26 @@
   <ItemGroup>
     <None Include="Resources\LOGO4.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Person 40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-details32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar 321.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

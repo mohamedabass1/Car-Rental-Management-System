@@ -66,9 +66,9 @@ namespace CarRental_Buisness
         }
 
 
-        private async Task<bool> _AddNewPersonAsync()
+        private PersonDTO _ToDTO()
         {
-            PersonDTO person = new PersonDTO
+            return new PersonDTO
             {
                 PersonID = this.PersonID,
                 FirstName = this.FirstName,
@@ -81,40 +81,34 @@ namespace CarRental_Buisness
                 Email = this.Email,
                 NationalityCountryID = this.NationalityCountryID,
             };
-
-
-            this.PersonID = await clsPerson_DA.AddNewPersonAsync(person);
+        }
+        private async Task<bool> _AddNewPersonAsync()
+        {
+            this.PersonID = await clsPerson_DA.AddNewPersonAsync(this._ToDTO());
 
             return (this.PersonID != -1);
         }
         private async Task<bool> _UpdateAsync()
         {
-            PersonDTO person = new PersonDTO
-            {
-                PersonID = this.PersonID,
-                FirstName = this.FirstName,
-                SecondName = this.SecondName,
-                LastName = this.LastName,
-                DateOfBirth = DateOfBirth,
-                Gendor = this.Gendor,
-                Address = this.Address,
-                Phone = this.Phone,
-                Email = this.Email,
-                NationalityCountryID = this.NationalityCountryID,
-            };
-
-            return await clsPerson_DA.UpdatePersonAsync(person);
+            return await clsPerson_DA.UpdatePersonAsync(this._ToDTO());
         }
 
         public static async Task<clsPerson> FindAsync(int PersonID)
         {
             PersonDTO person = await clsPerson_DA.GetPersonByIDAsync(PersonID);
 
-            if (person != null)
-                return new clsPerson(person.PersonID, person.FirstName, person.SecondName, person.LastName, person.DateOfBirth, person.Gendor
-                    , person.Address, person.Phone, person.Email, person.NationalityCountryID);
-            else
+            if (person == null)
                 return null;
+
+
+            clsPerson NewPerson = new clsPerson(person.PersonID, person.FirstName, person.SecondName, person.LastName, person.DateOfBirth, person.Gendor
+                , person.Address, person.Phone, person.Email, person.NationalityCountryID);
+
+            // load person info Async
+            NewPerson.CountryInfo = await clsCountry.FindAsync(NewPerson.NationalityCountryID);
+
+            return NewPerson;
+
         }
         public async Task<bool> SaveAsync()
         {

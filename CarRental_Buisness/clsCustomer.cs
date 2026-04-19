@@ -36,29 +36,22 @@ namespace CarRental_Buisness
             _Mode = enMode.Update;
         }
 
+        private CustomerDTO _ToDTO()
+        {
+            return new CustomerDTO { CustomerID = this.CustomerID, PersonID = this.PersonID, DriverLicenseNumber = this.DriverLicenseNumber };
+        }
+
         private async Task<bool> _AddNewAsync()
         {
-            CustomerDTO customer = new CustomerDTO
-            {
-                PersonID = this.PersonID,
-                DriverLicenseNumber = this.DriverLicenseNumber
-            };
 
-            this.CustomerID = await clsCustomer_DA.AddNewCustomerAsync(customer);
+            this.CustomerID = await clsCustomer_DA.AddNewCustomerAsync(this._ToDTO());
 
             return this.CustomerID != -1;
         }
 
         private async Task<bool> _UpdateAsync()
         {
-            CustomerDTO customer = new CustomerDTO
-            {
-                CustomerID = this.CustomerID,
-                PersonID = this.PersonID,
-                DriverLicenseNumber = this.DriverLicenseNumber
-            };
-
-            return await clsCustomer_DA.UpdateCustomerAsync(customer);
+            return await clsCustomer_DA.UpdateCustomerAsync(this._ToDTO());
         }
 
         public async Task<bool> SaveAsync()
@@ -89,17 +82,18 @@ namespace CarRental_Buisness
         {
             CustomerDTO customer = await clsCustomer_DA.GetCustomerByIDAsync(customerID);
 
-            if (customer != null)
-            {
-                clsCustomer newCus = new clsCustomer(customer.CustomerID, customer.PersonID, customer.DriverLicenseNumber);
-
-                // load person info
-                newCus.PersonInfo = await clsPerson.FindAsync(customer.PersonID);
-
-                return newCus;
-            }
-            else
+            if (customer == null)
                 return null;
+
+
+            clsCustomer newCus = new clsCustomer(customer.CustomerID,
+                                                  customer.PersonID,
+                                                  customer.DriverLicenseNumber);
+
+            // load person info Async
+            newCus.PersonInfo = await clsPerson.FindAsync(customer.PersonID);
+
+            return newCus;
         }
 
         public static async Task<clsCustomer> FindByDriverLicenseNumberAsync(string DriverLicenseNumber)
@@ -135,9 +129,9 @@ namespace CarRental_Buisness
             return await clsCustomer_DA.IsCustomerExistsByLicenseAsync(DriverLicenseNumber);
         }
 
-        public static async Task<DataTable> ListCustomersPaged(int PageNumber, int RowsPerPage)
+        public static async Task<DataTable> ListCustomersPagedAsync(int PageNumber, int RowsPerPage)
         {
-            return await clsCustomer_DA.ListCustomersPaged(PageNumber, RowsPerPage);
+            return await clsCustomer_DA.ListCustomersPagedAsync(PageNumber, RowsPerPage);
         }
 
         public static async Task<DataTable> GetAllCustomersAsync()

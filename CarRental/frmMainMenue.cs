@@ -88,7 +88,7 @@ namespace CarRental
         }
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmCustomers(), "Manage Customers");
+            OpenPage(new frmListCustomers(), "Manage Customers");
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
