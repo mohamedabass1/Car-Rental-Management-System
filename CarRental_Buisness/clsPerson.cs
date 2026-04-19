@@ -27,7 +27,6 @@ namespace CarRental_Buisness
         public int NationalityCountryID { get; set; }
         public clsCountry CountryInfo;
 
-        public string ImagePath { get; set; }
 
 
         public clsPerson()
@@ -42,14 +41,13 @@ namespace CarRental_Buisness
             this.Phone = "";
             this.Email = "";
             this.NationalityCountryID = -1;
-            this.ImagePath = "";
             _Mode = enMode.AddNew;
         }
 
         private clsPerson(int PersonID, string FirstName, string SecondName,
             string LastName, DateTime DateOfBirth, short Gendor,
              string Address, string Phone, string Email,
-            int NationalityCountryID, string ImagePath)
+            int NationalityCountryID)
 
         {
             this.PersonID = PersonID;
@@ -64,7 +62,6 @@ namespace CarRental_Buisness
             this.NationalityCountryID = NationalityCountryID;
             this.CountryInfo = clsCountry.Find(NationalityCountryID);
 
-            this.ImagePath = ImagePath;
             _Mode = enMode.Update;
         }
 
@@ -83,7 +80,6 @@ namespace CarRental_Buisness
                 Phone = this.Phone,
                 Email = this.Email,
                 NationalityCountryID = this.NationalityCountryID,
-                ImagePath = this.ImagePath
             };
 
 
@@ -105,7 +101,6 @@ namespace CarRental_Buisness
                 Phone = this.Phone,
                 Email = this.Email,
                 NationalityCountryID = this.NationalityCountryID,
-                ImagePath = this.ImagePath
             };
 
             return await clsPerson_DA.UpdatePersonAsync(person);
@@ -117,7 +112,7 @@ namespace CarRental_Buisness
 
             if (person != null)
                 return new clsPerson(person.PersonID, person.FirstName, person.SecondName, person.LastName, person.DateOfBirth, person.Gendor
-                    , person.Address, person.Phone, person.Email, person.NationalityCountryID, person.ImagePath);
+                    , person.Address, person.Phone, person.Email, person.NationalityCountryID);
             else
                 return null;
         }

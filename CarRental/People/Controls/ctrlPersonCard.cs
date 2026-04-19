@@ -1,6 +1,5 @@
 ﻿using CarRental.Properties;
 using CarRental_Buisness;
-using System.IO;
 using System.Windows.Forms;
 
 namespace CarRental.People.Controls
@@ -39,22 +38,6 @@ namespace CarRental.People.Controls
             _FillPersonInfo();
         }
 
-        private void _LoadPersonImage()
-        {
-            if (_Person.Gendor == 0)
-                pbPersonImage.Image = Resources.Male_512;
-            else
-                pbPersonImage.Image = Resources.Female_512;
-
-            string ImagePath = _Person.ImagePath;
-            if (ImagePath != "")
-                if (File.Exists(ImagePath))
-                    pbPersonImage.ImageLocation = ImagePath;
-                else
-                    MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-        }
-
         private void _FillPersonInfo()
         {
             llEditPersonInfo.Enabled = true;
@@ -67,7 +50,6 @@ namespace CarRental.People.Controls
             lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
             lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
             lblAddress.Text = _Person.Address;
-            _LoadPersonImage();
 
 
         }
@@ -84,18 +66,17 @@ namespace CarRental.People.Controls
             lblDateOfBirth.Text = "[????]";
             lblCountry.Text = "[????]";
             lblAddress.Text = "[????]";
-            pbPersonImage.Image = Resources.Male_512;
 
         }
 
-        private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void llEditPersonInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmAddUpdatePerson frm = new frmAddUpdatePerson(_PersonID);
-            //frm.ShowDialog();
+            frmAddUpdateCustomer frm = new frmAddUpdateCustomer(_PersonID);
+            frm.ShowDialog();
 
             //refresh
             LoadPersonInfo(_PersonID);
         }
-
     }
 }

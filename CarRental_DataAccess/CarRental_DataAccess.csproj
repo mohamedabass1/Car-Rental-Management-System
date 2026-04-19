@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsCountryData.cs" />
+    <Compile Include="clsCustomer_DA.cs" />
     <Compile Include="clsDataAccessSetting.cs" />
     <Compile Include="clsPerson_DA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,6 +51,10 @@
     <ProjectReference Include="..\CarRental_DTO\CarRental_DTO.csproj">
       <Project>{02a41826-e3b9-449a-9287-3825399aa829}</Project>
       <Name>CarRental_DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarRental_Utilities\CarRental_Utilities.csproj">
+      <Project>{9d9c95aa-b810-48f9-a9bb-37b8c3d3448a}</Project>
+      <Name>CarRental_Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

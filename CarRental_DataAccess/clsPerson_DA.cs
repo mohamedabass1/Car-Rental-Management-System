@@ -1,4 +1,5 @@
 ﻿using CarRental_DTO;
+using CarRental_Utilities;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -52,11 +53,6 @@ namespace CarRental_DataAccess
 
                     command.Parameters.AddWithValue("@NationalityCountryID", Person.NationalityCountryID);
 
-                    if (string.IsNullOrWhiteSpace(Person.ImagePath))
-                        command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
-                    else
-                        command.Parameters.AddWithValue("@ImagePath", Person.ImagePath);
-
 
                     SqlParameter outputPersonIDParam = new SqlParameter("@NewPersonID", SqlDbType.Int)
                     {
@@ -104,11 +100,6 @@ namespace CarRental_DataAccess
                         command.Parameters.AddWithValue("@Email", Person.Email);
 
                     command.Parameters.AddWithValue("@NationalityCountryID", Person.NationalityCountryID);
-
-                    if (string.IsNullOrWhiteSpace(Person.ImagePath))
-                        command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
-                    else
-                        command.Parameters.AddWithValue("@ImagePath", Person.ImagePath);
 
                     SqlParameter outputPersonIDParam = new SqlParameter("@NewPersonID", SqlDbType.Int)
                     {
@@ -161,7 +152,6 @@ namespace CarRental_DataAccess
 
                                     Email = (reader["Email"] == DBNull.Value) ? "" : (string)reader["Email"],
                                     NationalityCountryID = (int)reader["NationalityCountryID"],
-                                    ImagePath = (reader["ImagePath"] == DBNull.Value) ? "" : (string)reader["ImagePath"]
                                 };
                                 return person1;
                             }
@@ -211,7 +201,6 @@ namespace CarRental_DataAccess
 
                                     Email = (reader["Email"] == DBNull.Value) ? "" : (string)reader["Email"],
                                     NationalityCountryID = (int)reader["NationalityCountryID"],
-                                    ImagePath = (reader["ImagePath"] == DBNull.Value) ? "" : (string)reader["ImagePath"]
                                 };
 
                                 return person1;
@@ -220,9 +209,11 @@ namespace CarRental_DataAccess
                         }
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        throw;
+                        clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
+
+
                     }
                 }
             }
@@ -312,10 +303,10 @@ namespace CarRental_DataAccess
                     rowAffected = await command.ExecuteNonQueryAsync();
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     rowAffected = 0;
-                    throw;
+                    clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
                 }
             }
             return rowAffected > 0;
@@ -369,7 +360,7 @@ namespace CarRental_DataAccess
                     isFound = (result != null);
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     isFound = false;
                     throw;
@@ -411,21 +402,16 @@ namespace CarRental_DataAccess
 
                 command.Parameters.AddWithValue("@NationalityCountryID", person.NationalityCountryID);
 
-                if (string.IsNullOrWhiteSpace(person.ImagePath))
-                    command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
-                else
-                    command.Parameters.AddWithValue("@ImagePath", person.ImagePath);
-
                 try
                 {
                     connection.Open();
                     rowsAffected = command.ExecuteNonQuery();
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     rowsAffected = 0;
-                    throw;
+                    clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
                 }
             }
             return rowsAffected > 0;
@@ -463,10 +449,6 @@ namespace CarRental_DataAccess
 
                 command.Parameters.AddWithValue("@NationalityCountryID", person.NationalityCountryID);
 
-                if (string.IsNullOrWhiteSpace(person.ImagePath))
-                    command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
-                else
-                    command.Parameters.AddWithValue("@ImagePath", person.ImagePath);
 
                 try
                 {
@@ -474,10 +456,10 @@ namespace CarRental_DataAccess
                     rowsAffected = await command.ExecuteNonQueryAsync();
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     rowsAffected = 0;
-                    throw;
+                    clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
                 }
             }
             return rowsAffected > 0;
