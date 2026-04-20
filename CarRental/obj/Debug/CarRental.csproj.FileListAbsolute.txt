@@ -29,3 +29,5 @@ C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\bin\Debug\CarRental_U
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.People.frmAddUpdateCustomer.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Test.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmListCustomers.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmShowCustomerDetails.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.ctrlCustomerInfoCard.resources

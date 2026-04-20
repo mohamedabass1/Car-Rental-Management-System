@@ -1,5 +1,6 @@
 ﻿using CarRental.Properties;
 using CarRental_Buisness;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarRental.People.Controls
@@ -25,7 +26,7 @@ namespace CarRental.People.Controls
             InitializeComponent();
         }
 
-        public async void LoadPersonInfo(int PersonID)
+        public async Task LoadPersonInfo(int PersonID)
         {
             _Person = await clsPerson.FindAsync(PersonID);
             if (_Person == null)
@@ -40,7 +41,6 @@ namespace CarRental.People.Controls
 
         private void _FillPersonInfo()
         {
-            llEditPersonInfo.Enabled = true;
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
             lblFullName.Text = _Person.FullName;
@@ -70,13 +70,5 @@ namespace CarRental.People.Controls
         }
 
 
-        private void llEditPersonInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmAddUpdateCustomer frm = new frmAddUpdateCustomer(_PersonID);
-            frm.ShowDialog();
-
-            //refresh
-            LoadPersonInfo(_PersonID);
-        }
     }
 }

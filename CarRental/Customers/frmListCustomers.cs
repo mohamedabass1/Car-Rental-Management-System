@@ -14,15 +14,15 @@ namespace CarRental.Customers
 
         DataTable _dtCustomers;
 
-        int _PageNumber = 1;
-        int _RowsPerPage = 10;
+
         private async void frmListCustomers_Load(object sender, System.EventArgs e)
         {
-            _dtCustomers = await clsCustomer.ListCustomersPagedAsync(_PageNumber, _RowsPerPage);
+            _dtCustomers = await clsCustomer.GetAllCustomersAsync();
+
 
             dgvCustomersList.DataSource = _dtCustomers;
 
-
+            cbFilterBy.SelectedIndex = 0;
             lblRecordsCount.Text = dgvCustomersList.Rows.Count.ToString();
 
             if (dgvCustomersList.Rows.Count > 0)
@@ -59,6 +59,92 @@ namespace CarRental.Customers
                 dgvCustomersList.Columns[9].Width = 170;
             }
         }
+
+        // filtering
+        #region 
+        private void txtFilterValue_TextChanged(object sender, System.EventArgs e)
+        {
+            string FilterColumn = "";
+            //Map Selected Filter to real Column name 
+            switch (cbFilterBy.Text)
+            {
+                case "Customer ID":
+                    FilterColumn = "CustomerID";
+                    break;
+
+                case "First Name":
+                    FilterColumn = "FirstName";
+                    break;
+
+                case "Last Name":
+                    FilterColumn = "LastName";
+                    break;
+
+                case "Nationality":
+                    FilterColumn = "CountryName";
+                    break;
+
+                case "Gendor":
+                    FilterColumn = "Gendor";
+                    break;
+
+                case "Phone":
+                    FilterColumn = "Phone";
+                    break;
+
+                case "Email":
+                    FilterColumn = "Email";
+                    break;
+
+                case "License No":
+                    FilterColumn = "DriverLicenseNumber";
+                    break;
+
+                default:
+                    FilterColumn = "None";
+                    break;
+
+            }
+
+
+            //Reset the filters in case nothing selected or filter value conains nothing.
+            if (txtFilterValue.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtCustomers.DefaultView.RowFilter = "";
+                lblRecordsCount.Text = dgvCustomersList.Rows.Count.ToString();
+                return;
+            }
+
+
+            if (FilterColumn == "CustomerID")
+                //in this case we deal with integer not string.
+
+                _dtCustomers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());
+            else
+                _dtCustomers.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
+
+            lblRecordsCount.Text = dgvCustomersList.Rows.Count.ToString();
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            txtFilterValue.Visible = (cbFilterBy.Text != "None");
+
+            if (txtFilterValue.Visible)
+            {
+                txtFilterValue.Text = "";
+                txtFilterValue.Focus();
+            }
+        }
+
+        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //we allow number incase person id is selected.
+            if (cbFilterBy.Text == "Customer ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        #endregion
 
         private void btnAddCustomer_Click(object sender, System.EventArgs e)
         {
@@ -105,12 +191,16 @@ namespace CarRental.Customers
                 frmListCustomers_Load(null, null);
             }
             else
-
                 MessageBox.Show("Customer was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
+        private void showCustomerDeToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            int CustomerID = (int)dgvCustomersList.CurrentRow.Cells[0].Value;
 
-
+            Form frm = new frmShowCustomerDetails(CustomerID);
+            frm.ShowDialog();
+        }
     }
 }

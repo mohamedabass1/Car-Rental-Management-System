@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCustomersList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.cmsCustomers = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmsCustomers = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.showCustomerTransactionsHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.showCustomerDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +47,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showCuostomerBookingHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.cbFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
+            this.showCustomerTransactionsHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomersList)).BeginInit();
             this.cmsCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -58,28 +58,28 @@
             this.dgvCustomersList.AllowUserToAddRows = false;
             this.dgvCustomersList.AllowUserToDeleteRows = false;
             this.dgvCustomersList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvCustomersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvCustomersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCustomersList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCustomersList.ColumnHeadersHeight = 40;
             this.dgvCustomersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvCustomersList.ContextMenuStrip = this.cmsCustomers;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomersList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomersList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomersList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomersList.Location = new System.Drawing.Point(19, 315);
             this.dgvCustomersList.Name = "dgvCustomersList";
@@ -110,6 +110,42 @@
             this.dgvCustomersList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomersList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // cmsCustomers
+            // 
+            this.cmsCustomers.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cmsCustomers.ImageScalingSize = new System.Drawing.Size(22, 22);
+            this.cmsCustomers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showCustomerDeToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.addNewCustomerToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.showCuostomerBookingHistoryToolStripMenuItem,
+            this.showCustomerTransactionsHistoryToolStripMenuItem});
+            this.cmsCustomers.Name = "guna2ContextMenuStrip1";
+            this.cmsCustomers.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmsCustomers.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.cmsCustomers.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cmsCustomers.RenderStyle.ColorTable = null;
+            this.cmsCustomers.RenderStyle.RoundedEdges = true;
+            this.cmsCustomers.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.cmsCustomers.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.cmsCustomers.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.cmsCustomers.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
+            this.cmsCustomers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.cmsCustomers.Size = new System.Drawing.Size(364, 206);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(360, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(360, 6);
+            // 
             // lblRecordsCount
             // 
             this.lblRecordsCount.AutoSize = true;
@@ -129,109 +165,6 @@
             this.label2.Size = new System.Drawing.Size(105, 23);
             this.label2.TabIndex = 10;
             this.label2.Text = "# Records:";
-            // 
-            // cmsCustomers
-            // 
-            this.cmsCustomers.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.cmsCustomers.ImageScalingSize = new System.Drawing.Size(22, 22);
-            this.cmsCustomers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showCustomerDeToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.addNewCustomerToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.showCuostomerBookingHistoryToolStripMenuItem,
-            this.showCustomerTransactionsHistoryToolStripMenuItem});
-            this.cmsCustomers.Name = "guna2ContextMenuStrip1";
-            this.cmsCustomers.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.cmsCustomers.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.cmsCustomers.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cmsCustomers.RenderStyle.ColorTable = null;
-            this.cmsCustomers.RenderStyle.RoundedEdges = true;
-            this.cmsCustomers.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.cmsCustomers.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmsCustomers.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.cmsCustomers.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.cmsCustomers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsCustomers.Size = new System.Drawing.Size(364, 184);
-            // 
-            // showCustomerTransactionsHistoryToolStripMenuItem
-            // 
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Name = "showCustomerTransactionsHistoryToolStripMenuItem";
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Text = "Show Customer Transactions History";
-            // 
-            // btnAddCustomer
-            // 
-            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomer.Image = global::CarRental.Properties.Resources.Add_Person_40;
-            this.btnAddCustomer.Location = new System.Drawing.Point(1368, 245);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(76, 55);
-            this.btnAddCustomer.TabIndex = 92;
-            this.btnAddCustomer.UseVisualStyleBackColor = true;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.Customers;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(613, 47);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(249, 166);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // showCustomerDeToolStripMenuItem
-            // 
-            this.showCustomerDeToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
-            this.showCustomerDeToolStripMenuItem.Name = "showCustomerDeToolStripMenuItem";
-            this.showCustomerDeToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCustomerDeToolStripMenuItem.Text = "Show Customer Details";
-            // 
-            // addNewCustomerToolStripMenuItem
-            // 
-            this.addNewCustomerToolStripMenuItem.Image = global::CarRental.Properties.Resources.AddPerson_32;
-            this.addNewCustomerToolStripMenuItem.Name = "addNewCustomerToolStripMenuItem";
-            this.addNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.addNewCustomerToolStripMenuItem.Text = "Add New Customer";
-            this.addNewCustomerToolStripMenuItem.Click += new System.EventHandler(this.addNewCustomerToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_32;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::CarRental.Properties.Resources.Delete_32;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // showCuostomerBookingHistoryToolStripMenuItem
-            // 
-            this.showCuostomerBookingHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
-            this.showCuostomerBookingHistoryToolStripMenuItem.Name = "showCuostomerBookingHistoryToolStripMenuItem";
-            this.showCuostomerBookingHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCuostomerBookingHistoryToolStripMenuItem.Text = "Show Cuostomer Booking history";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(360, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(360, 6);
             // 
             // cbFilterBy
             // 
@@ -257,6 +190,7 @@
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(202, 36);
             this.cbFilterBy.TabIndex = 94;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -287,6 +221,77 @@
             this.txtFilterValue.SelectedText = "";
             this.txtFilterValue.Size = new System.Drawing.Size(238, 36);
             this.txtFilterValue.TabIndex = 96;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Image = global::CarRental.Properties.Resources.Add_Person_40;
+            this.btnAddCustomer.Location = new System.Drawing.Point(1368, 245);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(76, 55);
+            this.btnAddCustomer.TabIndex = 92;
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.Customers;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(613, 47);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(249, 166);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 4;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // showCustomerDeToolStripMenuItem
+            // 
+            this.showCustomerDeToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
+            this.showCustomerDeToolStripMenuItem.Name = "showCustomerDeToolStripMenuItem";
+            this.showCustomerDeToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.showCustomerDeToolStripMenuItem.Text = "Show Customer Details";
+            this.showCustomerDeToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDeToolStripMenuItem_Click);
+            // 
+            // addNewCustomerToolStripMenuItem
+            // 
+            this.addNewCustomerToolStripMenuItem.Image = global::CarRental.Properties.Resources.AddPerson_32;
+            this.addNewCustomerToolStripMenuItem.Name = "addNewCustomerToolStripMenuItem";
+            this.addNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.addNewCustomerToolStripMenuItem.Text = "Add New Customer";
+            this.addNewCustomerToolStripMenuItem.Click += new System.EventHandler(this.addNewCustomerToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_32;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::CarRental.Properties.Resources.Delete_32;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // showCuostomerBookingHistoryToolStripMenuItem
+            // 
+            this.showCuostomerBookingHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
+            this.showCuostomerBookingHistoryToolStripMenuItem.Name = "showCuostomerBookingHistoryToolStripMenuItem";
+            this.showCuostomerBookingHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.showCuostomerBookingHistoryToolStripMenuItem.Text = "Show Cuostomer Booking History";
+            // 
+            // showCustomerTransactionsHistoryToolStripMenuItem
+            // 
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Name = "showCustomerTransactionsHistoryToolStripMenuItem";
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Text = "Show Customer Transactions History";
             // 
             // frmListCustomers
             // 
