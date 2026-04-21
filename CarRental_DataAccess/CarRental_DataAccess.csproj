@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,7 +45,9 @@
     <Compile Include="clsCountryData.cs" />
     <Compile Include="clsCustomer_DA.cs" />
     <Compile Include="clsDataAccessSetting.cs" />
+    <Compile Include="clsFuelType_DA.cs" />
     <Compile Include="clsPerson_DA.cs" />
+    <Compile Include="clsVehicleCategory_DA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
