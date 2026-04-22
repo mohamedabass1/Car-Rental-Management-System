@@ -37,7 +37,7 @@ namespace CarRental
             }
 
 
-            frm.BackColor = Color.White;
+            frm.BackColor = Color.FromArgb(240, 242, 245);
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
             myPanel.Controls.Add(frm);
@@ -95,6 +95,33 @@ namespace CarRental
         {
             OpenPage(new frmUsers(), "Manageg Vehciles");
 
+        }
+
+        private void mainPanal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
+        private void btnMax_Click_1(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+                WindowState = FormWindowState.Normal;
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

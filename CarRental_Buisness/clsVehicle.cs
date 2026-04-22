@@ -17,8 +17,12 @@ namespace CarRental_Buisness
         public int Years { get; set; }
         public int Mileage { get; set; }
         public int FuelTypeID { get; set; }
+
+        public clsFuelType FuelTypeInfo;
         public string PlateNumber { get; set; }
         public int CarCategoryID { get; set; }
+
+        public clsVehicleCategory CategoryInfo;
         public decimal RentalPricePerDay { get; set; }
         public bool IsAvailableForRent { get; set; }
 
@@ -109,18 +113,25 @@ namespace CarRental_Buisness
             if (vehicle == null)
                 return null;
 
-            return new clsVehicle(
-                vehicle.VehicleID,
-                vehicle.Make,
-                vehicle.Model,
-                vehicle.Years,
-                vehicle.Mileage,
-                vehicle.FuelTypeID,
-                vehicle.PlateNumber,
-                vehicle.CarCategoryID,
-                vehicle.RentalPricePerDay,
-                vehicle.IsAvailableForRent
-            );
+
+
+            clsVehicle v = new clsVehicle(
+                                            vehicle.VehicleID,
+                                            vehicle.Make,
+                                            vehicle.Model,
+                                            vehicle.Years,
+                                            vehicle.Mileage,
+                                            vehicle.FuelTypeID,
+                                            vehicle.PlateNumber,
+                                            vehicle.CarCategoryID,
+                                            vehicle.RentalPricePerDay,
+                                            vehicle.IsAvailableForRent
+                                        );
+
+            v.FuelTypeInfo = await clsFuelType.FindByIDAsync(v.FuelTypeID);
+            v.CategoryInfo = await clsVehicleCategory.FindByIDAsync(v.CarCategoryID);
+
+            return v;
         }
 
         public static async Task<bool> DeleteVehicleAsync(int vehicleID)

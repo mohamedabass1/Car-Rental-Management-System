@@ -46,6 +46,7 @@
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsFuelType.cs" />
     <Compile Include="clsPerson.cs" />
+    <Compile Include="clsVehicle.cs" />
     <Compile Include="clsVehicleCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
