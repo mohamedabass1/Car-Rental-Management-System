@@ -130,11 +130,11 @@
     <Compile Include="Users\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vehciles\frmVehciles.cs">
+    <Compile Include="Vehciles\frmListVehciles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vehciles\frmVehciles.Designer.cs">
-      <DependentUpon>frmVehciles.cs</DependentUpon>
+    <Compile Include="Vehciles\frmListVehciles.Designer.cs">
+      <DependentUpon>frmListVehciles.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Booking\frmBooking.resx">
       <DependentUpon>frmBooking.cs</DependentUpon>
@@ -182,8 +182,8 @@
     <EmbeddedResource Include="Users\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vehciles\frmVehciles.resx">
-      <DependentUpon>frmVehciles.cs</DependentUpon>
+    <EmbeddedResource Include="Vehciles\frmListVehciles.resx">
+      <DependentUpon>frmListVehciles.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -321,6 +321,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vehilcesList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-car40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-car32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-delete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-Edit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenance-vehicle32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

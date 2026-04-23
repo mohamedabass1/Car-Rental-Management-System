@@ -83,7 +83,7 @@ namespace CarRental
 
         private void btnVehicles_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmVehciles(), "Manageg Vehciles");
+            OpenPage(new frmListVehciles(), "Manageg Vehciles");
 
         }
         private void btnCustomers_Click(object sender, EventArgs e)
