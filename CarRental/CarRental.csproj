@@ -136,6 +136,12 @@
     <Compile Include="Vehicles\Controls\ctrlVehicleInfoCard.Designer.cs">
       <DependentUpon>ctrlVehicleInfoCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVrhicleInfoCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVrhicleInfoCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlVrhicleInfoCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicles\frmAddUpdateVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfoCard.resx">
       <DependentUpon>ctrlVehicleInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\Controls\ctrlVrhicleInfoCardWithFilter.resx">
+      <DependentUpon>ctrlVrhicleInfoCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\frmAddUpdateVehicle.resx">
       <DependentUpon>frmAddUpdateVehicle.cs</DependentUpon>

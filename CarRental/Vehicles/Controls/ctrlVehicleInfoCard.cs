@@ -73,9 +73,13 @@ namespace CarRental.Vehicles.Controls
 
         }
 
-        private void llEditVehicleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void llEditVehicleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Form frm = new frmAddUpdateVehicle(_VehicleID);
+            frm.ShowDialog();
 
+            // refresh
+            await LoadVehicleInf(_VehicleID);
         }
     }
 }
