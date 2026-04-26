@@ -135,7 +135,7 @@ namespace CarRental.Vehicles
             _Vehicle.Make = txtMake.Text.Trim();
             _Vehicle.Model = txtModel.Text.Trim();
             _Vehicle.Years = Convert.ToInt16(txtYear.Text.Trim());
-            _Vehicle.Mileage = Convert.ToInt16(txtMileage.Text.Trim());
+            _Vehicle.Mileage = Convert.ToInt32(txtMileage.Text.Trim());
             _Vehicle.PlateNumber = txtPlateNumber.Text.Trim();
             _Vehicle.RentalPricePerDay = Convert.ToDecimal(txtRentalPricePerDay.Text.Trim());
             _Vehicle.IsAvailableForRent = chbIsAvilableForRent.Checked;
@@ -155,9 +155,10 @@ namespace CarRental.Vehicles
                 _Mode = enMode.Update;
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
                 // Trigger the event to send data back to the caller form.
-                DataBack?.Invoke(this, _Vehicle.VehicleID);
+                this.DataBack?.Invoke(this, _Vehicle.VehicleID);
+
+
 
             }
             else
@@ -214,6 +215,23 @@ namespace CarRental.Vehicles
         private void btnClose(object sender, System.EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtYear_Validating1(object sender, CancelEventArgs e)
+        {
+            ValidateEmptyTextBox(sender, e);
+
+            int Year = int.Parse(txtYear.Text.Trim());
+
+            if (Year > DateTime.Now.Year)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtYear, "Please Enter valid Year!");
+            }
+            else
+            {
+                errorProvider1.SetError(txtYear, null);
+            }
         }
     }
 }

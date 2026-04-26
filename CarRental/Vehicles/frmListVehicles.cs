@@ -1,4 +1,5 @@
-﻿using CarRental.Vehicles;
+﻿using CarRental.Maintenance;
+using CarRental.Vehicles;
 using CarRental_Buisness;
 using System;
 using System.Data;
@@ -268,6 +269,12 @@ namespace CarRental.Vehciles
         private void maintenanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNewMaintenance_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmMaintenance();
+            frm.ShowDialog();
         }
     }
 }

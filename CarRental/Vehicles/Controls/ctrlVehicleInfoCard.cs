@@ -20,7 +20,7 @@ namespace CarRental.Vehicles.Controls
             InitializeComponent();
         }
 
-        public async Task LoadVehicleInf(int VehicleID)
+        public async Task LoadVehicleInfo(int VehicleID)
         {
             _VehicleID = VehicleID;
 
@@ -48,7 +48,7 @@ namespace CarRental.Vehicles.Controls
             lblRntalPrice.Text = _Vehicle.RentalPricePerDay.ToString();
             lblFuelType.Text = _Vehicle.FuelTypeInfo.FuelTypeName;
             lblCatigory.Text = _Vehicle.CategoryInfo.CategoryName;
-            lblIsAvilableForRent.Text = _Vehicle.IsAvailableForRent ? "Yes" : "No";
+            lblIsAvilableForRent.Text = _Vehicle.IsAvailableForRent ? "Available" : "Not Available";
             lblMileage.Text = _Vehicle.Mileage.ToString();
             lblPlateNumber.Text = _Vehicle.PlateNumber;
             lblLastMentainnaceData.Text = "[???]";
@@ -79,7 +79,12 @@ namespace CarRental.Vehicles.Controls
             frm.ShowDialog();
 
             // refresh
-            await LoadVehicleInf(_VehicleID);
+            await LoadVehicleInfo(_VehicleID);
+        }
+
+        private void ctrlVehicleInfoCard_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }

@@ -92,6 +92,12 @@
     </Compile>
     <Compile Include="Global Classes\clsUtil.cs" />
     <Compile Include="Global Classes\clsValidatoin.cs" />
+    <Compile Include="Maintenance\frmMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\frmMaintenance.Designer.cs">
+      <DependentUpon>frmMaintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\Controls\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenue.resx">
       <DependentUpon>frmMainMenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\frmMaintenance.resx">
+      <DependentUpon>frmMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\ctrlPersonCard.resx">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>
@@ -411,6 +420,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search-car48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_return48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

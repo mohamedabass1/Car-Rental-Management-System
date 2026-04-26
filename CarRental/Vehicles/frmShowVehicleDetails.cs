@@ -14,7 +14,7 @@ namespace CarRental.Vehicles
 
         private async void frmShowVehicleDetails_Load(object sender, EventArgs e)
         {
-            await ctrlVehicleInfoCard1.LoadVehicleInf(_VehicleID);
+            await ctrlVehicleInfoCard1.LoadVehicleInfo(_VehicleID);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

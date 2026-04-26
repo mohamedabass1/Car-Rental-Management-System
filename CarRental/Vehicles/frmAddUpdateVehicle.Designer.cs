@@ -396,7 +396,7 @@
             this.txtYear.Size = new System.Drawing.Size(200, 36);
             this.txtYear.TabIndex = 187;
             this.txtYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMileage_KeyPress);
-            this.txtYear.Validating += new System.ComponentModel.CancelEventHandler(this.txtYear_Validating);
+            this.txtYear.Validating += new System.ComponentModel.CancelEventHandler(this.txtYear_Validating1);
             // 
             // txtModel
             // 

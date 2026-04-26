@@ -35,3 +35,4 @@ C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.V
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehicles.frmShowVehicleDetails.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehicles.Controls.ctrlVehicleInfoCard.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehicles.Controls.ctrlVrhicleInfoCardWithFilter.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Maintenance.frmMaintenance.resources
