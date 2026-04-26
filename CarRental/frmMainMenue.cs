@@ -37,7 +37,7 @@ namespace CarRental
             }
 
 
-            frm.BackColor = Color.FromArgb(240, 242, 245);
+            frm.BackColor = Color.FromArgb(245, 245, 245);
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
             myPanel.Controls.Add(frm);
@@ -57,7 +57,9 @@ namespace CarRental
 
             OpenPage(new frmDashboard(), "Dashboard");
 
+
         }
+
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -83,7 +85,7 @@ namespace CarRental
 
         private void btnVehicles_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmListVehciles(), "Manageg Vehciles");
+            OpenPage(new frmListVehicles(), "Manageg Vehciles");
 
         }
         private void btnCustomers_Click(object sender, EventArgs e)

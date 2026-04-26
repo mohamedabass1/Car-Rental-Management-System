@@ -130,11 +130,29 @@
     <Compile Include="Users\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vehciles\frmListVehciles.cs">
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfoCard.Designer.cs">
+      <DependentUpon>ctrlVehicleInfoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmAddUpdateVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vehciles\frmListVehciles.Designer.cs">
-      <DependentUpon>frmListVehciles.cs</DependentUpon>
+    <Compile Include="Vehicles\frmAddUpdateVehicle.Designer.cs">
+      <DependentUpon>frmAddUpdateVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmListVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmListVehicles.Designer.cs">
+      <DependentUpon>frmListVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmShowVehicleDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmShowVehicleDetails.Designer.cs">
+      <DependentUpon>frmShowVehicleDetails.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Booking\frmBooking.resx">
       <DependentUpon>frmBooking.cs</DependentUpon>
@@ -182,8 +200,17 @@
     <EmbeddedResource Include="Users\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vehciles\frmListVehciles.resx">
-      <DependentUpon>frmListVehciles.cs</DependentUpon>
+    <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfoCard.resx">
+      <DependentUpon>ctrlVehicleInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmAddUpdateVehicle.resx">
+      <DependentUpon>frmAddUpdateVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmListVehicles.resx">
+      <DependentUpon>frmListVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmShowVehicleDetails.resx">
+      <DependentUpon>frmShowVehicleDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -339,6 +366,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maintenance-vehicle32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vehicle-details32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-driver-type32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-fuel-type32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available-car32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rental-price-per-day32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mileage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\year32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plate-number32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

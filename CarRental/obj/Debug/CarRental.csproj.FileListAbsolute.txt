@@ -30,4 +30,7 @@ C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.T
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmListCustomers.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmShowCustomerDetails.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.ctrlCustomerInfoCard.resources
-C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehciles.frmListVehciles.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehciles.frmListVehicles.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehicles.frmAddUpdateVehicle.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehicles.frmShowVehicleDetails.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Vehicles.Controls.ctrlVehicleInfoCard.resources

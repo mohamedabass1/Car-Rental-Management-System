@@ -122,6 +122,37 @@ namespace CarRental_DataAccess
             return dt;
         }
 
+        public static async Task<DataTable> ListVehiclesPagedAsync(int PageNumber, int RowsPerPage)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand("Vehicle.SP_ListVehiclesPaged", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                command.Parameters.AddWithValue("@RowsPerPage", RowsPerPage);
+
+                try
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlDataReader r = await command.ExecuteReaderAsync())
+                    {
+                        if (r.HasRows)
+                            dt.Load(r);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
+                }
+            }
+
+            return dt;
+        }
+
         public static async Task<bool> UpdateVehicleAsync(VehicleDTO vehicle)
         {
             int rows = 0;

@@ -33,8 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCustomersList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsCustomers = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.showCustomerDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.addNewCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.showCuostomerBookingHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showCustomerTransactionsHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -42,12 +48,6 @@
             this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.showCustomerDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showCuostomerBookingHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showCustomerTransactionsHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomersList)).BeginInit();
             this.cmsCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -137,15 +137,61 @@
             this.cmsCustomers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.cmsCustomers.Size = new System.Drawing.Size(364, 184);
             // 
+            // showCustomerDeToolStripMenuItem
+            // 
+            this.showCustomerDeToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
+            this.showCustomerDeToolStripMenuItem.Name = "showCustomerDeToolStripMenuItem";
+            this.showCustomerDeToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.showCustomerDeToolStripMenuItem.Text = "Show Customer Details";
+            this.showCustomerDeToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDeToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(360, 6);
             // 
+            // addNewCustomerToolStripMenuItem
+            // 
+            this.addNewCustomerToolStripMenuItem.Image = global::CarRental.Properties.Resources.AddPerson_32;
+            this.addNewCustomerToolStripMenuItem.Name = "addNewCustomerToolStripMenuItem";
+            this.addNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.addNewCustomerToolStripMenuItem.Text = "Add New Customer";
+            this.addNewCustomerToolStripMenuItem.Click += new System.EventHandler(this.addNewCustomerToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_32;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::CarRental.Properties.Resources.Delete_32;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(360, 6);
+            // 
+            // showCuostomerBookingHistoryToolStripMenuItem
+            // 
+            this.showCuostomerBookingHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
+            this.showCuostomerBookingHistoryToolStripMenuItem.Name = "showCuostomerBookingHistoryToolStripMenuItem";
+            this.showCuostomerBookingHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.showCuostomerBookingHistoryToolStripMenuItem.Text = "Show Cuostomer Booking History";
+            // 
+            // showCustomerTransactionsHistoryToolStripMenuItem
+            // 
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Name = "showCustomerTransactionsHistoryToolStripMenuItem";
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Text = "Show Customer Transactions History";
             // 
             // lblRecordsCount
             // 
@@ -254,52 +300,6 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 4;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // showCustomerDeToolStripMenuItem
-            // 
-            this.showCustomerDeToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
-            this.showCustomerDeToolStripMenuItem.Name = "showCustomerDeToolStripMenuItem";
-            this.showCustomerDeToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCustomerDeToolStripMenuItem.Text = "Show Customer Details";
-            this.showCustomerDeToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDeToolStripMenuItem_Click);
-            // 
-            // addNewCustomerToolStripMenuItem
-            // 
-            this.addNewCustomerToolStripMenuItem.Image = global::CarRental.Properties.Resources.AddPerson_32;
-            this.addNewCustomerToolStripMenuItem.Name = "addNewCustomerToolStripMenuItem";
-            this.addNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.addNewCustomerToolStripMenuItem.Text = "Add New Customer";
-            this.addNewCustomerToolStripMenuItem.Click += new System.EventHandler(this.addNewCustomerToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_32;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::CarRental.Properties.Resources.Delete_32;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // showCuostomerBookingHistoryToolStripMenuItem
-            // 
-            this.showCuostomerBookingHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
-            this.showCuostomerBookingHistoryToolStripMenuItem.Name = "showCuostomerBookingHistoryToolStripMenuItem";
-            this.showCuostomerBookingHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCuostomerBookingHistoryToolStripMenuItem.Text = "Show Cuostomer Booking History";
-            // 
-            // showCustomerTransactionsHistoryToolStripMenuItem
-            // 
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Name = "showCustomerTransactionsHistoryToolStripMenuItem";
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Text = "Show Customer Transactions History";
             // 
             // frmListCustomers
             // 

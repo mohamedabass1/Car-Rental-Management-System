@@ -143,6 +143,11 @@ namespace CarRental_Buisness
         {
             return await clsVehicle_DA.GetAllVehiclesAsync();
         }
+
+        public static async Task<DataTable> ListVehiclesPagedAsync(int PageNumber, int RowsPerPage)
+        {
+            return await clsVehicle_DA.ListVehiclesPagedAsync(PageNumber, RowsPerPage);
+        }
     }
 }
 

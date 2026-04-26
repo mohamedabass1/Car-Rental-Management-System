@@ -425,7 +425,7 @@
             // 
             // mainPanal
             // 
-            this.mainPanal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.mainPanal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.mainPanal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanal.Location = new System.Drawing.Point(257, 57);
             this.mainPanal.Name = "mainPanal";

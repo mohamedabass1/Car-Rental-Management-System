@@ -1,6 +1,6 @@
-﻿namespace CarRental.Customers
+﻿namespace CarRental.Vehicles
 {
-    partial class frmShowCustomerDetails
+    partial class frmShowVehicleDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,30 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
+            this.ctrlVehicleInfoCard1 = new CarRental.Vehicles.Controls.ctrlVehicleInfoCard();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.ctrlCustomerInfoCard1 = new CarRental.Customers.ctrlCustomerInfoCard();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(93, 9);
+            this.lblTitle.Location = new System.Drawing.Point(12, 19);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(757, 39);
-            this.lblTitle.TabIndex = 117;
-            this.lblTitle.Text = "Customer Details";
+            this.lblTitle.Size = new System.Drawing.Size(879, 55);
+            this.lblTitle.TabIndex = 118;
+            this.lblTitle.Text = "Vehicle Details";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ctrlVehicleInfoCard1
+            // 
+            this.ctrlVehicleInfoCard1.BackColor = System.Drawing.Color.White;
+            this.ctrlVehicleInfoCard1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.ctrlVehicleInfoCard1.Location = new System.Drawing.Point(13, 109);
+            this.ctrlVehicleInfoCard1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlVehicleInfoCard1.Name = "ctrlVehicleInfoCard1";
+            this.ctrlVehicleInfoCard1.Size = new System.Drawing.Size(890, 324);
+            this.ctrlVehicleInfoCard1.TabIndex = 119;
             // 
             // btnClose
             // 
@@ -59,40 +68,29 @@
             this.btnClose.Image = global::CarRental.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnClose.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnClose.Location = new System.Drawing.Point(799, 559);
+            this.btnClose.Location = new System.Drawing.Point(748, 453);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(151, 45);
-            this.btnClose.TabIndex = 121;
+            this.btnClose.TabIndex = 122;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ctrlCustomerInfoCard1
+            // frmShowVehicleDetails
             // 
-            this.ctrlCustomerInfoCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlCustomerInfoCard1.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.ctrlCustomerInfoCard1.Location = new System.Drawing.Point(20, 62);
-            this.ctrlCustomerInfoCard1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlCustomerInfoCard1.Name = "ctrlCustomerInfoCard1";
-            this.ctrlCustomerInfoCard1.Size = new System.Drawing.Size(937, 482);
-            this.ctrlCustomerInfoCard1.TabIndex = 122;
-            // 
-            // frmShowCustomerDetails
-            // 
-            this.AcceptButton = this.btnClose;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(979, 616);
-            this.Controls.Add(this.ctrlCustomerInfoCard1);
+            this.ClientSize = new System.Drawing.Size(912, 510);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.ctrlVehicleInfoCard1);
             this.Controls.Add(this.lblTitle);
-            this.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmShowCustomerDetails";
+            this.Name = "frmShowVehicleDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customer Details";
-            this.Load += new System.EventHandler(this.frmShowCustomerDetails_Load);
+            this.Text = "Vehicle Details";
+            this.Load += new System.EventHandler(this.frmShowVehicleDetails_Load);
             this.ResumeLayout(false);
 
         }
@@ -100,7 +98,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
+        private Controls.ctrlVehicleInfoCard ctrlVehicleInfoCard1;
         private Guna.UI2.WinForms.Guna2Button btnClose;
-        private ctrlCustomerInfoCard ctrlCustomerInfoCard1;
     }
 }

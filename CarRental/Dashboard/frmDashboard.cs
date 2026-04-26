@@ -15,8 +15,8 @@ namespace CarRental.Dashbiard
 
         }
         // 1. تعريف لوحة ألوان احترافية (Modern Dark Theme Palette)
-        private readonly Color FormBackground = Color.FromArgb(30, 30, 47);      // خلفية داكنة رئيسية
-        private readonly Color CardBackground = Color.FromArgb(39, 41, 61);      // لون البطاقات
+        private readonly Color FormBackground = Color.FromArgb(49, 68, 80);      // خلفية داكنة رئيسية
+        private readonly Color CardBackground = Color.FromArgb(45, 55, 60);      // لون البطاقات
         private readonly Color TextPrimary = Color.White;                        // النصوص الرئيسية (الأرقام)
         private readonly Color TextSecondary = Color.FromArgb(154, 154, 169);    // النصوص الفرعية (العناوين)
         private readonly Color AccentColor = Color.FromArgb(29, 142, 238);       // الأزرق الدلالي
@@ -42,7 +42,7 @@ namespace CarRental.Dashbiard
             {
                 Text = "Dashboard Overview",
                 Font = new Font("Segoe UI", 24F, FontStyle.Bold),
-                ForeColor = TextPrimary,
+                ForeColor = Color.FromArgb(45, 55, 60),
                 AutoSize = true,
                 Location = new Point(0, 0)
             };
@@ -51,7 +51,7 @@ namespace CarRental.Dashbiard
             {
                 Text = $"Welcome back, Admin | {DateTime.Now.ToString("dd MMMM yyyy")}",
                 Font = new Font("Segoe UI", 12F, FontStyle.Regular),
-                ForeColor = TextSecondary,
+                ForeColor = Color.FromArgb(45, 55, 60),
                 AutoSize = true,
                 Location = new Point(5, 45)
             };
