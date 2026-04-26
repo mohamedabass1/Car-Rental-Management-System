@@ -210,5 +210,35 @@ namespace CarRental_DataAccess
 
             return rows > 0;
         }
+
+        public static async Task<bool> IsVehicleExistsByPlateNumber(string PlateNumber)
+        {
+            bool isExists = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand("Vehicle.SP_CheckVehicleExistsByPlateNumber", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+
+                try
+                {
+                    await connection.OpenAsync();
+
+                    object result = await command.ExecuteScalarAsync();
+
+                    isExists = (result != null);
+
+                }
+                catch (Exception ex)
+                {
+                    isExists = false;
+                    clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
+                }
+            }
+
+            return isExists;
+        }
     }
 }

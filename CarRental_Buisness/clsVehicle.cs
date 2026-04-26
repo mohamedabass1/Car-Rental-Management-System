@@ -148,6 +148,11 @@ namespace CarRental_Buisness
         {
             return await clsVehicle_DA.ListVehiclesPagedAsync(PageNumber, RowsPerPage);
         }
+
+        public static async Task<bool> IsVehicleExistsByPlateNumber(string PlateNumber)
+        {
+            return await clsVehicle_DA.IsVehicleExistsByPlateNumber(PlateNumber);
+        }
     }
 }
 

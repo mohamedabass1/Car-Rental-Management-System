@@ -215,6 +215,8 @@ namespace CarRental.Vehciles
         {
             Form frm = new frmAddUpdateVehicle();
             frm.ShowDialog();
+
+            frmListVehciles_Load(null, null);
         }
 
         private void showVehicleDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,16 +230,38 @@ namespace CarRental.Vehciles
         {
             Form frm = new frmAddUpdateVehicle();
             frm.ShowDialog();
+
+            frmListVehciles_Load(null, null);
         }
 
         private void editVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = new frmAddUpdateVehicle();
+            int VehicleID = (int)dgvVehciles.CurrentRow.Cells[0].Value;
+
+            Form frm = new frmAddUpdateVehicle(VehicleID);
             frm.ShowDialog();
+
+            frmListVehciles_Load(null, null);
+
         }
 
-        private void deleteVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void deleteVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int VehicleID = (int)dgvVehciles.CurrentRow.Cells[0].Value;
+
+            if (MessageBox.Show("Are you sure you want to delete Vehicle [" + VehicleID + "]",
+             "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+
+            if (await clsVehicle.DeleteVehicleAsync(VehicleID))
+            {
+                MessageBox.Show("Vehicle Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // refresh
+                frmListVehciles_Load(null, null);
+
+            }
+            else
+                MessageBox.Show("Vehicle was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 

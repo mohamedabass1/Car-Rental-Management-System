@@ -252,5 +252,10 @@ namespace CarRental.People
             else
                 errorProvider1.SetError(txtLicenseNumber, null);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
