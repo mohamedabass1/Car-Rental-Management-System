@@ -142,11 +142,11 @@
     <Compile Include="Vehicles\Controls\ctrlVehicleInfoCard.Designer.cs">
       <DependentUpon>ctrlVehicleInfoCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vehicles\Controls\ctrlVrhicleInfoCardWithFilter.cs">
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfoCardWithFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Vehicles\Controls\ctrlVrhicleInfoCardWithFilter.Designer.cs">
-      <DependentUpon>ctrlVrhicleInfoCardWithFilter.cs</DependentUpon>
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfoCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlVehicleInfoCardWithFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Vehicles\frmAddUpdateVehicle.cs">
       <SubType>Form</SubType>
@@ -218,8 +218,8 @@
     <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfoCard.resx">
       <DependentUpon>ctrlVehicleInfoCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vehicles\Controls\ctrlVrhicleInfoCardWithFilter.resx">
-      <DependentUpon>ctrlVrhicleInfoCardWithFilter.cs</DependentUpon>
+    <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfoCardWithFilter.resx">
+      <DependentUpon>ctrlVehicleInfoCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\frmAddUpdateVehicle.resx">
       <DependentUpon>frmAddUpdateVehicle.cs</DependentUpon>

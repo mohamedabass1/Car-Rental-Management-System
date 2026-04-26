@@ -45,6 +45,7 @@
     <Compile Include="CountryDTO.cs" />
     <Compile Include="CustomerDTO.cs" />
     <Compile Include="FuelTypeDTO.cs" />
+    <Compile Include="MaintenanceDTO.cs" />
     <Compile Include="PersonDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VehicleCategoryDTO.cs" />
