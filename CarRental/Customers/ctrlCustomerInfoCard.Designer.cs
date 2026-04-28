@@ -45,8 +45,8 @@
             // ctrlPersonCard1
             // 
             this.ctrlPersonCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(10, 14);
-            this.ctrlPersonCard1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctrlPersonCard1.Location = new System.Drawing.Point(5, 2);
+            this.ctrlPersonCard1.Margin = new System.Windows.Forms.Padding(5);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
             this.ctrlPersonCard1.Size = new System.Drawing.Size(924, 337);
             this.ctrlPersonCard1.TabIndex = 122;
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.lblCustomerID);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(10, 370);
+            this.groupBox1.Location = new System.Drawing.Point(5, 352);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(915, 100);
             this.groupBox1.TabIndex = 121;
@@ -154,9 +154,9 @@
             this.Controls.Add(this.ctrlPersonCard1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlCustomerInfoCard";
-            this.Size = new System.Drawing.Size(937, 482);
+            this.Size = new System.Drawing.Size(932, 467);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

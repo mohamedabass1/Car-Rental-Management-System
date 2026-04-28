@@ -51,7 +51,7 @@ namespace CarRental.Vehicles.Controls
             lblIsAvilableForRent.Text = _Vehicle.IsAvailableForRent ? "Available" : "Not Available";
             lblMileage.Text = _Vehicle.Mileage.ToString();
             lblPlateNumber.Text = _Vehicle.PlateNumber;
-            lblLastMentainnaceData.Text = "[???]";
+            lblLastMentainnaceDate.Text = (_Vehicle.LastMaintenanceInfo != null ? _Vehicle.LastMaintenanceInfo.MaintenanceDate.ToShortDateString() : "No Maintenance");
         }
 
         public void ResetPersonInfo()
@@ -68,7 +68,7 @@ namespace CarRental.Vehicles.Controls
             lblCatigory.Text = "[????]";
             lblIsAvilableForRent.Text = "[????]";
             lblMileage.Text = "[????]";
-            lblLastMentainnaceData.Text = "[????]";
+            lblLastMentainnaceDate.Text = "[????]";
             lblPlateNumber.Text = "[????]";
 
         }

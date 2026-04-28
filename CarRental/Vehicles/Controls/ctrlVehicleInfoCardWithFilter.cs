@@ -148,6 +148,7 @@ namespace CarRental.Vehicles.Controls
         private void ctrlVrhicleInfoCardWithFilter_Load(object sender, System.EventArgs e)
         {
             FilterFoucs();
+
         }
     }
 }

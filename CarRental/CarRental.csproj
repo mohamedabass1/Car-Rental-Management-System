@@ -60,6 +60,12 @@
     <Compile Include="Booking\frmBooking.Designer.cs">
       <DependentUpon>frmBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlCustomerInfoCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customers\ctrlCustomerInfoCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,8 +172,17 @@
     <Compile Include="Vehicles\frmShowVehicleDetails.Designer.cs">
       <DependentUpon>frmShowVehicleDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maintenance\frmVehicleMaintenanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\frmVehicleMaintenanceHistory.Designer.cs">
+      <DependentUpon>frmVehicleMaintenanceHistory.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Booking\frmBooking.resx">
       <DependentUpon>frmBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.resx">
+      <DependentUpon>ctrlCustomerInfoCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\ctrlCustomerInfoCard.resx">
       <DependentUpon>ctrlCustomerInfoCard.cs</DependentUpon>
@@ -229,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\frmShowVehicleDetails.resx">
       <DependentUpon>frmShowVehicleDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\frmVehicleMaintenanceHistory.resx">
+      <DependentUpon>frmVehicleMaintenanceHistory.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -423,6 +441,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\car_return48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Person 401.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

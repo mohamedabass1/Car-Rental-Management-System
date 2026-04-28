@@ -26,6 +26,8 @@ namespace CarRental_Buisness
         public decimal RentalPricePerDay { get; set; }
         public bool IsAvailableForRent { get; set; }
 
+        public clsMaintenance LastMaintenanceInfo;
+
         public clsVehicle()
         {
             VehicleID = -1;
@@ -130,7 +132,7 @@ namespace CarRental_Buisness
 
             v.FuelTypeInfo = await clsFuelType.FindByIDAsync(v.FuelTypeID);
             v.CategoryInfo = await clsVehicleCategory.FindByIDAsync(v.CarCategoryID);
-
+            v.LastMaintenanceInfo = await clsMaintenance.GetLastVehicleMaintenanceDataAsync(v.VehicleID);
             return v;
         }
 

@@ -268,7 +268,9 @@ namespace CarRental.Vehciles
 
         private void maintenanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            int VehicleID = (int)dgvVehciles.CurrentRow.Cells[0].Value;
+            Form frm = new frmMaintenance(VehicleID);
+            frm.ShowDialog();
         }
 
         private void btnNewMaintenance_Click(object sender, EventArgs e)

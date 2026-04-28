@@ -15,7 +15,7 @@ namespace CarRental.Customers
             get { return _CustomerID; }
         }
 
-        public clsCustomer SelectedCustomer
+        public clsCustomer SelectedCustomerInfo
         {
             get { return _Customer; }
         }

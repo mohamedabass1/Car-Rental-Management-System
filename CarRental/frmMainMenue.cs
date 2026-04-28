@@ -18,7 +18,6 @@ namespace CarRental
             InitializeComponent();
             myPanel = mainPanal;
 
-
         }
 
         // Load Specific Form  int the Panel in this form
@@ -45,57 +44,55 @@ namespace CarRental
             frm.Show();
         }
 
-        private void OpenPage(Form frm, string title)
+        private void OpenPage(Form frm, string title, Control btn)
         {
             lblTitle.Text = title;
             _LoadForm(frm);
+            MoveIndicator(btn);
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            OpenPage(new frmDashboard(), "Dashboard");
-
-
+            OpenPage(new frmDashboard(), "Dashboard", btnDashboard);
         }
 
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmDashboard(), "Dashboard");
+            OpenPage(new frmDashboard(), "Dashboard", btnDashboard);
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmBooking(), "Manageg Booking");
+            OpenPage(new frmBooking(), "Manageg Booking", btnBooking);
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmReturn(), "Manageg Return");
+            OpenPage(new frmReturn(), "Manageg Return", btnReturn);
 
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmTransactions(), "Manageg Transactions");
+            OpenPage(new frmTransactions(), "Manageg Transactions", btnTransactions);
 
         }
 
         private void btnVehicles_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmListVehicles(), "Manageg Vehciles");
+            OpenPage(new frmListVehicles(), "Manageg Vehicles", btnVehicles);
 
         }
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmListCustomers(), "Manage Customers");
+            OpenPage(new frmListCustomers(), "Manage Customers", btnCustomers);
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmUsers(), "Manageg Vehciles");
+            OpenPage(new frmUsers(), "Manageg Users", btnUsers);
 
         }
 
@@ -124,6 +121,11 @@ namespace CarRental
         private void btnMin_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void MoveIndicator(Control btn)
+        {
+            Indicator1.Top = btn.Top;
         }
     }
 }

@@ -34,8 +34,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dgvVehciles = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsVehicles = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.showVehicleDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.addNewVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.maintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showMaintenanceHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbFilterBy = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -46,12 +52,6 @@
             this.btnNewMaintenance = new System.Windows.Forms.Button();
             this.btnAddNewVehcile = new System.Windows.Forms.Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.showVehicleDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showMaintenanceHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehciles)).BeginInit();
             this.cmsVehicles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -156,15 +156,62 @@
             this.cmsVehicles.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.cmsVehicles.Size = new System.Drawing.Size(294, 184);
             // 
+            // showVehicleDetailsToolStripMenuItem
+            // 
+            this.showVehicleDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.vehicle_details32;
+            this.showVehicleDetailsToolStripMenuItem.Name = "showVehicleDetailsToolStripMenuItem";
+            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
+            this.showVehicleDetailsToolStripMenuItem.Text = "Show Vehicle Details";
+            this.showVehicleDetailsToolStripMenuItem.Click += new System.EventHandler(this.showVehicleDetailsToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(290, 6);
             // 
+            // addNewVehicleToolStripMenuItem
+            // 
+            this.addNewVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.add_car32;
+            this.addNewVehicleToolStripMenuItem.Name = "addNewVehicleToolStripMenuItem";
+            this.addNewVehicleToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
+            this.addNewVehicleToolStripMenuItem.Text = "Add New Vehicle";
+            this.addNewVehicleToolStripMenuItem.Click += new System.EventHandler(this.addNewVehicleToolStripMenuItem_Click);
+            // 
+            // editVehicleToolStripMenuItem
+            // 
+            this.editVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_Edit32;
+            this.editVehicleToolStripMenuItem.Name = "editVehicleToolStripMenuItem";
+            this.editVehicleToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
+            this.editVehicleToolStripMenuItem.Text = "Edit";
+            this.editVehicleToolStripMenuItem.Click += new System.EventHandler(this.editVehicleToolStripMenuItem_Click);
+            // 
+            // deleteVehicleToolStripMenuItem
+            // 
+            this.deleteVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_delete32;
+            this.deleteVehicleToolStripMenuItem.Name = "deleteVehicleToolStripMenuItem";
+            this.deleteVehicleToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
+            this.deleteVehicleToolStripMenuItem.Text = "Delete";
+            this.deleteVehicleToolStripMenuItem.Click += new System.EventHandler(this.deleteVehicleToolStripMenuItem_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(290, 6);
+            // 
+            // maintenanceToolStripMenuItem
+            // 
+            this.maintenanceToolStripMenuItem.Image = global::CarRental.Properties.Resources.maintenance_vehicle32;
+            this.maintenanceToolStripMenuItem.Name = "maintenanceToolStripMenuItem";
+            this.maintenanceToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
+            this.maintenanceToolStripMenuItem.Text = "Maintenance";
+            this.maintenanceToolStripMenuItem.Click += new System.EventHandler(this.maintenanceToolStripMenuItem_Click);
+            // 
+            // showMaintenanceHistoryToolStripMenuItem
+            // 
+            this.showMaintenanceHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
+            this.showMaintenanceHistoryToolStripMenuItem.Name = "showMaintenanceHistoryToolStripMenuItem";
+            this.showMaintenanceHistoryToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
+            this.showMaintenanceHistoryToolStripMenuItem.Text = "Show Maintenance History";
             // 
             // txtFilterValue
             // 
@@ -329,53 +376,6 @@
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 123;
             this.guna2PictureBox2.TabStop = false;
-            // 
-            // showVehicleDetailsToolStripMenuItem
-            // 
-            this.showVehicleDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.vehicle_details32;
-            this.showVehicleDetailsToolStripMenuItem.Name = "showVehicleDetailsToolStripMenuItem";
-            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
-            this.showVehicleDetailsToolStripMenuItem.Text = "Show Vehicle Details";
-            this.showVehicleDetailsToolStripMenuItem.Click += new System.EventHandler(this.showVehicleDetailsToolStripMenuItem_Click);
-            // 
-            // addNewVehicleToolStripMenuItem
-            // 
-            this.addNewVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.add_car32;
-            this.addNewVehicleToolStripMenuItem.Name = "addNewVehicleToolStripMenuItem";
-            this.addNewVehicleToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
-            this.addNewVehicleToolStripMenuItem.Text = "Add New Vehicle";
-            this.addNewVehicleToolStripMenuItem.Click += new System.EventHandler(this.addNewVehicleToolStripMenuItem_Click);
-            // 
-            // editVehicleToolStripMenuItem
-            // 
-            this.editVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_Edit32;
-            this.editVehicleToolStripMenuItem.Name = "editVehicleToolStripMenuItem";
-            this.editVehicleToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
-            this.editVehicleToolStripMenuItem.Text = "Edit";
-            this.editVehicleToolStripMenuItem.Click += new System.EventHandler(this.editVehicleToolStripMenuItem_Click);
-            // 
-            // deleteVehicleToolStripMenuItem
-            // 
-            this.deleteVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_delete32;
-            this.deleteVehicleToolStripMenuItem.Name = "deleteVehicleToolStripMenuItem";
-            this.deleteVehicleToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
-            this.deleteVehicleToolStripMenuItem.Text = "Delete";
-            this.deleteVehicleToolStripMenuItem.Click += new System.EventHandler(this.deleteVehicleToolStripMenuItem_Click);
-            // 
-            // maintenanceToolStripMenuItem
-            // 
-            this.maintenanceToolStripMenuItem.Image = global::CarRental.Properties.Resources.maintenance_vehicle32;
-            this.maintenanceToolStripMenuItem.Name = "maintenanceToolStripMenuItem";
-            this.maintenanceToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
-            this.maintenanceToolStripMenuItem.Text = "Maintenance";
-            this.maintenanceToolStripMenuItem.Click += new System.EventHandler(this.maintenanceToolStripMenuItem_Click);
-            // 
-            // showMaintenanceHistoryToolStripMenuItem
-            // 
-            this.showMaintenanceHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
-            this.showMaintenanceHistoryToolStripMenuItem.Name = "showMaintenanceHistoryToolStripMenuItem";
-            this.showMaintenanceHistoryToolStripMenuItem.Size = new System.Drawing.Size(293, 28);
-            this.showMaintenanceHistoryToolStripMenuItem.Text = "Show Maintenance History";
             // 
             // frmListVehicles
             // 
