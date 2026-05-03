@@ -110,30 +110,30 @@ namespace CarRental_Buisness
 
         public static async Task<clsVehicle> FindByIDAsync(int vehicleID)
         {
-            VehicleDTO vehicle = await clsVehicle_DA.GetVehicleByIDAsync(vehicleID);
+            VehicleDTO dto = await clsVehicle_DA.GetVehicleByIDAsync(vehicleID);
 
-            if (vehicle == null)
+            if (dto == null)
                 return null;
 
 
 
-            clsVehicle v = new clsVehicle(
-                                            vehicle.VehicleID,
-                                            vehicle.Make,
-                                            vehicle.Model,
-                                            vehicle.Years,
-                                            vehicle.Mileage,
-                                            vehicle.FuelTypeID,
-                                            vehicle.PlateNumber,
-                                            vehicle.CarCategoryID,
-                                            vehicle.RentalPricePerDay,
-                                            vehicle.IsAvailableForRent
+            clsVehicle vehicle = new clsVehicle(
+                                            dto.VehicleID,
+                                            dto.Make,
+                                            dto.Model,
+                                            dto.Years,
+                                            dto.Mileage,
+                                            dto.FuelTypeID,
+                                            dto.PlateNumber,
+                                            dto.CarCategoryID,
+                                            dto.RentalPricePerDay,
+                                            dto.IsAvailableForRent
                                         );
 
-            v.FuelTypeInfo = await clsFuelType.FindByIDAsync(v.FuelTypeID);
-            v.CategoryInfo = await clsVehicleCategory.FindByIDAsync(v.CarCategoryID);
-            v.LastMaintenanceInfo = await clsMaintenance.GetLastVehicleMaintenanceDataAsync(v.VehicleID);
-            return v;
+            vehicle.FuelTypeInfo = await clsFuelType.FindByIDAsync(vehicle.FuelTypeID);
+            vehicle.CategoryInfo = await clsVehicleCategory.FindByIDAsync(vehicle.CarCategoryID);
+            vehicle.LastMaintenanceInfo = await clsMaintenance.GetLastVehicleMaintenanceDataAsync(vehicle.VehicleID);
+            return vehicle;
         }
 
         public static async Task<bool> DeleteVehicleAsync(int vehicleID)

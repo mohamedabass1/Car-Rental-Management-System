@@ -47,6 +47,7 @@
     <Compile Include="clsFuelType.cs" />
     <Compile Include="clsMaintenance.cs" />
     <Compile Include="clsPerson.cs" />
+    <Compile Include="clsRentalBooking.cs" />
     <Compile Include="clsVehicle.cs" />
     <Compile Include="clsVehicleCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

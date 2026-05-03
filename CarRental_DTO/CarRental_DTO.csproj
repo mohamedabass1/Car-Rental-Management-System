@@ -48,6 +48,7 @@
     <Compile Include="MaintenanceDTO.cs" />
     <Compile Include="PersonDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentalBookingDTO.cs" />
     <Compile Include="VehicleCategoryDTO.cs" />
     <Compile Include="VehicleDTO.cs" />
   </ItemGroup>
