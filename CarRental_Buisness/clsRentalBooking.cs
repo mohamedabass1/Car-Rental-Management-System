@@ -1,6 +1,7 @@
 ﻿using CarRental_DataAccess;
 using CarRental_DTO;
 using System;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace CarRental_Buisness
@@ -41,19 +42,20 @@ namespace CarRental_Buisness
         }
 
         private clsRentalBooking(int BookingID, int CustomerID, int VehicleID, DateTime RentalStartDate, DateTime RentalEndDate,
-           string PickupLocation, string DropoffLocation, byte InitialRentalDays, decimal RentalPricePerDay, decimal )
+                                string PickupLocation, string DropoffLocation, byte InitialRentalDays, decimal RentalPricePerDay,
+                                decimal InitialTotalDueAmount, string InitialCheckNotes)
         {
-            //BookingID = dto.BookingID;
-            //CustomerID = dto.CustomerID;
-            //VehicleID = dto.VehicleID;
-            //RentalStartDate = dto.RentalStartDate;
-            //RentalEndDate = dto.RentalEndDate;
-            //PickupLocation = dto.PickupLocation;
-            //DropoffLocation = dto.DropoffLocation;
-            //InitialRentalDays = dto.InitialRentalDays;
-            //RentalPricePerDay = dto.RentalPricePerDay;
-            //InitialTotalDueAmount = dto.InitialTotalDueAmount;
-            //InitialCheckNotes = dto.InitialCheckNotes;
+            this.BookingID = BookingID;
+            this.CustomerID = CustomerID;
+            this.VehicleID = VehicleID;
+            this.RentalStartDate = RentalStartDate;
+            this.RentalEndDate = RentalEndDate;
+            this.PickupLocation = PickupLocation;
+            this.DropoffLocation = DropoffLocation;
+            this.InitialRentalDays = InitialRentalDays;
+            this.RentalPricePerDay = RentalPricePerDay;
+            this.InitialTotalDueAmount = InitialTotalDueAmount;
+            this.InitialCheckNotes = InitialCheckNotes;
 
             _Mode = enMode.Update;
         }
@@ -87,7 +89,6 @@ namespace CarRental_Buisness
 
         public async Task<bool> SaveAsync()
         {
-            // 🔥 Validation مهم
             if (RentalEndDate < RentalStartDate)
                 return false;
 
@@ -115,9 +116,41 @@ namespace CarRental_Buisness
             if (dto == null)
                 return null;
 
-            //return new clsRentalBooking(dto);
+            clsRentalBooking booking = new clsRentalBooking(dto.BookingID, dto.CustomerID, dto.VehicleID, dto.RentalStartDate, dto.RentalEndDate,
+                                                            dto.PickupLocation, dto.DropoffLocation, dto.InitialRentalDays,
+                                                            dto.RentalPricePerDay, dto.InitialTotalDueAmount, dto.InitialCheckNotes);
+
+            booking.CustomerInfo = await clsCustomer.FindByIDAsync(booking.CustomerID);
+            booking.VehicleInfo = await clsVehicle.FindByIDAsync(booking.VehicleID);
+
+            return booking;
+
         }
 
+        public static async Task<bool> DeleteAsync(int bookingID)
+        {
+            return await clsRentalBooking_DA.DeleteRentalBookingAsync(bookingID);
+        }
+
+        public static async Task<bool> ExistsAsync(int bookingID)
+        {
+            return await clsRentalBooking_DA.IsRentalBookingExistsAsync(bookingID);
+        }
+
+        public static async Task<DataTable> GetAllAsync()
+        {
+            return await clsRentalBooking_DA.GetAllRentalBookingsAsync();
+        }
+
+        public static async Task<DataTable> GetCustomerHistoryAsync(int customerID)
+        {
+            return await clsRentalBooking_DA.GetCustomerBookingHistoryAsync(customerID);
+        }
+
+        public static async Task<DataTable> GetVehicleHistoryAsync(int vehicleID)
+        {
+            return await clsRentalBooking_DA.GetVehicleBookingHistoryAsync(vehicleID);
+        }
 
     }
 }
