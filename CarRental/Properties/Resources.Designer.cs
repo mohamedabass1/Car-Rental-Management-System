@@ -63,6 +63,16 @@ namespace CarRental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_booking48 {
+            get {
+                object obj = ResourceManager.GetObject("add-booking48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_car32 {
             get {
                 object obj = ResourceManager.GetObject("add-car32", resourceCulture);
@@ -126,6 +136,16 @@ namespace CarRental.Properties {
         internal static System.Drawing.Bitmap available_car32 {
             get {
                 object obj = ResourceManager.GetObject("available-car32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap booking {
+            get {
+                object obj = ResourceManager.GetObject("booking", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,6 +463,16 @@ namespace CarRental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mileage1 {
+            get {
+                object obj = ResourceManager.GetObject("mileage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimize_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("minimize_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24", resourceCulture);
@@ -466,6 +496,26 @@ namespace CarRental.Properties {
         internal static System.Drawing.Bitmap money_32 {
             get {
                 object obj = ResourceManager.GetObject("money 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Next_32 {
+            get {
+                object obj = ResourceManager.GetObject("Next 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Notes_32 {
+            get {
+                object obj = ResourceManager.GetObject("Notes 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -527,6 +577,16 @@ namespace CarRental.Properties {
             get {
                 object obj = ResourceManager.GetObject("pngtree-vector-illustration-of-a-car-rental-icon-and-logo-vector-png-image_364765" +
                         "74", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Release_Detained_License_32 {
+            get {
+                object obj = ResourceManager.GetObject("Release Detained License 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

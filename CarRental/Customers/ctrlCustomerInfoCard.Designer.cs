@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlPersonCard1 = new CarRental.People.Controls.ctrlPersonCard();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblEditCustomerInfo = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -37,19 +36,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
+            this.ctrlPersonCard1 = new CarRental.People.Controls.ctrlPersonCard();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ctrlPersonCard1
-            // 
-            this.ctrlPersonCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(5, 2);
-            this.ctrlPersonCard1.Margin = new System.Windows.Forms.Padding(5);
-            this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(924, 337);
-            this.ctrlPersonCard1.TabIndex = 122;
             // 
             // groupBox1
             // 
@@ -62,9 +53,9 @@
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.lblCustomerID);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(5, 352);
+            this.groupBox1.Location = new System.Drawing.Point(5, 337);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(915, 100);
+            this.groupBox1.Size = new System.Drawing.Size(915, 82);
             this.groupBox1.TabIndex = 121;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
@@ -72,6 +63,7 @@
             // lblEditCustomerInfo
             // 
             this.lblEditCustomerInfo.AutoSize = true;
+            this.lblEditCustomerInfo.Enabled = false;
             this.lblEditCustomerInfo.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.lblEditCustomerInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.lblEditCustomerInfo.Location = new System.Drawing.Point(638, 45);
@@ -146,6 +138,15 @@
             this.lblCustomerID.TabIndex = 141;
             this.lblCustomerID.Text = "[????]";
             // 
+            // ctrlPersonCard1
+            // 
+            this.ctrlPersonCard1.BackColor = System.Drawing.Color.White;
+            this.ctrlPersonCard1.Location = new System.Drawing.Point(5, 2);
+            this.ctrlPersonCard1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrlPersonCard1.Name = "ctrlPersonCard1";
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(924, 337);
+            this.ctrlPersonCard1.TabIndex = 122;
+            // 
             // ctrlCustomerInfoCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -156,7 +157,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlCustomerInfoCard";
-            this.Size = new System.Drawing.Size(932, 467);
+            this.Size = new System.Drawing.Size(932, 426);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

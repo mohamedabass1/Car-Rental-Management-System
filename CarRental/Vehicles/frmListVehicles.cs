@@ -81,16 +81,7 @@ namespace CarRental.Vehciles
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-             None
-            Vehicle ID
-            Make
-            Model
-            Year
-            PlateNumber
-            Fuel Type
-            Price
-            Available*/
+
 
             if (cbFilterBy.Text == "Is Available")
             {

@@ -193,6 +193,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmVehicleMaintenanceHistory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicle Maintenance History";
             this.Load += new System.EventHandler(this.frmVehicleMaintenanceHistory_Load);
             this.guna2GroupBox1.ResumeLayout(false);

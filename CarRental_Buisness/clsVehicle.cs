@@ -155,6 +155,32 @@ namespace CarRental_Buisness
         {
             return await clsVehicle_DA.IsVehicleExistsByPlateNumber(PlateNumber);
         }
+
+        public async Task<bool> SetUnavailable()
+        {
+            if (!IsAvailableForRent)
+                return false;
+
+            bool result = await clsVehicle_DA.SetUnavailable(this.VehicleID);
+
+            if (result)
+                IsAvailableForRent = false;
+
+            return result;
+        }
+
+        public async Task<bool> SetAvailable()
+        {
+            if (IsAvailableForRent)
+                return false;
+
+            bool result = await clsVehicle_DA.SetAvailable(this.VehicleID);
+
+            if (result)
+                IsAvailableForRent = true;
+
+            return result;
+        }
     }
 }
 

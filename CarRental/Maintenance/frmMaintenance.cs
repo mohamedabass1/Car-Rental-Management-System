@@ -76,7 +76,7 @@ namespace CarRental.Maintenance
 
         private void frmMaintenance_Activated(object sender, System.EventArgs e)
         {
-            ctrlVrhicleInfoCardWithFilter1.FilterFoucs();
+            ctrlVrhicleInfoCardWithFilter1.FilterFocus();
         }
 
         private void txtCost_KeyPress(object sender, KeyPressEventArgs e)

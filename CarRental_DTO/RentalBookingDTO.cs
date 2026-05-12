@@ -10,7 +10,7 @@ namespace CarRental_DTO
         public DateTime RentalStartDate { get; set; }
         public DateTime RentalEndDate { get; set; }
         public string PickupLocation { get; set; }
-        public string DropoffLocation { get; set; }
+        public string DropOffLocation { get; set; }
         public byte InitialRentalDays { get; set; }
         public decimal RentalPricePerDay { get; set; }
         public decimal InitialTotalDueAmount { get; set; }

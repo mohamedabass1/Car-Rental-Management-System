@@ -240,5 +240,56 @@ namespace CarRental_DataAccess
 
             return isExists;
         }
+
+        public static async Task<bool> SetUnavailable(int VehicleID)
+        {
+            int AffectedRows = 0;
+            string query = @"Update Vehicle SET  IsAvailableForRent = 0 Where VehicleID =  @VehicleID;";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@VehicleID", VehicleID);
+
+                try
+                {
+                    await connection.OpenAsync();
+
+                    AffectedRows = await command.ExecuteNonQueryAsync();
+                }
+                catch (Exception ex)
+                {
+
+                    clsEventLogger.Log("Database exception: " + ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                }
+            }
+
+            return AffectedRows != 0;
+
+        }
+
+        public static async Task<bool> SetAvailable(int VehicleID)
+        {
+            int AffectedRows = 0;
+            string query = @"Update Vehicle SET  IsAvailableForRent = 1 Where VehicleID =  @VehicleID;";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@VehicleID", VehicleID);
+                try
+                {
+                    await connection.OpenAsync();
+
+                    AffectedRows = await command.ExecuteNonQueryAsync();
+                }
+                catch (Exception ex)
+                {
+
+                    clsEventLogger.Log("Database exception: " + ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                }
+            }
+
+            return AffectedRows != 0;
+
+        }
     }
 }

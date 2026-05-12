@@ -124,7 +124,7 @@ namespace CarRental.Vehicles.Controls
 
         }
 
-        public void FilterFoucs()
+        public void FilterFocus()
         {
             txtVehicleID.Focus();
         }
@@ -147,7 +147,7 @@ namespace CarRental.Vehicles.Controls
 
         private void ctrlVrhicleInfoCardWithFilter_Load(object sender, System.EventArgs e)
         {
-            FilterFoucs();
+            FilterFocus();
 
         }
     }

@@ -65,7 +65,7 @@ namespace CarRental
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmBooking(), "Manageg Booking", btnBooking);
+            OpenPage(new frmRentalBookingList(), "Manageg Booking", btnBooking);
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

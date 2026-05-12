@@ -19,7 +19,7 @@ namespace CarRental_Buisness
         public DateTime RentalStartDate { get; set; }
         public DateTime RentalEndDate { get; set; }
         public string PickupLocation { get; set; }
-        public string DropoffLocation { get; set; }
+        public string DropOffLocation { get; set; }
         public byte InitialRentalDays { get; set; }
         public decimal RentalPricePerDay { get; set; }
         public decimal InitialTotalDueAmount { get; set; }
@@ -33,7 +33,7 @@ namespace CarRental_Buisness
             RentalStartDate = DateTime.Now;
             RentalEndDate = DateTime.Now;
             PickupLocation = "";
-            DropoffLocation = "";
+            DropOffLocation = "";
             RentalPricePerDay = 0;
             InitialTotalDueAmount = 0;
             InitialCheckNotes = "";
@@ -51,7 +51,7 @@ namespace CarRental_Buisness
             this.RentalStartDate = RentalStartDate;
             this.RentalEndDate = RentalEndDate;
             this.PickupLocation = PickupLocation;
-            this.DropoffLocation = DropoffLocation;
+            this.DropOffLocation = DropoffLocation;
             this.InitialRentalDays = InitialRentalDays;
             this.RentalPricePerDay = RentalPricePerDay;
             this.InitialTotalDueAmount = InitialTotalDueAmount;
@@ -69,7 +69,7 @@ namespace CarRental_Buisness
                 RentalStartDate = this.RentalStartDate,
                 RentalEndDate = this.RentalEndDate,
                 PickupLocation = this.PickupLocation,
-                DropoffLocation = this.DropoffLocation,
+                DropOffLocation = this.DropOffLocation,
                 RentalPricePerDay = this.RentalPricePerDay,
                 InitialTotalDueAmount = this.InitialTotalDueAmount,
                 InitialCheckNotes = this.InitialCheckNotes
@@ -117,7 +117,7 @@ namespace CarRental_Buisness
                 return null;
 
             clsRentalBooking booking = new clsRentalBooking(dto.BookingID, dto.CustomerID, dto.VehicleID, dto.RentalStartDate, dto.RentalEndDate,
-                                                            dto.PickupLocation, dto.DropoffLocation, dto.InitialRentalDays,
+                                                            dto.PickupLocation, dto.DropOffLocation, dto.InitialRentalDays,
                                                             dto.RentalPricePerDay, dto.InitialTotalDueAmount, dto.InitialCheckNotes);
 
             booking.CustomerInfo = await clsCustomer.FindByIDAsync(booking.CustomerID);

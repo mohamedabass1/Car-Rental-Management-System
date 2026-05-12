@@ -32,22 +32,23 @@ namespace CarRental.Customers
             if (_Customer == null)
             {
                 MessageBox.Show($"Customer with ID{_CustomerID} Not Exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                lblEditCustomerInfo.Enabled = false;
                 return;
             }
 
             await ctrlPersonCard1.LoadPersonInfo(_Customer.PersonID);
             lblCustomerID.Text = _CustomerID.ToString();
             lblDriverLicenseNumber.Text = _Customer.DriverLicenseNumber;
+            lblEditCustomerInfo.Enabled = true;
         }
 
-        private void lblEditCustomerInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void lblEditCustomerInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form frm = new frmAddUpdateCustomer(_CustomerID);
             frm.ShowDialog();
 
             // refresh after editing
-            LoadCustomerInfo(_CustomerID);
+            await LoadCustomerInfo(_CustomerID);
         }
     }
 }

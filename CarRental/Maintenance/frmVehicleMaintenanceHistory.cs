@@ -17,6 +17,7 @@ namespace CarRental.Vehicles
         DataTable dtVehicleMaintenanceHistory;
         private async void frmVehicleMaintenanceHistory_Load(object sender, EventArgs e)
         {
+            await ctrlVehicleInfoCard1.LoadVehicleInfo(_VehicleID);
             dtVehicleMaintenanceHistory = await clsMaintenance.GetAllVehicleMaintenanceAsync(_VehicleID);
 
             dgvMaintenanceHistory.DataSource = dtVehicleMaintenanceHistory;

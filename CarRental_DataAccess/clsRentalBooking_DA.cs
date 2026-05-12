@@ -1,4 +1,5 @@
 ﻿using CarRental_DTO;
+using CarRental_Utilities;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -22,7 +23,7 @@ namespace CarRental_DataAccess
                 command.Parameters.AddWithValue("@RentalStartDate", booking.RentalStartDate);
                 command.Parameters.AddWithValue("@RentalEndDate", booking.RentalEndDate);
                 command.Parameters.AddWithValue("@PickupLocation", booking.PickupLocation);
-                command.Parameters.AddWithValue("@DropoffLocation", booking.DropoffLocation);
+                command.Parameters.AddWithValue("@DropoffLocation", booking.DropOffLocation);
                 command.Parameters.AddWithValue("@RentalPricePerDay", booking.RentalPricePerDay);
                 command.Parameters.AddWithValue("@InitialTotalDueAmount", booking.InitialTotalDueAmount);
 
@@ -61,7 +62,7 @@ namespace CarRental_DataAccess
                 command.Parameters.AddWithValue("@RentalStartDate", booking.RentalStartDate);
                 command.Parameters.AddWithValue("@RentalEndDate", booking.RentalEndDate);
                 command.Parameters.AddWithValue("@PickupLocation", booking.PickupLocation);
-                command.Parameters.AddWithValue("@DropoffLocation", booking.DropoffLocation);
+                command.Parameters.AddWithValue("@DropoffLocation", booking.DropOffLocation);
                 command.Parameters.AddWithValue("@RentalPricePerDay", booking.RentalPricePerDay);
                 command.Parameters.AddWithValue("@InitialTotalDueAmount", booking.InitialTotalDueAmount);
 
@@ -99,7 +100,7 @@ namespace CarRental_DataAccess
                             RentalStartDate = (DateTime)reader["RentalStartDate"],
                             RentalEndDate = (DateTime)reader["RentalEndDate"],
                             PickupLocation = (string)reader["PickupLocation"],
-                            DropoffLocation = (string)reader["DropoffLocation"],
+                            DropOffLocation = (string)reader["DropoffLocation"],
                             InitialRentalDays = (byte)reader["InitialRentalDays"],
                             RentalPricePerDay = (decimal)reader["RentalPricePerDay"],
                             InitialTotalDueAmount = (decimal)reader["InitialTotalDueAmount"],
@@ -121,13 +122,22 @@ namespace CarRental_DataAccess
             {
                 command.CommandType = CommandType.StoredProcedure;
 
-                await connection.OpenAsync();
-
-                using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                try
                 {
-                    if (reader.HasRows)
-                        dt.Load(reader);
+                    await connection.OpenAsync();
+
+                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        if (reader.HasRows)
+                            dt.Load(reader);
+                    }
                 }
+                catch (Exception ex)
+                {
+
+                    clsEventLogger.Log(ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                }
+
             }
 
             return dt;

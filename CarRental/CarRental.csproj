@@ -54,11 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Booking\frmBooking.cs">
+    <Compile Include="Booking\frmAddNewBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Booking\frmBooking.Designer.cs">
-      <DependentUpon>frmBooking.cs</DependentUpon>
+    <Compile Include="Booking\frmAddNewBooking.Designer.cs">
+      <DependentUpon>frmAddNewBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\frmRentalBookingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\frmRentalBookingList.Designer.cs">
+      <DependentUpon>frmRentalBookingList.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.cs">
       <SubType>UserControl</SubType>
@@ -130,6 +136,18 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransactionInfoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransactionInfoCard.Designer.cs">
+      <DependentUpon>ctrlTransactionInfoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionDetails.Designer.cs">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\frmTransactions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,8 +196,11 @@
     <Compile Include="Maintenance\frmVehicleMaintenanceHistory.Designer.cs">
       <DependentUpon>frmVehicleMaintenanceHistory.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Booking\frmBooking.resx">
-      <DependentUpon>frmBooking.cs</DependentUpon>
+    <EmbeddedResource Include="Booking\frmAddNewBooking.resx">
+      <DependentUpon>frmAddNewBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\frmRentalBookingList.resx">
+      <DependentUpon>frmRentalBookingList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.resx">
       <DependentUpon>ctrlCustomerInfoCardWithFilter.cs</DependentUpon>
@@ -223,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Controls\ctrlTransactionInfoCard.resx">
+      <DependentUpon>ctrlTransactionInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmTransactionDetails.resx">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmTransactions.resx">
       <DependentUpon>frmTransactions.cs</DependentUpon>
@@ -450,6 +477,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add Person 401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-booking48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Release Detained License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mileage1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
