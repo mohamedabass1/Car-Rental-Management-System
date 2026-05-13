@@ -37,6 +37,17 @@ namespace CarRental.Transactions.Controls
             _FillTransactionInfo();
         }
 
+        public async Task LoadTransactionInfoByBookingID(int BookingID)
+        {
+            _Transaction = await clsRentalTransaction.FindByBookingIDAsync(BookingID);
+
+            if (_Transaction == null)
+            {
+                MessageBox.Show("No Transaction with Booking ID = " + BookingID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _FillTransactionInfo();
+        }
         private void _FillTransactionInfo()
         {
             _TransactionID = _Transaction.TransactionID;
@@ -54,8 +65,6 @@ namespace CarRental.Transactions.Controls
             lblTotalRemaining.Text = _Transaction.TotalRemaining?.ToString("0.00") ?? "N/A";
             lblTotalRefundedAmount.Text = _Transaction.TotalRefundedAmount?.ToString("0.00") ?? "N/A";
             lblUpdatedTransactionDate.Text = _Transaction.UpdatedTransactionDate?.ToShortDateString() ?? "N/A";
-
-
         }
     }
 }

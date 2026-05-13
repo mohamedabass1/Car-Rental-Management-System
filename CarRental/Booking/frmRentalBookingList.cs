@@ -25,11 +25,11 @@ namespace CarRental.Booking
 
             if (dgvRentlBooking.Rows.Count > 0)
             {
-                dgvRentlBooking.Columns[0].HeaderText = "Booking ID";
-                dgvRentlBooking.Columns[0].Width = 90;
+                dgvRentlBooking.Columns[0].HeaderText = "ID";
+                dgvRentlBooking.Columns[0].Width = 70;
 
                 dgvRentlBooking.Columns[1].HeaderText = "Customer ID";
-                dgvRentlBooking.Columns[1].Width = 90;
+                dgvRentlBooking.Columns[1].Width = 120;
 
                 dgvRentlBooking.Columns[2].HeaderText = "Customer Name";
                 dgvRentlBooking.Columns[2].Width = 180;
@@ -76,7 +76,7 @@ namespace CarRental.Booking
 
             switch (cbFilterBy.Text)
             {
-                case "Booking ID":
+                case "ID":
                     FilterColumn = "BookingID";
                     break;
 
@@ -152,13 +152,21 @@ namespace CarRental.Booking
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (cbFilterBy.Text == "Booking ID"
+            if (cbFilterBy.Text == "ID"
                 || cbFilterBy.Text == "Customer ID"
                 || cbFilterBy.Text == "Vehicle ID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar)
                             && !char.IsControl(e.KeyChar);
             }
+        }
+
+        private void showBookingDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int bookingID = (int)dgvRentlBooking.CurrentRow.Cells[0].Value;
+
+            frmShowBookingDetails frm = new frmShowBookingDetails(bookingID);
+            frm.ShowDialog();
         }
     }
 }

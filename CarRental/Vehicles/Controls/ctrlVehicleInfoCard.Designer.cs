@@ -127,6 +127,7 @@
             // 
             this.llEditVehicleInfo.AutoSize = true;
             this.llEditVehicleInfo.Enabled = false;
+            this.llEditVehicleInfo.LinkColor = System.Drawing.Color.DodgerBlue;
             this.llEditVehicleInfo.Location = new System.Drawing.Point(506, 28);
             this.llEditVehicleInfo.Name = "llEditVehicleInfo";
             this.llEditVehicleInfo.Size = new System.Drawing.Size(157, 23);

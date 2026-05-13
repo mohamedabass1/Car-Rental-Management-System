@@ -154,7 +154,7 @@
             this.cmsVehicles.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsVehicles.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
             this.cmsVehicles.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsVehicles.Size = new System.Drawing.Size(294, 184);
+            this.cmsVehicles.Size = new System.Drawing.Size(294, 206);
             // 
             // showVehicleDetailsToolStripMenuItem
             // 

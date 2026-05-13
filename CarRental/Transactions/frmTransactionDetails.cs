@@ -12,6 +12,7 @@ namespace CarRental.Transactions
             _TransactionID = TransactionID;
         }
 
+
         private async void frmTransactionDetails_Load(object sender, System.EventArgs e)
         {
             await ctrlTransactionInfoCard1.LoadTransactionInfo(_TransactionID);

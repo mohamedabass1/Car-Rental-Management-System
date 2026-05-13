@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Booking\Controls\ctrlBookingInfoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Controls\ctrlBookingInfoCard.Designer.cs">
+      <DependentUpon>ctrlBookingInfoCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Booking\frmAddNewBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="Booking\frmRentalBookingList.Designer.cs">
       <DependentUpon>frmRentalBookingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\frmShowBookingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\frmShowBookingDetails.Designer.cs">
+      <DependentUpon>frmShowBookingDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.cs">
       <SubType>UserControl</SubType>
@@ -196,11 +208,17 @@
     <Compile Include="Maintenance\frmVehicleMaintenanceHistory.Designer.cs">
       <DependentUpon>frmVehicleMaintenanceHistory.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Booking\Controls\ctrlBookingInfoCard.resx">
+      <DependentUpon>ctrlBookingInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Booking\frmAddNewBooking.resx">
       <DependentUpon>frmAddNewBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\frmRentalBookingList.resx">
       <DependentUpon>frmRentalBookingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\frmShowBookingDetails.resx">
+      <DependentUpon>frmShowBookingDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.resx">
       <DependentUpon>ctrlCustomerInfoCardWithFilter.cs</DependentUpon>
