@@ -4,6 +4,7 @@ using CarRental.Vehicles;
 using CarRental_Buisness;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CarRental.Transactions
@@ -21,7 +22,7 @@ namespace CarRental.Transactions
             dtTransactions = await clsRentalTransaction.GetAllAsync();
 
             dgvTransactionsList.DataSource = dtTransactions;
-
+            // ConfigureDataGridView();
             cbFilterBy.SelectedIndex = 0;
             lblRecordsCount.Text = dtTransactions.Rows.Count.ToString();
 
@@ -63,6 +64,42 @@ namespace CarRental.Transactions
 
 
         }
+
+        private void ConfigureDataGridView()
+        {
+            // Visual polish
+            dgvTransactionsList.EnableHeadersVisualStyles = false;
+            dgvTransactionsList.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 144, 255); // DodgerBlue-like
+            dgvTransactionsList.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvTransactionsList.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            dgvTransactionsList.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvTransactionsList.RowTemplate.Height = 28;
+            dgvTransactionsList.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+            dgvTransactionsList.DefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
+            dgvTransactionsList.DefaultCellStyle.SelectionBackColor = Color.FromArgb(204, 229, 255);
+            dgvTransactionsList.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // Behavior and readability
+            dgvTransactionsList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTransactionsList.MultiSelect = false;
+            dgvTransactionsList.ReadOnly = true;
+            dgvTransactionsList.AllowUserToAddRows = false;
+            dgvTransactionsList.AllowUserToResizeRows = false;
+            dgvTransactionsList.RowHeadersVisible = false;
+            dgvTransactionsList.BorderStyle = BorderStyle.None;
+            dgvTransactionsList.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvTransactionsList.GridColor = Color.LightGray;
+
+            // Prevent user from reordering columns (keeps consistent layout)
+            dgvTransactionsList.AllowUserToOrderColumns = false;
+
+            // Improve initial column sizing behavior (widths are set later)
+            dgvTransactionsList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+        }
+
+
+
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
