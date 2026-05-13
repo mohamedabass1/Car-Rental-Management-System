@@ -1,4 +1,5 @@
-﻿using CarRental_Buisness;
+﻿using CarRental.Customers;
+using CarRental_Buisness;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -166,6 +167,14 @@ namespace CarRental.Booking
             int bookingID = (int)dgvRentlBooking.CurrentRow.Cells[0].Value;
 
             frmShowBookingDetails frm = new frmShowBookingDetails(bookingID);
+            frm.ShowDialog();
+        }
+
+        private void showCustomerDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CustomerID = (int)dgvRentlBooking.CurrentRow.Cells[1].Value;
+
+            frmShowCustomerDetails frm = new frmShowCustomerDetails(CustomerID);
             frm.ShowDialog();
         }
     }

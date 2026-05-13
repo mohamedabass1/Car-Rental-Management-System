@@ -1,6 +1,6 @@
 ﻿namespace CarRental.Transactions
 {
-    partial class frmTransactions
+    partial class frmManageTransactions
     {
         /// <summary>
         /// Required designer variable.

@@ -43,7 +43,7 @@
             this.btnAddNewBooking = new System.Windows.Forms.Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.showBookingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRentlBooking)).BeginInit();
             this.cmsRentalBooking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -199,7 +199,7 @@
             this.cmsRentalBooking.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showBookingDetailsToolStripMenuItem,
             this.toolStripSeparator1,
-            this.addNewVehicleToolStripMenuItem,
+            this.showCustomerDetailsToolStripMenuItem,
             this.toolStripSeparator3});
             this.cmsRentalBooking.Name = "guna2ContextMenuStrip1";
             this.cmsRentalBooking.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -211,17 +211,17 @@
             this.cmsRentalBooking.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsRentalBooking.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
             this.cmsRentalBooking.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsRentalBooking.Size = new System.Drawing.Size(250, 94);
+            this.cmsRentalBooking.Size = new System.Drawing.Size(265, 72);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(261, 6);
             // 
             // btnAddNewBooking
             // 
@@ -255,16 +255,17 @@
             // 
             this.showBookingDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
             this.showBookingDetailsToolStripMenuItem.Name = "showBookingDetailsToolStripMenuItem";
-            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(249, 28);
+            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 28);
             this.showBookingDetailsToolStripMenuItem.Text = "Show Booking Details";
             this.showBookingDetailsToolStripMenuItem.Click += new System.EventHandler(this.showBookingDetailsToolStripMenuItem_Click);
             // 
-            // addNewVehicleToolStripMenuItem
+            // showCustomerDetailsToolStripMenuItem
             // 
-            this.addNewVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.add_car32;
-            this.addNewVehicleToolStripMenuItem.Name = "addNewVehicleToolStripMenuItem";
-            this.addNewVehicleToolStripMenuItem.Size = new System.Drawing.Size(249, 28);
-            this.addNewVehicleToolStripMenuItem.Text = "Add New Vehicle";
+            this.showCustomerDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.PersonDetails_32;
+            this.showCustomerDetailsToolStripMenuItem.Name = "showCustomerDetailsToolStripMenuItem";
+            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 28);
+            this.showCustomerDetailsToolStripMenuItem.Text = "Show Customer Details";
+            this.showCustomerDetailsToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDetailsToolStripMenuItem_Click);
             // 
             // frmRentalBookingList
             // 
@@ -306,7 +307,7 @@
         private Guna.UI2.WinForms.Guna2ContextMenuStrip cmsRentalBooking;
         private System.Windows.Forms.ToolStripMenuItem showBookingDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem addNewVehicleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showCustomerDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

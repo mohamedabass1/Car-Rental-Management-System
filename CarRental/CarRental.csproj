@@ -160,11 +160,11 @@
     <Compile Include="Transactions\frmTransactionDetails.Designer.cs">
       <DependentUpon>frmTransactionDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactions\frmTransactions.cs">
+    <Compile Include="Transactions\frmTransactionsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transactions\frmTransactions.Designer.cs">
-      <DependentUpon>frmTransactions.cs</DependentUpon>
+    <Compile Include="Transactions\frmTransactionsList.Designer.cs">
+      <DependentUpon>frmTransactionsList.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\frmUsers.cs">
       <SubType>Form</SubType>
@@ -269,8 +269,8 @@
     <EmbeddedResource Include="Transactions\frmTransactionDetails.resx">
       <DependentUpon>frmTransactionDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactions\frmTransactions.resx">
-      <DependentUpon>frmTransactions.cs</DependentUpon>
+    <EmbeddedResource Include="Transactions\frmTransactionsList.resx">
+      <DependentUpon>frmTransactionsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
@@ -513,6 +513,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mileage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonDetails 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transactions.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

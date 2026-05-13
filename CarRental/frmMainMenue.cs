@@ -76,7 +76,7 @@ namespace CarRental
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmTransactions(), "Manageg Transactions", btnTransactions);
+            OpenPage(new frmTransactionsList(), "Manageg Transactions", btnTransactions);
 
         }
 

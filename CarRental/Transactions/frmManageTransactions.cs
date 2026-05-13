@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CarRental.Transactions
 {
-    public partial class frmTransactions : Form
+    public partial class frmManageTransactions : Form
     {
-        public frmTransactions()
+        public frmManageTransactions()
         {
             InitializeComponent();
         }
