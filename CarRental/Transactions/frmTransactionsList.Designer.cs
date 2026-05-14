@@ -64,7 +64,7 @@
             this.txtFilterValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterValue.Location = new System.Drawing.Point(343, 278);
-            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PlaceholderText = "";
             this.txtFilterValue.SelectedText = "";
@@ -79,7 +79,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(31, 283);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 21);
+            this.label1.Size = new System.Drawing.Size(76, 21);
             this.label1.TabIndex = 103;
             this.label1.Text = "Filter By:";
             // 
@@ -108,25 +108,23 @@
             // 
             // lblRecordsCount
             // 
-            this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblRecordsCount.Location = new System.Drawing.Point(141, 709);
             this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(32, 21);
+            this.lblRecordsCount.Size = new System.Drawing.Size(24, 21);
             this.lblRecordsCount.TabIndex = 100;
             this.lblRecordsCount.Text = "??";
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(31, 709);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 21);
+            this.label2.Size = new System.Drawing.Size(87, 21);
             this.label2.TabIndex = 99;
             this.label2.Text = "# Records:";
             // 
@@ -137,12 +135,12 @@
             this.dgvTransactionsList.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvTransactionsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTransactionsList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvTransactionsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTransactionsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -159,7 +157,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTransactionsList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTransactionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.dgvTransactionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTransactionsList.Location = new System.Drawing.Point(26, 329);
             this.dgvTransactionsList.Name = "dgvTransactionsList";
             this.dgvTransactionsList.ReadOnly = true;
@@ -205,7 +203,6 @@
             this.showReturnDetailsToolStripMenuItem});
             this.cmsRentalTransactions.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.cmsRentalTransactions.Name = "guna2ContextMenuStrip1";
-            this.cmsRentalTransactions.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.cmsRentalTransactions.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.cmsRentalTransactions.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.cmsRentalTransactions.RenderStyle.ColorTable = null;
@@ -221,7 +218,7 @@
             // 
             this.showBookingDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_321;
             this.showBookingDetailsToolStripMenuItem.Name = "showBookingDetailsToolStripMenuItem";
-            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
             this.showBookingDetailsToolStripMenuItem.Text = "Show Booking Details";
             this.showBookingDetailsToolStripMenuItem.Click += new System.EventHandler(this.showBookingDetailsToolStripMenuItem_Click);
             // 
@@ -234,7 +231,7 @@
             // 
             this.showCustomerDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.PersonDetails_32;
             this.showCustomerDetailsToolStripMenuItem.Name = "showCustomerDetailsToolStripMenuItem";
-            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
             this.showCustomerDetailsToolStripMenuItem.Text = "Show Customer Details";
             this.showCustomerDetailsToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDetailsToolStripMenuItem_Click);
             // 
@@ -247,27 +244,26 @@
             // 
             this.showTransactionDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.Notes_32;
             this.showTransactionDetailsToolStripMenuItem.Name = "showTransactionDetailsToolStripMenuItem";
-            this.showTransactionDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.showTransactionDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
             this.showTransactionDetailsToolStripMenuItem.Text = "Show Transaction Details";
             this.showTransactionDetailsToolStripMenuItem.Click += new System.EventHandler(this.showTransactionDetailsToolStripMenuItem_Click);
             // 
             // showVehicleDetailsToolStripMenuItem
             // 
             this.showVehicleDetailsToolStripMenuItem.Name = "showVehicleDetailsToolStripMenuItem";
-            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
             this.showVehicleDetailsToolStripMenuItem.Text = "Show Vehicle Details";
             this.showVehicleDetailsToolStripMenuItem.Click += new System.EventHandler(this.showVehicleDetailsToolStripMenuItem_Click);
             // 
             // showReturnDetailsToolStripMenuItem
             // 
             this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
-            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
             this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.transactions;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(620, 61);
@@ -279,7 +275,7 @@
             // 
             // frmTransactionsList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1479, 792);

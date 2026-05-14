@@ -523,5 +523,14 @@
   <ItemGroup>
     <None Include="Resources\edit 321.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crop_square_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

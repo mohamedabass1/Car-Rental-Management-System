@@ -20,15 +20,12 @@ namespace CarRental.Booking
         {
             InitializeComponent();
         }
-
         private void frmAddNewBooking_Load(object sender, System.EventArgs e)
         {
             ctrlCustomerInfoCardWithFilter1.FilterFoucs();
             dtpStartDate.MinDate = DateTime.Today;
             dtpEndDate.MinDate = dtpStartDate.Value.AddDays(1);
             lblInitalRentalDays.Text = "1";
-
-
         }
         private void _CalculateTotalAmount()
         {
@@ -38,9 +35,7 @@ namespace CarRental.Booking
             int rentalDays = (dtpEndDate.Value.Date - dtpStartDate.Value.Date).Days;
 
             lblInitalRentalDays.Text = rentalDays.ToString();
-
             decimal totalAmount = rentalDays * _SelectedVehicle.RentalPricePerDay;
-
             lblInitalTotalDueAmount.Text = totalAmount.ToString();
         }
         private void ctrlVehicleInfoCardWithFilter1_OnVehicleSelected(int vehicleID)
@@ -52,7 +47,6 @@ namespace CarRental.Booking
                 btnBooking.Enabled = false;
                 return;
             }
-
 
             if (!ctrlVehicleInfoCardWithFilter1.SelectedVehicleInfo.IsAvailableForRent)
             {
@@ -70,7 +64,6 @@ namespace CarRental.Booking
             _CalculateTotalAmount();
 
             btnBooking.Enabled = true;
-
         }
 
         private void guna2TabControl1_Selecting(object sender, TabControlCancelEventArgs e)
@@ -82,7 +75,6 @@ namespace CarRental.Booking
                     guna2TabControl1.SelectTab("tbCustomerInfo");
                     return;
                 }
-
             ctrlVehicleInfoCardWithFilter1.FilterFocus();
         }
 
@@ -90,7 +82,6 @@ namespace CarRental.Booking
         {
             if (ctrlCustomerInfoCardWithFilter1.SelectedCustomerInfo == null)
                 return;
-
 
             lblCustomerID.Text = customerID.ToString();
             _SelectedCustomer = ctrlCustomerInfoCardWithFilter1.SelectedCustomerInfo;
@@ -109,7 +100,6 @@ namespace CarRental.Booking
             if (MessageBox.Show("Are you sure you want to Rent this Vehicle?", "Confirm",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
-
 
             _Booking = new clsRentalBooking();
 
@@ -141,7 +131,6 @@ namespace CarRental.Booking
                 return;
             }
 
-
             _Transaction = new clsRentalTransaction();
             _Transaction.BookingID = _Booking.BookingID;
             _Transaction.PaymentDetails = txtPaymentDetails.Text;
@@ -169,15 +158,12 @@ namespace CarRental.Booking
             btnBooking.Enabled = false;
             ctrlCustomerInfoCardWithFilter1.FilterEnabled = false;
             ctrlVehicleInfoCardWithFilter1.FilterEnabled = false;
-
         }
 
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
         {
             dtpEndDate.MinDate = dtpStartDate.Value.AddDays(1);
-
             _CalculateTotalAmount();
-
         }
 
         private void dtpEndDate_ValueChanged(object sender, EventArgs e)
@@ -187,7 +173,6 @@ namespace CarRental.Booking
 
         private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
         {
-
             // First: set AutoValidate property of your Form to EnableAllowFocusChange in designer 
             Guna2TextBox Temp = ((Guna2TextBox)sender);
             if (string.IsNullOrEmpty(Temp.Text.Trim()))
@@ -200,7 +185,6 @@ namespace CarRental.Booking
                 //e.Cancel = false;
                 errorProvider1.SetError(Temp, null);
             }
-
         }
 
         private void txtPickupLocation_Validating(object sender, CancelEventArgs e)
@@ -208,7 +192,7 @@ namespace CarRental.Booking
             ValidateEmptyTextBox(sender, e);
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnClose(object sender, EventArgs e)
         {
             this.Close();
         }

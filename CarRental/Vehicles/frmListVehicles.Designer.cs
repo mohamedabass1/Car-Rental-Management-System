@@ -59,8 +59,7 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(24, 730);
@@ -77,7 +76,8 @@
             this.dgvVehciles.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvVehciles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvVehciles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvVehciles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVehciles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -154,7 +154,7 @@
             this.cmsVehicles.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsVehicles.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
             this.cmsVehicles.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsVehicles.Size = new System.Drawing.Size(294, 206);
+            this.cmsVehicles.Size = new System.Drawing.Size(294, 184);
             // 
             // showVehicleDetailsToolStripMenuItem
             // 
@@ -273,8 +273,7 @@
             // 
             // lblRecordsCount
             // 
-            this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblRecordsCount.Location = new System.Drawing.Point(132, 731);
@@ -285,6 +284,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(938, 282);
@@ -295,6 +295,7 @@
             // 
             // cbPages
             // 
+            this.cbPages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPages.BackColor = System.Drawing.Color.Transparent;
             this.cbPages.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbPages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -365,8 +366,7 @@
             // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2PictureBox2.Image = global::CarRental.Properties.Resources.vehilcesList;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(613, 53);

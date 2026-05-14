@@ -51,11 +51,10 @@
             // 
             // lblRecordsCount
             // 
-            this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.lblRecordsCount.Location = new System.Drawing.Point(126, 702);
+            this.lblRecordsCount.Location = new System.Drawing.Point(126, 686);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(32, 22);
             this.lblRecordsCount.TabIndex = 154;
@@ -73,7 +72,7 @@
             this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtFilterValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Location = new System.Drawing.Point(371, 243);
+            this.txtFilterValue.Location = new System.Drawing.Point(371, 227);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PlaceholderText = "";
@@ -87,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(29, 248);
+            this.label1.Location = new System.Drawing.Point(29, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 23);
             this.label1.TabIndex = 152;
@@ -112,7 +111,7 @@
             "Model",
             "Pickup",
             "Dropoff"});
-            this.cbFilterBy.Location = new System.Drawing.Point(120, 243);
+            this.cbFilterBy.Location = new System.Drawing.Point(120, 227);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(202, 36);
             this.cbFilterBy.TabIndex = 151;
@@ -120,11 +119,10 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(18, 701);
+            this.label6.Location = new System.Drawing.Point(18, 685);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 23);
@@ -138,7 +136,8 @@
             this.dgvRentlBooking.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvRentlBooking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvRentlBooking.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvRentlBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRentlBooking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -161,7 +160,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRentlBooking.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRentlBooking.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvRentlBooking.Location = new System.Drawing.Point(21, 299);
+            this.dgvRentlBooking.Location = new System.Drawing.Point(21, 283);
             this.dgvRentlBooking.Margin = new System.Windows.Forms.Padding(0);
             this.dgvRentlBooking.Name = "dgvRentlBooking";
             this.dgvRentlBooking.ReadOnly = true;
@@ -245,7 +244,7 @@
             this.btnAddNewBooking.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAddNewBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewBooking.Image = global::CarRental.Properties.Resources.add_booking48;
-            this.btnAddNewBooking.Location = new System.Drawing.Point(1338, 220);
+            this.btnAddNewBooking.Location = new System.Drawing.Point(1338, 204);
             this.btnAddNewBooking.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddNewBooking.Name = "btnAddNewBooking";
             this.btnAddNewBooking.Size = new System.Drawing.Size(81, 59);
@@ -255,8 +254,7 @@
             // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2PictureBox2.Image = global::CarRental.Properties.Resources.booking;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(607, 24);

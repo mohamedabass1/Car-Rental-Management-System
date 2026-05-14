@@ -59,7 +59,7 @@ namespace CarRental.Dashbiard
             dgvRecent.Columns.Add("Car", "Car");
             dgvRecent.Columns.Add("Status", "Status");
 
-            dgvRecent.Rows.Add("ORD-1001", "Ahmed Ali", "Model A", "Confirmed");
+            dgvRecent.Rows.Add("ORD-1001", "Mohamed Abass", "Model A", "Confirmed");
             dgvRecent.Rows.Add("ORD-1002", "Sara Hassan", "Model B", "Pending");
             dgvRecent.Rows.Add("ORD-1003", "Mohamed Adel", "Model C", "Completed");
             dgvRecent.Rows.Add("ORD-1004", "Lina Youssef", "Model A", "Confirmed");
