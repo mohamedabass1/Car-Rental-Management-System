@@ -8,7 +8,7 @@ namespace CarRental_DataAccess
 {
     public class clsVehicleReturn_DA
     {
-        public static async Task<int> AddNewVehicleReturnAsync(VehicleReturnDTO vehicleReturn)
+        public static async Task<int> AddNewVehicleReturnAsync(VehicleReturnDTO vehicleReturnDTO)
         {
             int newReturnID = -1;
 
@@ -21,28 +21,28 @@ namespace CarRental_DataAccess
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("@ActualReturnDate",
-                    vehicleReturn.ActualReturnDate);
+                    vehicleReturnDTO.ActualReturnDate);
 
                 command.Parameters.AddWithValue("@ActualRentalDays",
-                    vehicleReturn.ActualRentalDays);
+                    vehicleReturnDTO.ActualRentalDays);
 
                 command.Parameters.AddWithValue("@Mileage",
-                    vehicleReturn.Mileage);
+                    vehicleReturnDTO.Mileage);
 
                 command.Parameters.AddWithValue("@ConsumedMileage",
-                    vehicleReturn.ConsumedMileage);
+                    vehicleReturnDTO.ConsumedMileage);
 
-                if (string.IsNullOrWhiteSpace(vehicleReturn.FinalCheckNotes))
+                if (string.IsNullOrWhiteSpace(vehicleReturnDTO.FinalCheckNotes))
                     command.Parameters.AddWithValue("@FinalCheckNotes", DBNull.Value);
                 else
                     command.Parameters.AddWithValue("@FinalCheckNotes",
-                        vehicleReturn.FinalCheckNotes);
+                        vehicleReturnDTO.FinalCheckNotes);
 
                 command.Parameters.AddWithValue("@AdditionalCharges",
-                    vehicleReturn.AdditionalCharges);
+                    vehicleReturnDTO.AdditionalCharges);
 
                 command.Parameters.AddWithValue("@ActualTotalDueAmount",
-                    vehicleReturn.ActualTotalDueAmount);
+                    vehicleReturnDTO.ActualTotalDueAmount);
 
                 SqlParameter outputParam =
                     new SqlParameter("@NewReturnID", SqlDbType.Int)
@@ -61,6 +61,56 @@ namespace CarRental_DataAccess
 
             return newReturnID;
         }
+
+        public static async Task<int> AddNewVehicleReturnAsync(VehicleReturnDTO vehicleReturnDTO, SqlConnection dbConnection, SqlTransaction dbTransaction)
+        {
+            int newReturnID = -1;
+
+
+
+            using (SqlCommand command = new SqlCommand("Returns.SP_AddNewVehicleReturn", dbConnection, dbTransaction))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@ActualReturnDate",
+                    vehicleReturnDTO.ActualReturnDate);
+
+                command.Parameters.AddWithValue("@ActualRentalDays",
+                    vehicleReturnDTO.ActualRentalDays);
+
+                command.Parameters.AddWithValue("@Mileage",
+                    vehicleReturnDTO.Mileage);
+
+                command.Parameters.AddWithValue("@ConsumedMileage", vehicleReturnDTO.ConsumedMileage);
+
+                if (string.IsNullOrWhiteSpace(vehicleReturnDTO.FinalCheckNotes))
+                    command.Parameters.AddWithValue("@FinalCheckNotes", DBNull.Value);
+                else
+                    command.Parameters.AddWithValue("@FinalCheckNotes", vehicleReturnDTO.FinalCheckNotes);
+
+                command.Parameters.AddWithValue("@AdditionalCharges",
+                    vehicleReturnDTO.AdditionalCharges);
+
+                command.Parameters.AddWithValue("@ActualTotalDueAmount",
+                    vehicleReturnDTO.ActualTotalDueAmount);
+
+                SqlParameter outputParam =
+                    new SqlParameter("@NewReturnID", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+
+                command.Parameters.Add(outputParam);
+
+
+                await command.ExecuteNonQueryAsync();
+
+                newReturnID = (int)outputParam.Value;
+            }
+
+            return newReturnID;
+        }
+
 
         public static async Task<bool> UpdateVehicleReturnAsync(
             VehicleReturnDTO vehicleReturn)

@@ -70,6 +70,37 @@ namespace CarRental_DataAccess
             return rowsAffected > 0;
         }
 
+        public static async Task<bool> UpdateRentalTransactionAsync(RentalTransactionDTO transaction, SqlConnection dbConnection, SqlTransaction dbTransaction)
+        {
+            int rowsAffected = 0;
+
+            using (SqlCommand command = new SqlCommand("Transactions.SP_UpdateRentalTransaction", dbConnection, dbTransaction))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@TransactionID", transaction.TransactionID);
+
+                command.Parameters.AddWithValue("@ReturnID",
+                    transaction.ReturnID.HasValue ? (object)transaction.ReturnID : DBNull.Value);
+
+                command.Parameters.AddWithValue("@ActualTotalDueAmount",
+                    transaction.ActualTotalDueAmount.HasValue ? (object)transaction.ActualTotalDueAmount : DBNull.Value);
+
+                command.Parameters.AddWithValue("@TotalRemaining",
+                    transaction.TotalRemaining.HasValue ? (object)transaction.TotalRemaining : DBNull.Value);
+
+                command.Parameters.AddWithValue("@TotalRefundedAmount",
+                    transaction.TotalRefundedAmount.HasValue ? (object)transaction.TotalRefundedAmount : DBNull.Value);
+
+                command.Parameters.AddWithValue("@UpdatedTransactionDate",
+                   transaction.UpdatedTransactionDate.HasValue ? (object)transaction.UpdatedTransactionDate : DBNull.Value);
+
+                rowsAffected = await command.ExecuteNonQueryAsync();
+            }
+
+            return rowsAffected > 0;
+        }
+
         public static async Task<bool> DeleteRentalTransactionAsync(int transactionID)
         {
             int rowsAffected = 0;

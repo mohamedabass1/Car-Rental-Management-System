@@ -292,7 +292,7 @@ namespace CarRental_DataAccess
 
         }
 
-        public static async Task<bool> SetAvailableAsync(int VehicleID, int NewMileage)
+        public static async Task<bool> SetAvailableAsync(int VehicleID, int NewMileage, SqlConnection dbConnection, SqlTransaction dbTransaction)
         {
             int AffectedRows = 0;
             string query = @"Update Vehicle 
@@ -300,14 +300,13 @@ namespace CarRental_DataAccess
                                 IsAvailableForRent = 1 ,
                                 Mileage = @NewMileage
                             Where VehicleID =  @VehicleID;";
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+
+            using (SqlCommand command = new SqlCommand(query, dbConnection, dbTransaction))
             {
                 command.Parameters.AddWithValue("@VehicleID", VehicleID);
                 command.Parameters.AddWithValue("@Mileage", NewMileage);
                 try
                 {
-                    await connection.OpenAsync();
 
                     AffectedRows = await command.ExecuteNonQueryAsync();
                 }

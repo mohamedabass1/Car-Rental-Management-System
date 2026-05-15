@@ -204,8 +204,7 @@ namespace CarRental_Buisness
                 return null;
             }
 
-            if (await this.VehicleInfo.SetAvailableAsync(CurrentMileage))
-                return vehicleReturn;
+
 
 
             await clsVehicleReturn.DeleteAsync(vehicleReturn.ReturnID);

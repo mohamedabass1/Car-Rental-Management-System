@@ -81,7 +81,7 @@ namespace CarRental_Buisness
         }
 
         // 🔹 Convert To DTO
-        private RentalTransactionDTO _ToDTO()
+        public RentalTransactionDTO _ToDTO()
         {
             return new RentalTransactionDTO
             {

@@ -182,21 +182,6 @@ namespace CarRental_Buisness
             return result;
         }
 
-        public async Task<bool> SetAvailableAsync(int NewMileage)
-        {
-            if (IsAvailableForRent)
-                return false;
-
-            bool result = await clsVehicle_DA.SetAvailableAsync(this.VehicleID, NewMileage);
-
-            if (result)
-            {
-                IsAvailableForRent = true;
-                Mileage = NewMileage;
-            }
-
-            return result;
-        }
 
         public static async Task<int> GetVehicleMileageAsync(int VehicleID)
         {
