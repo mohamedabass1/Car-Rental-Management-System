@@ -9,6 +9,10 @@ namespace CarRental.Booking
     {
         int _BookingID = -1;
         clsRentalBooking _RentalBooking;
+
+
+        public int SelectedBookingID { get { return _BookingID; } }
+        public clsRentalBooking SelectedBookingInfo { get { return _RentalBooking; } }
         public ctrlBookingInfoCard()
         {
             InitializeComponent();

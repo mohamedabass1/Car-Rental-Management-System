@@ -50,6 +50,7 @@
     <Compile Include="clsPerson_DA.cs" />
     <Compile Include="clsRentalBooking_DA.cs" />
     <Compile Include="clsVehicleCategory_DA.cs" />
+    <Compile Include="clsVehicleReturn_DA.cs" />
     <Compile Include="clsVehicle_DA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clsRentalTransaction_DA.cs" />

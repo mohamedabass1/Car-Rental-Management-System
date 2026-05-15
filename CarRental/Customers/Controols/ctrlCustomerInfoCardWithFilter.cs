@@ -118,14 +118,14 @@ namespace CarRental.Customers.Controols
 
         }
 
-        public void FilterFoucs()
+        public void FilterFocus()
         {
             txtCustomerID.Focus();
         }
 
         private void CustomerInfoCardWithFilter_Load(object sender, EventArgs e)
         {
-            FilterFoucs();
+            FilterFocus();
         }
     }
 }

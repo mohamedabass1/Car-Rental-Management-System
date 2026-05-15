@@ -151,17 +151,17 @@ namespace CarRental_Buisness
             return await clsVehicle_DA.ListVehiclesPagedAsync(PageNumber, RowsPerPage);
         }
 
-        public static async Task<bool> IsVehicleExistsByPlateNumber(string PlateNumber)
+        public static async Task<bool> IsVehicleExistsByPlateNumberAsync(string PlateNumber)
         {
-            return await clsVehicle_DA.IsVehicleExistsByPlateNumber(PlateNumber);
+            return await clsVehicle_DA.IsVehicleExistsByPlateNumberAsync(PlateNumber);
         }
 
-        public async Task<bool> SetUnavailable()
+        public async Task<bool> SetUnavailableAsync()
         {
             if (!IsAvailableForRent)
                 return false;
 
-            bool result = await clsVehicle_DA.SetUnavailable(this.VehicleID);
+            bool result = await clsVehicle_DA.SetUnavailableAsync(this.VehicleID);
 
             if (result)
                 IsAvailableForRent = false;
@@ -169,18 +169,40 @@ namespace CarRental_Buisness
             return result;
         }
 
-        public async Task<bool> SetAvailable()
+        public async Task<bool> SetAvailableAsync()
         {
             if (IsAvailableForRent)
                 return false;
 
-            bool result = await clsVehicle_DA.SetAvailable(this.VehicleID);
+            bool result = await clsVehicle_DA.SetAvailableAsync(this.VehicleID);
 
             if (result)
                 IsAvailableForRent = true;
 
             return result;
         }
+
+        public async Task<bool> SetAvailableAsync(int NewMileage)
+        {
+            if (IsAvailableForRent)
+                return false;
+
+            bool result = await clsVehicle_DA.SetAvailableAsync(this.VehicleID, NewMileage);
+
+            if (result)
+            {
+                IsAvailableForRent = true;
+                Mileage = NewMileage;
+            }
+
+            return result;
+        }
+
+        public static async Task<int> GetVehicleMileageAsync(int VehicleID)
+        {
+            return await clsVehicle_DA.GetVehicleMileageAsync(VehicleID);
+        }
+
     }
 }
 

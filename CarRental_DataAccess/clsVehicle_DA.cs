@@ -211,7 +211,7 @@ namespace CarRental_DataAccess
             return rows > 0;
         }
 
-        public static async Task<bool> IsVehicleExistsByPlateNumber(string PlateNumber)
+        public static async Task<bool> IsVehicleExistsByPlateNumberAsync(string PlateNumber)
         {
             bool isExists = false;
 
@@ -241,7 +241,7 @@ namespace CarRental_DataAccess
             return isExists;
         }
 
-        public static async Task<bool> SetUnavailable(int VehicleID)
+        public static async Task<bool> SetUnavailableAsync(int VehicleID)
         {
             int AffectedRows = 0;
             string query = @"Update Vehicle SET  IsAvailableForRent = 0 Where VehicleID =  @VehicleID;";
@@ -267,7 +267,7 @@ namespace CarRental_DataAccess
 
         }
 
-        public static async Task<bool> SetAvailable(int VehicleID)
+        public static async Task<bool> SetAvailableAsync(int VehicleID)
         {
             int AffectedRows = 0;
             string query = @"Update Vehicle SET  IsAvailableForRent = 1 Where VehicleID =  @VehicleID;";
@@ -290,6 +290,63 @@ namespace CarRental_DataAccess
 
             return AffectedRows != 0;
 
+        }
+
+        public static async Task<bool> SetAvailableAsync(int VehicleID, int NewMileage)
+        {
+            int AffectedRows = 0;
+            string query = @"Update Vehicle 
+                            SET  
+                                IsAvailableForRent = 1 ,
+                                Mileage = @NewMileage
+                            Where VehicleID =  @VehicleID;";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@VehicleID", VehicleID);
+                command.Parameters.AddWithValue("@Mileage", NewMileage);
+                try
+                {
+                    await connection.OpenAsync();
+
+                    AffectedRows = await command.ExecuteNonQueryAsync();
+                }
+                catch (Exception ex)
+                {
+
+                    clsEventLogger.Log("Database exception: " + ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                }
+            }
+
+            return AffectedRows != 0;
+
+        }
+
+        public static async Task<int> GetVehicleMileageAsync(int VehicleID)
+        {
+            int Mileage = 0;
+            string query = @"SELECT Mileage FROM Vehicle WHERE VehicleID =  @VehicleID;";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@VehicleID", VehicleID);
+                try
+                {
+                    await connection.OpenAsync();
+
+                    object result = await command.ExecuteScalarAsync();
+
+                    Mileage = Convert.ToInt32(result);
+                }
+                catch (Exception ex)
+                {
+                    Mileage = 0;
+                    clsEventLogger.Log("Database exception: " + ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                }
+            }
+
+            return Mileage;
         }
     }
 }

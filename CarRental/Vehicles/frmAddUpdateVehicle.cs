@@ -196,7 +196,7 @@ namespace CarRental.Vehicles
 
             string PlateNumber = txtPlateNumber.Text.Trim();
 
-            if (PlateNumber != _Vehicle.PlateNumber && await clsVehicle.IsVehicleExistsByPlateNumber(PlateNumber))
+            if (PlateNumber != _Vehicle.PlateNumber && await clsVehicle.IsVehicleExistsByPlateNumberAsync(PlateNumber))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtPlateNumber, "Plate Number is used for another vehicle!");

@@ -60,6 +60,12 @@
     <Compile Include="Booking\Controls\ctrlBookingInfoCard.Designer.cs">
       <DependentUpon>ctrlBookingInfoCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Booking\Controls\ctrlBookingInfoCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Controls\ctrlBookingInfoCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlBookingInfoCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Booking\frmAddNewBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     <Compile Include="Return\frmReturn.Designer.cs">
       <DependentUpon>frmReturn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Return\frmVehicleReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return\frmVehicleReturn.Designer.cs">
+      <DependentUpon>frmVehicleReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +223,9 @@
     <EmbeddedResource Include="Booking\Controls\ctrlBookingInfoCard.resx">
       <DependentUpon>ctrlBookingInfoCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Controls\ctrlBookingInfoCardWithFilter.resx">
+      <DependentUpon>ctrlBookingInfoCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Booking\frmAddNewBooking.resx">
       <DependentUpon>frmAddNewBooking.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +274,9 @@
     </Compile>
     <EmbeddedResource Include="Return\frmReturn.resx">
       <DependentUpon>frmReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return\frmVehicleReturn.resx">
+      <DependentUpon>frmVehicleReturn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>

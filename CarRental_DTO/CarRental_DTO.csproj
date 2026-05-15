@@ -52,6 +52,7 @@
     <Compile Include="RentalTransactionDTO.cs" />
     <Compile Include="VehicleCategoryDTO.cs" />
     <Compile Include="VehicleDTO.cs" />
+    <Compile Include="VehicleReturnDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

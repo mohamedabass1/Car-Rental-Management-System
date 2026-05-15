@@ -22,7 +22,7 @@ namespace CarRental.Booking
         }
         private void frmAddNewBooking_Load(object sender, System.EventArgs e)
         {
-            ctrlCustomerInfoCardWithFilter1.FilterFoucs();
+            ctrlCustomerInfoCardWithFilter1.FilterFocus();
             dtpStartDate.MinDate = DateTime.Today;
             dtpEndDate.MinDate = dtpStartDate.Value.AddDays(1);
             lblInitalRentalDays.Text = "1";
@@ -123,7 +123,7 @@ namespace CarRental.Booking
                 return;
             }
 
-            if (!await _SelectedVehicle.SetUnavailable())
+            if (!await _SelectedVehicle.SetUnavailableAsync())
             {
                 await clsRentalBooking.DeleteAsync(_Booking.BookingID);
                 MessageBox.Show("Failed to complete operation!", "Failed",
@@ -149,7 +149,7 @@ namespace CarRental.Booking
             else
             {
                 await clsRentalBooking.DeleteAsync(_Booking.BookingID);
-                await _SelectedVehicle.SetAvailable();
+                await _SelectedVehicle.SetAvailableAsync();
                 MessageBox.Show("Failed to complete operation!", "Failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

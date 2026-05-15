@@ -51,6 +51,7 @@
     <Compile Include="clsRentalTransaction.cs" />
     <Compile Include="clsVehicle.cs" />
     <Compile Include="clsVehicleCategory.cs" />
+    <Compile Include="clsVehicleReturn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
