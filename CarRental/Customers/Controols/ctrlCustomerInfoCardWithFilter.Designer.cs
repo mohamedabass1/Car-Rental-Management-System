@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbFilter = new System.Windows.Forms.GroupBox();
-            this.txtCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.ctrlCustomerInfoCard1 = new CarRental.Customers.ctrlCustomerInfoCard();
             this.btnAddNewCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnFindCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.txtCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ctrlCustomerInfoCard1 = new CarRental.Customers.ctrlCustomerInfoCard();
             this.gbFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -53,51 +53,6 @@
             this.gbFilter.TabIndex = 2;
             this.gbFilter.TabStop = false;
             this.gbFilter.Text = "Filter";
-            // 
-            // txtCustomerID
-            // 
-            this.txtCustomerID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(235)))));
-            this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerID.DefaultText = "";
-            this.txtCustomerID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.txtCustomerID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerID.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.txtCustomerID.ForeColor = System.Drawing.Color.Black;
-            this.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerID.Location = new System.Drawing.Point(236, 29);
-            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.PlaceholderText = "";
-            this.txtCustomerID.SelectedText = "";
-            this.txtCustomerID.Size = new System.Drawing.Size(295, 43);
-            this.txtCustomerID.TabIndex = 0;
-            this.txtCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerID_KeyPress);
-            this.txtCustomerID.Validating += new System.ComponentModel.CancelEventHandler(this.txtCustomerID_Validating);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(97, 37);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(131, 23);
-            this.label22.TabIndex = 114;
-            this.label22.Text = "Customer ID :";
-            // 
-            // ctrlCustomerInfoCard1
-            // 
-            this.ctrlCustomerInfoCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlCustomerInfoCard1.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.ctrlCustomerInfoCard1.Location = new System.Drawing.Point(1, 92);
-            this.ctrlCustomerInfoCard1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlCustomerInfoCard1.Name = "ctrlCustomerInfoCard1";
-            this.ctrlCustomerInfoCard1.Size = new System.Drawing.Size(932, 469);
-            this.ctrlCustomerInfoCard1.TabIndex = 0;
             // 
             // btnAddNewCustomer
             // 
@@ -137,11 +92,56 @@
             this.btnFindCustomer.TabIndex = 115;
             this.btnFindCustomer.Click += new System.EventHandler(this.btnFindCustomer_Click);
             // 
+            // txtCustomerID
+            // 
+            this.txtCustomerID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(235)))));
+            this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustomerID.DefaultText = "";
+            this.txtCustomerID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCustomerID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCustomerID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.txtCustomerID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerID.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtCustomerID.ForeColor = System.Drawing.Color.Black;
+            this.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerID.Location = new System.Drawing.Point(236, 29);
+            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.PlaceholderText = "";
+            this.txtCustomerID.SelectedText = "";
+            this.txtCustomerID.Size = new System.Drawing.Size(295, 43);
+            this.txtCustomerID.TabIndex = 0;
+            this.txtCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerID_KeyPress);
+            this.txtCustomerID.Validating += new System.ComponentModel.CancelEventHandler(this.txtCustomerID_Validating);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label22.Location = new System.Drawing.Point(97, 37);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(131, 23);
+            this.label22.TabIndex = 114;
+            this.label22.Text = "Customer ID :";
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // CustomerInfoCardWithFilter
+            // ctrlCustomerInfoCard1
+            // 
+            this.ctrlCustomerInfoCard1.BackColor = System.Drawing.Color.White;
+            this.ctrlCustomerInfoCard1.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.ctrlCustomerInfoCard1.Location = new System.Drawing.Point(1, 92);
+            this.ctrlCustomerInfoCard1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlCustomerInfoCard1.Name = "ctrlCustomerInfoCard1";
+            this.ctrlCustomerInfoCard1.Size = new System.Drawing.Size(932, 469);
+            this.ctrlCustomerInfoCard1.TabIndex = 0;
+            // 
+            // ctrlCustomerInfoCardWithFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,8 +149,8 @@
             this.Controls.Add(this.gbFilter);
             this.Controls.Add(this.ctrlCustomerInfoCard1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Name = "CustomerInfoCardWithFilter";
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "ctrlCustomerInfoCardWithFilter";
             this.Size = new System.Drawing.Size(933, 554);
             this.Load += new System.EventHandler(this.CustomerInfoCardWithFilter_Load);
             this.gbFilter.ResumeLayout(false);
@@ -161,13 +161,12 @@
         }
 
         #endregion
-
-        private ctrlCustomerInfoCard ctrlCustomerInfoCard1;
         private System.Windows.Forms.GroupBox gbFilter;
         private Guna.UI2.WinForms.Guna2Button btnAddNewCustomer;
         private Guna.UI2.WinForms.Guna2Button btnFindCustomer;
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerID;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private ctrlCustomerInfoCard ctrlCustomerInfoCard1;
     }
 }

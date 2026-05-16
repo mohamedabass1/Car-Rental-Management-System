@@ -40,14 +40,14 @@ namespace CarRental.Transactions
             this.label2 = new System.Windows.Forms.Label();
             this.dgvTransactionsList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsRentalTransactions = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.showBookingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.showCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.showTransactionDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showVehicleDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showReturnDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.showBookingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showTransactionDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showVehicleDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionsList)).BeginInit();
             this.cmsRentalTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -216,7 +216,36 @@ namespace CarRental.Transactions
             this.cmsRentalTransactions.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsRentalTransactions.RenderStyle.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.cmsRentalTransactions.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cmsRentalTransactions.Size = new System.Drawing.Size(252, 208);
+            this.cmsRentalTransactions.Size = new System.Drawing.Size(252, 186);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
+            // 
+            // showReturnDetailsToolStripMenuItem
+            // 
+            this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
+            this.showReturnDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
+            this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.transaction__1_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(588, 31);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(241, 178);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 98;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // showBookingDetailsToolStripMenuItem
             // 
@@ -227,11 +256,6 @@ namespace CarRental.Transactions
             this.showBookingDetailsToolStripMenuItem.Text = "Show Booking Details";
             this.showBookingDetailsToolStripMenuItem.Click += new System.EventHandler(this.showBookingDetailsToolStripMenuItem_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
-            // 
             // showCustomerDetailsToolStripMenuItem
             // 
             this.showCustomerDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.PersonDetails_32;
@@ -240,11 +264,6 @@ namespace CarRental.Transactions
             this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showCustomerDetailsToolStripMenuItem.Text = "Show Customer Details";
             this.showCustomerDetailsToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDetailsToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
             // 
             // showTransactionDetailsToolStripMenuItem
             // 
@@ -263,25 +282,6 @@ namespace CarRental.Transactions
             this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showVehicleDetailsToolStripMenuItem.Text = "Show Vehicle Details";
             this.showVehicleDetailsToolStripMenuItem.Click += new System.EventHandler(this.showVehicleDetailsToolStripMenuItem_Click);
-            // 
-            // showReturnDetailsToolStripMenuItem
-            // 
-            this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
-            this.showReturnDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
-            this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.transactions;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(620, 61);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(200, 140);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 98;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // frmTransactionsList
             // 

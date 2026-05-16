@@ -218,7 +218,7 @@ namespace CarRental_DataAccess
         public static async Task<RentalTransactionDTO> GetTransactionByReturnIDIDAsync(int ReturnID)
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
-            using (SqlCommand command = new SqlCommand("Transactions.SP_GetTransactionByReturnID", connection))
+            using (SqlCommand command = new SqlCommand("Transactions.SP_GetTransactionByRetrunID", connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@ReturnID", ReturnID);

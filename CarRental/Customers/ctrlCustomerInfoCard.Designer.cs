@@ -52,10 +52,11 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.lblCustomerID);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(5, 337);
+            this.groupBox1.Location = new System.Drawing.Point(0, 305);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(915, 82);
+            this.groupBox1.Size = new System.Drawing.Size(926, 82);
             this.groupBox1.TabIndex = 121;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
@@ -140,11 +141,11 @@
             // 
             // ctrlPersonCard1
             // 
-            this.ctrlPersonCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(5, 2);
-            this.ctrlPersonCard1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrlPersonCard1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ctrlPersonCard1.Location = new System.Drawing.Point(0, 0);
+            this.ctrlPersonCard1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(924, 337);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(926, 298);
             this.ctrlPersonCard1.TabIndex = 122;
             // 
             // ctrlCustomerInfoCard
@@ -157,7 +158,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlCustomerInfoCard";
-            this.Size = new System.Drawing.Size(932, 426);
+            this.Size = new System.Drawing.Size(926, 387);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -167,8 +168,6 @@
         }
 
         #endregion
-
-        private People.Controls.ctrlPersonCard ctrlPersonCard1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.LinkLabel lblEditCustomerInfo;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -177,5 +176,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lblCustomerID;
+        private People.Controls.ctrlPersonCard ctrlPersonCard1;
     }
 }

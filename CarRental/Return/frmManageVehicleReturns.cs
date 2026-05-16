@@ -1,4 +1,7 @@
-﻿using CarRental_Buisness;
+﻿using CarRental.Booking;
+using CarRental.Customers;
+using CarRental.Vehicles;
+using CarRental_Buisness;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -176,6 +179,37 @@ namespace CarRental.Return
 
             frmManageVehicleReturns_Load(null, null);
 
+        }
+
+        private void showReturnDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ReturnID = (int)dgvVehcileReturns.CurrentRow.Cells[0].Value;
+
+            frmShowReturnDetails frm = new frmShowReturnDetails(ReturnID);
+            frm.Show();
+        }
+
+        private void showBookingDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int BookingID = (int)dgvVehcileReturns.CurrentRow.Cells[4].Value;
+            frmShowBookingDetails frm = new frmShowBookingDetails(BookingID);
+
+            frm.ShowDialog();
+        }
+
+        private void showCustomerDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CustomerID = (int)dgvVehcileReturns.CurrentRow.Cells[1].Value;
+            frmShowCustomerDetails frm = new frmShowCustomerDetails(CustomerID);
+            frm.ShowDialog();
+
+        }
+
+        private void showVehicleDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int VehicleID = (int)dgvVehcileReturns.CurrentRow.Cells[3].Value;
+            frmShowVehicleDetails frm = new frmShowVehicleDetails(VehicleID);
+            frm.ShowDialog();
         }
     }
 }

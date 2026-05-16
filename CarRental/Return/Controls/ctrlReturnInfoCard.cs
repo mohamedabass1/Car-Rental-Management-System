@@ -9,7 +9,7 @@ namespace CarRental.Return.Controls
     public partial class ctrlReturnInfoCard : UserControl
     {
         int _ReturnID = -1;
-        clsVehicleReturn _VehicleReturn;
+        public clsVehicleReturn SelectedVehicleReturn;
 
         clsRentalTransaction _TransactionInfo;
         public ctrlReturnInfoCard()
@@ -19,9 +19,9 @@ namespace CarRental.Return.Controls
 
         public async Task LoadVehicleReturnInfo(int ReturnID)
         {
-            _VehicleReturn = await clsVehicleReturn.FindByIDAsync(ReturnID);
+            SelectedVehicleReturn = await clsVehicleReturn.FindByIDAsync(ReturnID);
 
-            if (_VehicleReturn == null)
+            if (SelectedVehicleReturn == null)
             {
                 MessageBox.Show($"Vehicle Return with ID {ReturnID} NOT found!",
                     "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -36,15 +36,15 @@ namespace CarRental.Return.Controls
 
         private async Task _FillVehicleReturnInfo()
         {
-            _ReturnID = _VehicleReturn.ReturnID;
+            _ReturnID = SelectedVehicleReturn.ReturnID;
             lblReturnID.Text = _ReturnID.ToString();
-            lblSActualReturnDate.Text = _VehicleReturn.ActualReturnDate.ToShortDateString();
-            lblActualRentalDays.Text = _VehicleReturn.ActualRentalDays.ToString();
-            lblMileage.Text = _VehicleReturn.Mileage.ToString();
-            lblConsumedMileage.Text = _VehicleReturn.ConsumedMileage.ToString();
-            lblFinalCheckNotes.Text = string.IsNullOrWhiteSpace(_VehicleReturn.FinalCheckNotes) ? "N/A" : _VehicleReturn.FinalCheckNotes;
-            lblAdditionalCharges.Text = _VehicleReturn.AdditionalCharges.ToString("0.00");
-            lblActualTotalDueAmount.Text = _VehicleReturn.ActualTotalDueAmount.ToString("0.00");
+            lblSActualReturnDate.Text = SelectedVehicleReturn.ActualReturnDate.ToShortDateString();
+            lblActualRentalDays.Text = SelectedVehicleReturn.ActualRentalDays.ToString();
+            lblMileage.Text = SelectedVehicleReturn.Mileage.ToString();
+            lblConsumedMileage.Text = SelectedVehicleReturn.ConsumedMileage.ToString();
+            lblFinalCheckNotes.Text = string.IsNullOrWhiteSpace(SelectedVehicleReturn.FinalCheckNotes) ? "N/A" : SelectedVehicleReturn.FinalCheckNotes;
+            lblAdditionalCharges.Text = SelectedVehicleReturn.AdditionalCharges.ToString("0.00");
+            lblActualTotalDueAmount.Text = SelectedVehicleReturn.ActualTotalDueAmount.ToString("0.00");
 
 
             // Load TransactionInfo
@@ -58,7 +58,7 @@ namespace CarRental.Return.Controls
 
         private void llShowTransactionInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmTransactionDetails frm = new frmTransactionDetails(_VehicleReturn.ReturnID, frmTransactionDetails.enFindBy.ReturnID);
+            frmTransactionDetails frm = new frmTransactionDetails(SelectedVehicleReturn.ReturnID, frmTransactionDetails.enFindBy.ReturnID);
             frm.ShowDialog();
         }
 

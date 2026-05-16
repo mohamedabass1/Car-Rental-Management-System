@@ -43,9 +43,9 @@
             this.showCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.showTransactionDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddNewBooking = new System.Windows.Forms.Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRentlBooking)).BeginInit();
             this.cmsRentalBooking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -213,7 +213,7 @@
             this.cmsRentalBooking.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsRentalBooking.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
             this.cmsRentalBooking.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsRentalBooking.Size = new System.Drawing.Size(280, 150);
+            this.cmsRentalBooking.Size = new System.Drawing.Size(280, 128);
             // 
             // showBookingDetailsToolStripMenuItem
             // 
@@ -249,6 +249,14 @@
             this.showTransactionDetailsToolStripMenuItem.Text = "Show Transaction Details";
             this.showTransactionDetailsToolStripMenuItem.Click += new System.EventHandler(this.showTransactionDetailsToolStripMenuItem_Click);
             // 
+            // returnToolStripMenuItem
+            // 
+            this.returnToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_return48;
+            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.returnToolStripMenuItem.Text = "Return";
+            this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
+            // 
             // btnAddNewBooking
             // 
             this.btnAddNewBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -266,7 +274,7 @@
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2PictureBox2.Image = global::CarRental.Properties.Resources.booking;
+            this.guna2PictureBox2.Image = global::CarRental.Properties.Resources.booking_online;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(607, 24);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(0);
@@ -275,14 +283,6 @@
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 148;
             this.guna2PictureBox2.TabStop = false;
-            // 
-            // returnToolStripMenuItem
-            // 
-            this.returnToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_return48;
-            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
-            this.returnToolStripMenuItem.Text = "Return";
-            this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // frmRentalBookingList
             // 

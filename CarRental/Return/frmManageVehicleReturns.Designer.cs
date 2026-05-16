@@ -31,18 +31,16 @@ namespace CarRental.Return
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbVehcileReturns = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.showVehicleDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showReturnDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.addNewVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showBookingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.maintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showMaintenanceHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showVehicleDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,15 +59,14 @@ namespace CarRental.Return
             this.cbVehcileReturns.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
             this.cbVehcileReturns.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cbVehcileReturns.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showVehicleDetailsToolStripMenuItem,
+            this.showReturnDetailsToolStripMenuItem,
             this.toolStripSeparator1,
-            this.addNewVehicleToolStripMenuItem,
-            this.editVehicleToolStripMenuItem,
-            this.deleteVehicleToolStripMenuItem,
+            this.showBookingDetailsToolStripMenuItem,
+            this.showCustomerDetailsToolStripMenuItem,
             this.toolStripSeparator3,
-            this.maintenanceToolStripMenuItem,
-            this.showMaintenanceHistoryToolStripMenuItem});
+            this.showVehicleDetailsToolStripMenuItem});
             this.cbVehcileReturns.Name = "guna2ContextMenuStrip1";
+            this.cbVehcileReturns.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cbVehcileReturns.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(130)))), ((int)(((byte)(246)))));
             this.cbVehcileReturns.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.cbVehcileReturns.RenderStyle.ColorTable = null;
@@ -79,65 +76,53 @@ namespace CarRental.Return
             this.cbVehcileReturns.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cbVehcileReturns.RenderStyle.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.cbVehcileReturns.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cbVehcileReturns.Size = new System.Drawing.Size(267, 220);
+            this.cbVehcileReturns.Size = new System.Drawing.Size(220, 174);
             // 
-            // showVehicleDetailsToolStripMenuItem
+            // showReturnDetailsToolStripMenuItem
             // 
-            this.showVehicleDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.vehicle_details32;
-            this.showVehicleDetailsToolStripMenuItem.Name = "showVehicleDetailsToolStripMenuItem";
-            this.showVehicleDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
-            this.showVehicleDetailsToolStripMenuItem.Text = "Show Vehicle Details";
+            this.showReturnDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.search_car48;
+            this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
+            this.showReturnDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(239, 34);
+            this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
+            this.showReturnDetailsToolStripMenuItem.Click += new System.EventHandler(this.showReturnDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(216, 6);
             // 
-            // addNewVehicleToolStripMenuItem
+            // showBookingDetailsToolStripMenuItem
             // 
-            this.addNewVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.add_car32;
-            this.addNewVehicleToolStripMenuItem.Name = "addNewVehicleToolStripMenuItem";
-            this.addNewVehicleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.addNewVehicleToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
-            this.addNewVehicleToolStripMenuItem.Text = "Add New Vehicle";
+            this.showBookingDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
+            this.showBookingDetailsToolStripMenuItem.Name = "showBookingDetailsToolStripMenuItem";
+            this.showBookingDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(239, 34);
+            this.showBookingDetailsToolStripMenuItem.Text = "Booking Details";
+            this.showBookingDetailsToolStripMenuItem.Click += new System.EventHandler(this.showBookingDetailsToolStripMenuItem_Click);
             // 
-            // editVehicleToolStripMenuItem
+            // showCustomerDetailsToolStripMenuItem
             // 
-            this.editVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_Edit32;
-            this.editVehicleToolStripMenuItem.Name = "editVehicleToolStripMenuItem";
-            this.editVehicleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.editVehicleToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
-            this.editVehicleToolStripMenuItem.Text = "Edit Vehicle";
-            // 
-            // deleteVehicleToolStripMenuItem
-            // 
-            this.deleteVehicleToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_delete32;
-            this.deleteVehicleToolStripMenuItem.Name = "deleteVehicleToolStripMenuItem";
-            this.deleteVehicleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.deleteVehicleToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
-            this.deleteVehicleToolStripMenuItem.Text = "Delete Vehicle";
+            this.showCustomerDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.PersonDetails_32;
+            this.showCustomerDetailsToolStripMenuItem.Name = "showCustomerDetailsToolStripMenuItem";
+            this.showCustomerDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(239, 34);
+            this.showCustomerDetailsToolStripMenuItem.Text = "Customer Details";
+            this.showCustomerDetailsToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(216, 6);
             // 
-            // maintenanceToolStripMenuItem
+            // showVehicleDetailsToolStripMenuItem
             // 
-            this.maintenanceToolStripMenuItem.Image = global::CarRental.Properties.Resources.maintenance_vehicle32;
-            this.maintenanceToolStripMenuItem.Name = "maintenanceToolStripMenuItem";
-            this.maintenanceToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.maintenanceToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
-            this.maintenanceToolStripMenuItem.Text = "Maintenance";
-            // 
-            // showMaintenanceHistoryToolStripMenuItem
-            // 
-            this.showMaintenanceHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
-            this.showMaintenanceHistoryToolStripMenuItem.Name = "showMaintenanceHistoryToolStripMenuItem";
-            this.showMaintenanceHistoryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.showMaintenanceHistoryToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
-            this.showMaintenanceHistoryToolStripMenuItem.Text = "Show Maintenance History";
+            this.showVehicleDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.maintenance_vehicle32;
+            this.showVehicleDetailsToolStripMenuItem.Name = "showVehicleDetailsToolStripMenuItem";
+            this.showVehicleDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(239, 34);
+            this.showVehicleDetailsToolStripMenuItem.Text = "Vehicle Details";
+            this.showVehicleDetailsToolStripMenuItem.Click += new System.EventHandler(this.showVehicleDetailsToolStripMenuItem_Click);
             // 
             // lblRecordsCount
             // 
@@ -224,31 +209,32 @@ namespace CarRental.Return
             this.dgvVehcileReturns.AllowUserToDeleteRows = false;
             this.dgvVehcileReturns.AllowUserToOrderColumns = true;
             this.dgvVehcileReturns.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(250)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvVehcileReturns.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(250)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvVehcileReturns.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVehcileReturns.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(150)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(150)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVehcileReturns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(150)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(150)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVehcileReturns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVehcileReturns.ColumnHeadersHeight = 52;
             this.dgvVehcileReturns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(250)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVehcileReturns.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvVehcileReturns.ContextMenuStrip = this.cbVehcileReturns;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(250)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVehcileReturns.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVehcileReturns.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(252)))), ((int)(((byte)(231)))));
             this.dgvVehcileReturns.Location = new System.Drawing.Point(22, 300);
             this.dgvVehcileReturns.Margin = new System.Windows.Forms.Padding(0);
@@ -285,28 +271,17 @@ namespace CarRental.Return
             // btnVehicleReturn
             // 
             this.btnVehicleReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            
+            this.btnVehicleReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(150)))), ((int)(((byte)(105)))));
+            this.btnVehicleReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVehicleReturn.FlatAppearance.BorderSize = 0;
+            this.btnVehicleReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(120)))), ((int)(((byte)(87)))));
+            this.btnVehicleReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
             this.btnVehicleReturn.Image = global::CarRental.Properties.Resources.add_car40;
             this.btnVehicleReturn.Location = new System.Drawing.Point(1365, 233);
             this.btnVehicleReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnVehicleReturn.Name = "btnVehicleReturn";
-            this.btnVehicleReturn.Size = new System.Drawing.Size(81, 59);
+            this.btnVehicleReturn.Size = new System.Drawing.Size(74, 54);
             this.btnVehicleReturn.TabIndex = 137;
-
-            this.btnVehicleReturn.BackColor = Color.FromArgb(5, 150, 105);
-
-
-            this.btnVehicleReturn.FlatAppearance.BorderSize = 0;
-
-            this.btnVehicleReturn.FlatAppearance.MouseOverBackColor =
-                Color.FromArgb(16, 185, 129);
-
-            this.btnVehicleReturn.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 120, 87);
-
-            this.btnVehicleReturn.Cursor =  Cursors.Hand;
-
-            this.btnVehicleReturn.Size =
-                new Size(74, 54);
             this.btnVehicleReturn.UseVisualStyleBackColor = false;
             this.btnVehicleReturn.Click += new System.EventHandler(this.btnVehicleReturn_Click);
             // 
@@ -354,14 +329,12 @@ namespace CarRental.Return
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContextMenuStrip cbVehcileReturns;
-        private System.Windows.Forms.ToolStripMenuItem showVehicleDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showReturnDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem addNewVehicleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editVehicleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteVehicleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showBookingDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showCustomerDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem maintenanceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showMaintenanceHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showVehicleDetailsToolStripMenuItem;
         private System.Windows.Forms.Label lblRecordsCount;
         private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;

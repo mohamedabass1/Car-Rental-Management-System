@@ -154,6 +154,12 @@
     <Compile Include="Return\frmManageVehicleReturns.Designer.cs">
       <DependentUpon>frmManageVehicleReturns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Return\frmShowReturnDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return\frmShowReturnDetails.Designer.cs">
+      <DependentUpon>frmShowReturnDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Return\frmVehicleReturn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Return\frmManageVehicleReturns.resx">
       <DependentUpon>frmManageVehicleReturns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return\frmShowReturnDetails.resx">
+      <DependentUpon>frmShowReturnDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Return\frmVehicleReturn.resx">
       <DependentUpon>frmVehicleReturn.cs</DependentUpon>
@@ -565,6 +574,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking-online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
