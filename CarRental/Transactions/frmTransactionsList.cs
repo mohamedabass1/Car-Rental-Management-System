@@ -214,7 +214,7 @@ namespace CarRental.Transactions
 
             int TransactionID = (int)dgvTransactionsList.CurrentRow.Cells[0].Value;
 
-            Form frm = new frmTransactionDetails(TransactionID);
+            Form frm = new frmTransactionDetails(TransactionID, frmTransactionDetails.enFindBy.TransactionID);
             frm.ShowDialog();
         }
 

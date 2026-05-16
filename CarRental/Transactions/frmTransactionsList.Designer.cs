@@ -1,4 +1,6 @@
-﻿namespace CarRental.Transactions
+﻿using System.Windows.Forms;
+
+namespace CarRental.Transactions
 {
     partial class frmTransactionsList
     {
@@ -133,66 +135,69 @@
             this.dgvTransactionsList.AllowUserToAddRows = false;
             this.dgvTransactionsList.AllowUserToDeleteRows = false;
             this.dgvTransactionsList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvTransactionsList.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvTransactionsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTransactionsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(70)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(70)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTransactionsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTransactionsList.ColumnHeadersHeight = 42;
+            this.dgvTransactionsList.ColumnHeadersHeight = 50;
             this.dgvTransactionsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvTransactionsList.ContextMenuStrip = this.cmsRentalTransactions;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTransactionsList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTransactionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvTransactionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.dgvTransactionsList.Location = new System.Drawing.Point(26, 329);
+            this.dgvTransactionsList.MultiSelect = false;
             this.dgvTransactionsList.Name = "dgvTransactionsList";
             this.dgvTransactionsList.ReadOnly = true;
+            this.dgvTransactionsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTransactionsList.RowHeadersVisible = false;
-            this.dgvTransactionsList.RowTemplate.Height = 36;
+            this.dgvTransactionsList.RowTemplate.Height = 44;
             this.dgvTransactionsList.Size = new System.Drawing.Size(1426, 365);
             this.dgvTransactionsList.TabIndex = 97;
-            this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvTransactionsList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvTransactionsList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTransactionsList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.dgvTransactionsList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.dgvTransactionsList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(70)))), ((int)(((byte)(229)))));
             this.dgvTransactionsList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvTransactionsList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.dgvTransactionsList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.dgvTransactionsList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvTransactionsList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvTransactionsList.ThemeStyle.HeaderStyle.Height = 42;
+            this.dgvTransactionsList.ThemeStyle.HeaderStyle.Height = 50;
             this.dgvTransactionsList.ThemeStyle.ReadOnly = true;
             this.dgvTransactionsList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTransactionsList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvTransactionsList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dgvTransactionsList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.dgvTransactionsList.ThemeStyle.RowsStyle.Height = 36;
-            this.dgvTransactionsList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvTransactionsList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dgvTransactionsList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            this.dgvTransactionsList.ThemeStyle.RowsStyle.Height = 44;
+            this.dgvTransactionsList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
             this.dgvTransactionsList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // cmsRentalTransactions
             // 
-            this.cmsRentalTransactions.AutoSize = false;
-            this.cmsRentalTransactions.DropShadowEnabled = false;
-            this.cmsRentalTransactions.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmsRentalTransactions.ImageScalingSize = new System.Drawing.Size(22, 22);
+            this.cmsRentalTransactions.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
+            this.cmsRentalTransactions.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsRentalTransactions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showBookingDetailsToolStripMenuItem,
             this.toolStripSeparator1,
@@ -201,64 +206,69 @@
             this.showTransactionDetailsToolStripMenuItem,
             this.showVehicleDetailsToolStripMenuItem,
             this.showReturnDetailsToolStripMenuItem});
-            this.cmsRentalTransactions.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.cmsRentalTransactions.Name = "guna2ContextMenuStrip1";
-            this.cmsRentalTransactions.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.cmsRentalTransactions.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cmsRentalTransactions.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(130)))), ((int)(((byte)(246)))));
+            this.cmsRentalTransactions.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.cmsRentalTransactions.RenderStyle.ColorTable = null;
             this.cmsRentalTransactions.RenderStyle.RoundedEdges = true;
             this.cmsRentalTransactions.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.cmsRentalTransactions.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.cmsRentalTransactions.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(70)))), ((int)(((byte)(229)))));
             this.cmsRentalTransactions.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.cmsRentalTransactions.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
-            this.cmsRentalTransactions.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            this.cmsRentalTransactions.Size = new System.Drawing.Size(280, 178);
+            this.cmsRentalTransactions.RenderStyle.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.cmsRentalTransactions.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.cmsRentalTransactions.Size = new System.Drawing.Size(252, 208);
             // 
             // showBookingDetailsToolStripMenuItem
             // 
             this.showBookingDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_321;
             this.showBookingDetailsToolStripMenuItem.Name = "showBookingDetailsToolStripMenuItem";
-            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.showBookingDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showBookingDetailsToolStripMenuItem.Text = "Show Booking Details";
             this.showBookingDetailsToolStripMenuItem.Click += new System.EventHandler(this.showBookingDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(276, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
             // 
             // showCustomerDetailsToolStripMenuItem
             // 
             this.showCustomerDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.PersonDetails_32;
             this.showCustomerDetailsToolStripMenuItem.Name = "showCustomerDetailsToolStripMenuItem";
-            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.showCustomerDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showCustomerDetailsToolStripMenuItem.Text = "Show Customer Details";
             this.showCustomerDetailsToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(276, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
             // 
             // showTransactionDetailsToolStripMenuItem
             // 
             this.showTransactionDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.Notes_32;
             this.showTransactionDetailsToolStripMenuItem.Name = "showTransactionDetailsToolStripMenuItem";
-            this.showTransactionDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.showTransactionDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showTransactionDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showTransactionDetailsToolStripMenuItem.Text = "Show Transaction Details";
             this.showTransactionDetailsToolStripMenuItem.Click += new System.EventHandler(this.showTransactionDetailsToolStripMenuItem_Click);
             // 
             // showVehicleDetailsToolStripMenuItem
             // 
+            this.showVehicleDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.add_booking48;
             this.showVehicleDetailsToolStripMenuItem.Name = "showVehicleDetailsToolStripMenuItem";
-            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.showVehicleDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showVehicleDetailsToolStripMenuItem.Text = "Show Vehicle Details";
             this.showVehicleDetailsToolStripMenuItem.Click += new System.EventHandler(this.showVehicleDetailsToolStripMenuItem_Click);
             // 
             // showReturnDetailsToolStripMenuItem
             // 
             this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
-            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.showReturnDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
             // 
             // guna2PictureBox1

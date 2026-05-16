@@ -142,11 +142,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Return\frmReturn.cs">
+    <Compile Include="Return\Controls\ctrlReturnInfoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Return\Controls\ctrlReturnInfoCard.Designer.cs">
+      <DependentUpon>ctrlReturnInfoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Return\frmManageVehicleReturns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Return\frmReturn.Designer.cs">
-      <DependentUpon>frmReturn.cs</DependentUpon>
+    <Compile Include="Return\frmManageVehicleReturns.Designer.cs">
+      <DependentUpon>frmManageVehicleReturns.cs</DependentUpon>
     </Compile>
     <Compile Include="Return\frmVehicleReturn.cs">
       <SubType>Form</SubType>
@@ -272,8 +278,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Return\frmReturn.resx">
-      <DependentUpon>frmReturn.cs</DependentUpon>
+    <EmbeddedResource Include="Return\Controls\ctrlReturnInfoCard.resx">
+      <DependentUpon>ctrlReturnInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return\frmManageVehicleReturns.resx">
+      <DependentUpon>frmManageVehicleReturns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Return\frmVehicleReturn.resx">
       <DependentUpon>frmVehicleReturn.cs</DependentUpon>
@@ -329,6 +338,10 @@
     <ProjectReference Include="..\CarRental_Buisness\CarRental_Buisness.csproj">
       <Project>{4240d774-d5bf-4509-93a5-b0c62d3cb014}</Project>
       <Name>CarRental_Buisness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarRental_DTO\CarRental_DTO.csproj">
+      <Project>{02a41826-e3b9-449a-9287-3825399aa829}</Project>
+      <Name>CarRental_DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -549,6 +562,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Return.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

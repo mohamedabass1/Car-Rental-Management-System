@@ -172,7 +172,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.panelMenu.Controls.Add(this.Indicator1);
             this.panelMenu.Controls.Add(this.guna2CirclePictureBox1);
             this.panelMenu.Controls.Add(this.btnUsers);

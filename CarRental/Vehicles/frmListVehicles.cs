@@ -211,7 +211,16 @@ namespace CarRental.Vehciles
             frmListVehciles_Load(null, null);
         }
 
-        private void showVehicleDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+        private void btnNewMaintenance_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmMaintenance();
+            frm.ShowDialog();
+        }
+
+        private void showVehicleDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             int VehicleID = (int)dgvVehciles.CurrentRow.Cells[0].Value;
             Form frm = new frmShowVehicleDetails(VehicleID);
@@ -234,7 +243,13 @@ namespace CarRental.Vehciles
             frm.ShowDialog();
 
             frmListVehciles_Load(null, null);
+        }
 
+        private void maintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int VehicleID = (int)dgvVehciles.CurrentRow.Cells[0].Value;
+            Form frm = new frmMaintenance(VehicleID);
+            frm.ShowDialog();
         }
 
         private async void deleteVehicleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -255,19 +270,6 @@ namespace CarRental.Vehciles
             else
                 MessageBox.Show("Vehicle was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        }
-
-        private void maintenanceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int VehicleID = (int)dgvVehciles.CurrentRow.Cells[0].Value;
-            Form frm = new frmMaintenance(VehicleID);
-            frm.ShowDialog();
-        }
-
-        private void btnNewMaintenance_Click(object sender, EventArgs e)
-        {
-            Form frm = new frmMaintenance();
-            frm.ShowDialog();
         }
     }
 }

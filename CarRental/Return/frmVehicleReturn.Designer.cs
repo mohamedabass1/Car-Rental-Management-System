@@ -94,6 +94,7 @@
             this.ctrlBookingInfoCardWithFilter1.Name = "ctrlBookingInfoCardWithFilter1";
             this.ctrlBookingInfoCardWithFilter1.Size = new System.Drawing.Size(974, 351);
             this.ctrlBookingInfoCardWithFilter1.TabIndex = 122;
+            this.ctrlBookingInfoCardWithFilter1.OnBookingSelected += new System.Action<int>(this.ctrlBookingInfoCardWithFilter1_OnBookingSelected);
             // 
             // gbReturnInfo
             // 
@@ -159,6 +160,7 @@
             this.llShowUpdatedTransactionInfo.TabIndex = 208;
             this.llShowUpdatedTransactionInfo.TabStop = true;
             this.llShowUpdatedTransactionInfo.Text = "Show Updated Transaction Info";
+            this.llShowUpdatedTransactionInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llShowUpdatedTransactionInfo_LinkClicked);
             // 
             // txtFinalCheckNotes
             // 
@@ -477,6 +479,7 @@
             this.btnClose.Size = new System.Drawing.Size(126, 40);
             this.btnClose.TabIndex = 207;
             this.btnClose.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnReturn
             // 
@@ -491,7 +494,7 @@
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(161, 40);
             this.btnReturn.TabIndex = 206;
-            this.btnReturn.Text = "Booking";
+            this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -516,6 +519,7 @@
             this.Name = "frmVehicleReturn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicle Return";
+            this.Load += new System.EventHandler(this.frmVehicleReturn_Load);
             this.gbReturnInfo.ResumeLayout(false);
             this.gbReturnInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();

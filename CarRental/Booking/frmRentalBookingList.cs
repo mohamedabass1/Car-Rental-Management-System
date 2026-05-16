@@ -1,4 +1,6 @@
 ﻿using CarRental.Customers;
+using CarRental.Return;
+using CarRental.Transactions;
 using CarRental_Buisness;
 using System;
 using System.Data;
@@ -26,41 +28,43 @@ namespace CarRental.Booking
 
             if (dgvRentlBooking.Rows.Count > 0)
             {
+                dgvRentlBooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                 dgvRentlBooking.Columns[0].HeaderText = "ID";
-                dgvRentlBooking.Columns[0].Width = 70;
+                dgvRentlBooking.Columns[0].FillWeight = 40;
 
                 dgvRentlBooking.Columns[1].HeaderText = "Customer ID";
-                dgvRentlBooking.Columns[1].Width = 120;
+                dgvRentlBooking.Columns[1].FillWeight = 70;
 
                 dgvRentlBooking.Columns[2].HeaderText = "Customer Name";
-                dgvRentlBooking.Columns[2].Width = 180;
+                dgvRentlBooking.Columns[2].FillWeight = 120;
 
                 dgvRentlBooking.Columns[3].HeaderText = "Vehicle ID";
-                dgvRentlBooking.Columns[3].Width = 90;
+                dgvRentlBooking.Columns[3].FillWeight = 60;
 
                 dgvRentlBooking.Columns[4].HeaderText = "Model";
-                dgvRentlBooking.Columns[4].Width = 140;
+                dgvRentlBooking.Columns[4].FillWeight = 100;
 
                 dgvRentlBooking.Columns[5].HeaderText = "Start Date";
-                dgvRentlBooking.Columns[5].Width = 140;
+                dgvRentlBooking.Columns[5].FillWeight = 90;
 
                 dgvRentlBooking.Columns[6].HeaderText = "End Date";
-                dgvRentlBooking.Columns[6].Width = 140;
+                dgvRentlBooking.Columns[6].FillWeight = 90;
 
                 dgvRentlBooking.Columns[7].HeaderText = "Pickup";
-                dgvRentlBooking.Columns[7].Width = 150;
+                dgvRentlBooking.Columns[7].FillWeight = 100;
 
                 dgvRentlBooking.Columns[8].HeaderText = "Dropoff";
-                dgvRentlBooking.Columns[8].Width = 150;
+                dgvRentlBooking.Columns[8].FillWeight = 100;
 
                 dgvRentlBooking.Columns[9].HeaderText = "Days";
-                dgvRentlBooking.Columns[9].Width = 70;
+                dgvRentlBooking.Columns[9].FillWeight = 50;
 
                 dgvRentlBooking.Columns[10].HeaderText = "Price / Day";
-                dgvRentlBooking.Columns[10].Width = 110;
+                dgvRentlBooking.Columns[10].FillWeight = 80;
 
                 dgvRentlBooking.Columns[11].HeaderText = "Total";
-                dgvRentlBooking.Columns[11].Width = 110;
+                dgvRentlBooking.Columns[11].FillWeight = 80;
             }
         }
 
@@ -176,6 +180,23 @@ namespace CarRental.Booking
 
             frmShowCustomerDetails frm = new frmShowCustomerDetails(CustomerID);
             frm.ShowDialog();
+        }
+
+        private void showTransactionDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int bookingID = (int)dgvRentlBooking.CurrentRow.Cells[0].Value;
+
+            frmTransactionDetails frm = new frmTransactionDetails(bookingID, frmTransactionDetails.enFindBy.BookingID);
+            frm.ShowDialog();
+        }
+
+        private void returnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int bookingID = (int)dgvRentlBooking.CurrentRow.Cells[0].Value;
+
+            frmVehicleReturn frm = new frmVehicleReturn(bookingID);
+            frm.ShowDialog();
+
         }
     }
 }

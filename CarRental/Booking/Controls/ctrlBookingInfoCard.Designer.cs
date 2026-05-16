@@ -33,33 +33,34 @@
             this.lblInitalCheckNotes = new System.Windows.Forms.Label();
             this.lblDropOfLocation = new System.Windows.Forms.Label();
             this.lblPickupLocation = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblInitalRentalDays = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblVehicleID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblInitalTotalDueAmount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblCustomerName = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lblBookingID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbGendor = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblInitalTotalDueAmount = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblBookingID = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.llbShowVehicleInfo = new System.Windows.Forms.LinkLabel();
             this.gbBookingInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -76,6 +77,7 @@
             // gbBookingInfo
             // 
             this.gbBookingInfo.BackColor = System.Drawing.Color.White;
+            this.gbBookingInfo.Controls.Add(this.llbShowVehicleInfo);
             this.gbBookingInfo.Controls.Add(this.llShowTransactionInfo);
             this.gbBookingInfo.Controls.Add(this.lblInitalCheckNotes);
             this.gbBookingInfo.Controls.Add(this.lblDropOfLocation);
@@ -123,7 +125,7 @@
             this.llShowTransactionInfo.Enabled = false;
             this.llShowTransactionInfo.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llShowTransactionInfo.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.llShowTransactionInfo.Location = new System.Drawing.Point(323, 231);
+            this.llShowTransactionInfo.Location = new System.Drawing.Point(405, 237);
             this.llShowTransactionInfo.Name = "llShowTransactionInfo";
             this.llShowTransactionInfo.Size = new System.Drawing.Size(187, 23);
             this.llShowTransactionInfo.TabIndex = 207;
@@ -164,6 +166,16 @@
             this.lblPickupLocation.TabIndex = 197;
             this.lblPickupLocation.Text = "[????]";
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::CarRental.Properties.Resources.Notes_32;
+            this.pictureBox10.Location = new System.Drawing.Point(751, 205);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 196;
+            this.pictureBox10.TabStop = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -175,6 +187,16 @@
             this.label8.TabIndex = 195;
             this.label8.Text = "Inital Check Notes:";
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::CarRental.Properties.Resources.Country_32;
+            this.pictureBox9.Location = new System.Drawing.Point(751, 163);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 194;
+            this.pictureBox9.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -185,6 +207,16 @@
             this.label2.Size = new System.Drawing.Size(169, 23);
             this.label2.TabIndex = 193;
             this.label2.Text = "Drop Of Location:";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::CarRental.Properties.Resources.Country_32;
+            this.pictureBox6.Location = new System.Drawing.Point(751, 119);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 192;
+            this.pictureBox6.TabStop = false;
             // 
             // label15
             // 
@@ -230,6 +262,16 @@
             this.lblInitalRentalDays.TabIndex = 188;
             this.lblInitalRentalDays.Text = "[????]";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CarRental.Properties.Resources.Number_32;
+            this.pictureBox3.Location = new System.Drawing.Point(185, 194);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 187;
+            this.pictureBox3.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -262,6 +304,36 @@
             this.label5.Size = new System.Drawing.Size(108, 23);
             this.label5.TabIndex = 183;
             this.label5.Text = "Vehicle ID:";
+            // 
+            // pbGendor
+            // 
+            this.pbGendor.Image = global::CarRental.Properties.Resources.id;
+            this.pbGendor.Location = new System.Drawing.Point(753, 80);
+            this.pbGendor.Name = "pbGendor";
+            this.pbGendor.Size = new System.Drawing.Size(33, 29);
+            this.pbGendor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGendor.TabIndex = 184;
+            this.pbGendor.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CarRental.Properties.Resources.Calendar_32;
+            this.pictureBox2.Location = new System.Drawing.Point(183, 154);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 182;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::CarRental.Properties.Resources.Calendar_32;
+            this.pictureBox5.Location = new System.Drawing.Point(183, 115);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 181;
+            this.pictureBox5.TabStop = false;
             // 
             // label12
             // 
@@ -297,6 +369,16 @@
             this.lblInitalTotalDueAmount.TabIndex = 154;
             this.lblInitalTotalDueAmount.Text = "[????]";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::CarRental.Properties.Resources.money_32;
+            this.pictureBox4.Location = new System.Drawing.Point(751, 40);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 153;
+            this.pictureBox4.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -307,6 +389,16 @@
             this.label3.Size = new System.Drawing.Size(227, 23);
             this.label3.TabIndex = 152;
             this.label3.Text = "Inital Total Due Amount:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CarRental.Properties.Resources.id;
+            this.pictureBox1.Location = new System.Drawing.Point(183, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 139;
+            this.pictureBox1.TabStop = false;
             // 
             // lblCustomerName
             // 
@@ -343,6 +435,16 @@
             this.lblBookingID.TabIndex = 127;
             this.lblBookingID.Text = "[????]";
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::CarRental.Properties.Resources.Person_32;
+            this.pictureBox8.Location = new System.Drawing.Point(183, 74);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 128;
+            this.pictureBox8.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -354,105 +456,19 @@
             this.label1.TabIndex = 114;
             this.label1.Text = "Customer Name:";
             // 
-            // pictureBox10
+            // llbShowVehicleInfo
             // 
-            this.pictureBox10.Image = global::CarRental.Properties.Resources.Notes_32;
-            this.pictureBox10.Location = new System.Drawing.Point(751, 205);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 196;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::CarRental.Properties.Resources.Country_32;
-            this.pictureBox9.Location = new System.Drawing.Point(751, 163);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 194;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::CarRental.Properties.Resources.Country_32;
-            this.pictureBox6.Location = new System.Drawing.Point(751, 119);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 192;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::CarRental.Properties.Resources.Number_32;
-            this.pictureBox3.Location = new System.Drawing.Point(185, 194);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 187;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pbGendor
-            // 
-            this.pbGendor.Image = global::CarRental.Properties.Resources.id;
-            this.pbGendor.Location = new System.Drawing.Point(753, 80);
-            this.pbGendor.Name = "pbGendor";
-            this.pbGendor.Size = new System.Drawing.Size(33, 29);
-            this.pbGendor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGendor.TabIndex = 184;
-            this.pbGendor.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CarRental.Properties.Resources.Calendar_32;
-            this.pictureBox2.Location = new System.Drawing.Point(183, 154);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 182;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::CarRental.Properties.Resources.Calendar_32;
-            this.pictureBox5.Location = new System.Drawing.Point(183, 115);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 181;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::CarRental.Properties.Resources.money_32;
-            this.pictureBox4.Location = new System.Drawing.Point(751, 40);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 153;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CarRental.Properties.Resources.id;
-            this.pictureBox1.Location = new System.Drawing.Point(183, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 139;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::CarRental.Properties.Resources.Person_32;
-            this.pictureBox8.Location = new System.Drawing.Point(183, 74);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 128;
-            this.pictureBox8.TabStop = false;
+            this.llbShowVehicleInfo.AutoSize = true;
+            this.llbShowVehicleInfo.Enabled = false;
+            this.llbShowVehicleInfo.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbShowVehicleInfo.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.llbShowVehicleInfo.Location = new System.Drawing.Point(232, 239);
+            this.llbShowVehicleInfo.Name = "llbShowVehicleInfo";
+            this.llbShowVehicleInfo.Size = new System.Drawing.Size(152, 23);
+            this.llbShowVehicleInfo.TabIndex = 208;
+            this.llbShowVehicleInfo.TabStop = true;
+            this.llbShowVehicleInfo.Text = "Show Vehicle Info";
+            this.llbShowVehicleInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbShowVehicleInfo_LinkClicked);
             // 
             // ctrlBookingInfoCard
             // 
@@ -514,5 +530,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.LinkLabel llShowTransactionInfo;
+        private System.Windows.Forms.LinkLabel llbShowVehicleInfo;
     }
 }

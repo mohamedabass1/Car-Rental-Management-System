@@ -1,4 +1,5 @@
 ﻿using CarRental.Transactions;
+using CarRental.Vehicles;
 using CarRental_Buisness;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,8 @@ namespace CarRental.Booking
             {
                 MessageBox.Show($"Rental Booking with ID {BookingID} NOT found!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 llShowTransactionInfo.Enabled = false;
+                llbShowVehicleInfo.Enabled = false;
+
                 return;
 
             }
@@ -53,14 +56,20 @@ namespace CarRental.Booking
 
 
             llShowTransactionInfo.Enabled = true;
+            llbShowVehicleInfo.Enabled = true;
         }
 
-        private async void llShowTransactionInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llShowTransactionInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            clsRentalTransaction Transaction = await clsRentalTransaction.FindByBookingIDAsync(_BookingID);
 
+            frmTransactionDetails frm = new frmTransactionDetails(_BookingID, frmTransactionDetails.enFindBy.BookingID);
+            frm.ShowDialog();
 
-            frmTransactionDetails frm = new frmTransactionDetails(Transaction.TransactionID);
+        }
+
+        private void llbShowVehicleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmShowVehicleDetails frm = new frmShowVehicleDetails(_RentalBooking.VehicleID);
             frm.ShowDialog();
 
         }

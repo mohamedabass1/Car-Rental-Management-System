@@ -17,22 +17,25 @@ namespace CarRental_Buisness.Services
         /// All operations are executed inside a single SQL transaction
         /// to guarantee atomicity and data consistency.
         /// </summary>
-        public static async Task<int> CompleteRentalReturnAsync(clsRentalBooking booking, DateTime actualReturnDate,
+        public static async Task<VehicleReturnDTO> CompleteRentalReturnAsync(clsRentalBooking booking, DateTime actualReturnDate,
                                                     short currentMileage, string finalCheckNotes, decimal additionalCharges)
         {
 
             // Validation
             if (actualReturnDate < booking.RentalStartDate)
-                return -1;
+                return null;
+
 
             if (currentMileage < booking.VehicleInfo.Mileage)
-                return -1;
+                return null;
+
 
             // Load Transaction
             clsRentalTransaction rentalTransaction = await clsRentalTransaction.FindByBookingIDAsync(booking.BookingID);
 
             if (rentalTransaction == null)
-                return -1;
+                return null;
+
 
 
 
@@ -64,16 +67,17 @@ namespace CarRental_Buisness.Services
                         FinalCheckNotes = finalCheckNotes,
                         AdditionalCharges = additionalCharges
                     };
-                    int VehicleReturnID = await clsVehicleReturn_DA.AddNewVehicleReturnAsync(vehicleReturnDTO, dbConnection, dbTransaction);
+                    vehicleReturnDTO.ReturnID = await clsVehicleReturn_DA.AddNewVehicleReturnAsync(vehicleReturnDTO, dbConnection, dbTransaction);
 
                     // if the oration failed rollback
-                    if (VehicleReturnID == -1)
+                    if (vehicleReturnDTO.ReturnID == -1)
                     {
                         dbTransaction.Rollback();
-                        return -1;
+                        return null;
+
                     }
 
-                    rentalTransaction.ReturnID = VehicleReturnID;
+                    rentalTransaction.ReturnID = vehicleReturnDTO.ReturnID;
                     rentalTransaction.ActualTotalDueAmount = actualTotalDueAmount;
                     rentalTransaction.TotalRemaining = remaining;
                     rentalTransaction.TotalRefundedAmount = refund;
@@ -88,7 +92,8 @@ namespace CarRental_Buisness.Services
                     if (!isTransactionUpdated)
                     {
                         dbTransaction.Rollback();
-                        return -1;
+                        return null;
+
                     }
 
 
@@ -99,14 +104,15 @@ namespace CarRental_Buisness.Services
                     if (!isVehicleUpdated)
                     {
                         dbTransaction.Rollback();
-                        return -1;
+                        return null;
+
                     }
 
 
                     // Commit all database operations.
                     dbTransaction.Commit();
 
-                    return VehicleReturnID;
+                    return vehicleReturnDTO;
 
                 }
             }

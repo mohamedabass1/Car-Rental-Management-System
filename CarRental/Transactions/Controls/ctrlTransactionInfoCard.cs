@@ -48,6 +48,20 @@ namespace CarRental.Transactions.Controls
             }
             _FillTransactionInfo();
         }
+
+        public async Task LoadTransactionInfoByReturnID(int ReturnID)
+        {
+            _Transaction = await clsRentalTransaction.FindByReturnIDAsync(ReturnID);
+
+            if (_Transaction == null)
+            {
+                MessageBox.Show("No Transaction with Return ID = " + ReturnID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _FillTransactionInfo();
+        }
+
+
         private void _FillTransactionInfo()
         {
             _TransactionID = _Transaction.TransactionID;
@@ -61,7 +75,7 @@ namespace CarRental.Transactions.Controls
             lblTransactionDate.Text = _Transaction.TransactionDate.ToShortDateString();
             lblInitalTotalDueAmount.Text = _Transaction.PaidInitialTotalDueAmount.ToString();
 
-
+            lblActualTotalDueAmount.Text = _Transaction.ActualTotalDueAmount?.ToString("0.00") ?? "N/A";
             lblTotalRemaining.Text = _Transaction.TotalRemaining?.ToString("0.00") ?? "N/A";
             lblTotalRefundedAmount.Text = _Transaction.TotalRefundedAmount?.ToString("0.00") ?? "N/A";
             lblUpdatedTransactionDate.Text = _Transaction.UpdatedTransactionDate?.ToShortDateString() ?? "N/A";

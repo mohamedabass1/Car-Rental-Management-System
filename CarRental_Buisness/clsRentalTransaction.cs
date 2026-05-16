@@ -194,6 +194,37 @@ namespace CarRental_Buisness
             return transaction;
         }
 
+        // 🔹 Find By BookingID
+        public static async Task<clsRentalTransaction> FindByReturnIDAsync(int ReturnID)
+        {
+            RentalTransactionDTO dto =
+                await clsRentalTransaction_DA
+                .GetTransactionByReturnIDIDAsync(ReturnID);
+
+            if (dto == null)
+                return null;
+
+            clsRentalTransaction transaction = new clsRentalTransaction(
+                          dto.TransactionID,
+                          dto.BookingID,
+                          dto.ReturnID,
+                          dto.PaymentDetails,
+                          dto.PaidInitialTotalDueAmount,
+                          dto.ActualTotalDueAmount,
+                          dto.TotalRemaining,
+                          dto.TotalRefundedAmount,
+                          dto.TransactionDate,
+                          dto.UpdatedTransactionDate
+                      );
+
+            // load booking info
+            transaction.BookingInfo = await clsRentalBooking.FindByIDAsync(transaction.BookingID);
+
+
+            return transaction;
+        }
+
+
         public static async Task<bool> DeleteAsync(int transactionID)
         {
             return await clsRentalTransaction_DA
@@ -210,6 +241,11 @@ namespace CarRental_Buisness
         {
             return await clsRentalTransaction_DA
                 .GetAllRentalTransactionsAsync();
+        }
+
+        public static async Task<bool> IsBookingReturnedAsync(int bookingID)
+        {
+            return await clsRentalTransaction_DA.IsBookingReturnedAsync(bookingID);
         }
     }
 }

@@ -42,8 +42,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.showCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.showTransactionDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddNewBooking = new System.Windows.Forms.Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRentlBooking)).BeginInit();
             this.cmsRentalBooking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -134,38 +136,37 @@
             this.dgvRentlBooking.AllowUserToAddRows = false;
             this.dgvRentlBooking.AllowUserToDeleteRows = false;
             this.dgvRentlBooking.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvRentlBooking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRentlBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRentlBooking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRentlBooking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvRentlBooking.ColumnHeadersHeight = 40;
+            this.dgvRentlBooking.ColumnHeadersHeight = 42;
             this.dgvRentlBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvRentlBooking.ContextMenuStrip = this.cmsRentalBooking;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRentlBooking.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvRentlBooking.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgvRentlBooking.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvRentlBooking.Location = new System.Drawing.Point(21, 283);
             this.dgvRentlBooking.Margin = new System.Windows.Forms.Padding(0);
             this.dgvRentlBooking.Name = "dgvRentlBooking";
             this.dgvRentlBooking.ReadOnly = true;
             this.dgvRentlBooking.RowHeadersVisible = false;
-            this.dgvRentlBooking.RowTemplate.Height = 35;
+            this.dgvRentlBooking.RowTemplate.Height = 36;
             this.dgvRentlBooking.Size = new System.Drawing.Size(1397, 392);
             this.dgvRentlBooking.TabIndex = 147;
             this.dgvRentlBooking.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -174,21 +175,21 @@
             this.dgvRentlBooking.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvRentlBooking.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgvRentlBooking.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRentlBooking.ThemeStyle.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvRentlBooking.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvRentlBooking.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRentlBooking.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.dgvRentlBooking.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvRentlBooking.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dgvRentlBooking.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.dgvRentlBooking.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvRentlBooking.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvRentlBooking.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvRentlBooking.ThemeStyle.HeaderStyle.Height = 42;
             this.dgvRentlBooking.ThemeStyle.ReadOnly = true;
             this.dgvRentlBooking.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRentlBooking.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvRentlBooking.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dgvRentlBooking.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvRentlBooking.ThemeStyle.RowsStyle.Height = 35;
-            this.dgvRentlBooking.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRentlBooking.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvRentlBooking.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dgvRentlBooking.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.dgvRentlBooking.ThemeStyle.RowsStyle.Height = 36;
+            this.dgvRentlBooking.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRentlBooking.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // cmsRentalBooking
             // 
@@ -199,7 +200,9 @@
             this.showBookingDetailsToolStripMenuItem,
             this.toolStripSeparator1,
             this.showCustomerDetailsToolStripMenuItem,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.showTransactionDetailsToolStripMenuItem,
+            this.returnToolStripMenuItem});
             this.cmsRentalBooking.Name = "guna2ContextMenuStrip1";
             this.cmsRentalBooking.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.cmsRentalBooking.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -210,33 +213,41 @@
             this.cmsRentalBooking.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsRentalBooking.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
             this.cmsRentalBooking.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsRentalBooking.Size = new System.Drawing.Size(265, 72);
+            this.cmsRentalBooking.Size = new System.Drawing.Size(280, 150);
             // 
             // showBookingDetailsToolStripMenuItem
             // 
             this.showBookingDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
             this.showBookingDetailsToolStripMenuItem.Name = "showBookingDetailsToolStripMenuItem";
-            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 28);
+            this.showBookingDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
             this.showBookingDetailsToolStripMenuItem.Text = "Show Booking Details";
             this.showBookingDetailsToolStripMenuItem.Click += new System.EventHandler(this.showBookingDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(276, 6);
             // 
             // showCustomerDetailsToolStripMenuItem
             // 
             this.showCustomerDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.PersonDetails_32;
             this.showCustomerDetailsToolStripMenuItem.Name = "showCustomerDetailsToolStripMenuItem";
-            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 28);
+            this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
             this.showCustomerDetailsToolStripMenuItem.Text = "Show Customer Details";
             this.showCustomerDetailsToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(276, 6);
+            // 
+            // showTransactionDetailsToolStripMenuItem
+            // 
+            this.showTransactionDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.Notes_32;
+            this.showTransactionDetailsToolStripMenuItem.Name = "showTransactionDetailsToolStripMenuItem";
+            this.showTransactionDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.showTransactionDetailsToolStripMenuItem.Text = "Show Transaction Details";
+            this.showTransactionDetailsToolStripMenuItem.Click += new System.EventHandler(this.showTransactionDetailsToolStripMenuItem_Click);
             // 
             // btnAddNewBooking
             // 
@@ -264,6 +275,14 @@
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 148;
             this.guna2PictureBox2.TabStop = false;
+            // 
+            // returnToolStripMenuItem
+            // 
+            this.returnToolStripMenuItem.Image = global::CarRental.Properties.Resources.car_return48;
+            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(279, 28);
+            this.returnToolStripMenuItem.Text = "Return";
+            this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // frmRentalBookingList
             // 
@@ -307,5 +326,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem showCustomerDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem showTransactionDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
     }
 }

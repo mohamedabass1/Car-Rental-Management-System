@@ -199,7 +199,7 @@ namespace CarRental.Booking
 
         private void llShowTransactionInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmTransactionDetails frm = new frmTransactionDetails(_TransactionID);
+            frmTransactionDetails frm = new frmTransactionDetails(_TransactionID, frmTransactionDetails.enFindBy.TransactionID);
             frm.ShowDialog();
         }
     }

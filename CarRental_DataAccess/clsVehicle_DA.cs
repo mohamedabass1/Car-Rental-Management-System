@@ -304,7 +304,7 @@ namespace CarRental_DataAccess
             using (SqlCommand command = new SqlCommand(query, dbConnection, dbTransaction))
             {
                 command.Parameters.AddWithValue("@VehicleID", VehicleID);
-                command.Parameters.AddWithValue("@Mileage", NewMileage);
+                command.Parameters.AddWithValue("@NewMileage", NewMileage);
                 try
                 {
 

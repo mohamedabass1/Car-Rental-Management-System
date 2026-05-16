@@ -36,7 +36,7 @@ namespace CarRental
             }
 
 
-            frm.BackColor = Color.FromArgb(245, 245, 245);
+            frm.BackColor = Color.FromArgb(241, 245, 249);
             frm.TopLevel = false;
             frm.AutoScroll = true;
             frm.Dock = DockStyle.Fill;
@@ -74,7 +74,7 @@ namespace CarRental
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmReturn(), "Manage Return", btnReturn);
+            OpenPage(new frmManageVehicleReturns(), "Manage Return", btnReturn);
 
         }
 

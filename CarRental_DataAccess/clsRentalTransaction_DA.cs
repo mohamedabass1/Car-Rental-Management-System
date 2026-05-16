@@ -215,6 +215,45 @@ namespace CarRental_DataAccess
             return null;
         }
 
+        public static async Task<RentalTransactionDTO> GetTransactionByReturnIDIDAsync(int ReturnID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand("Transactions.SP_GetTransactionByReturnID", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ReturnID", ReturnID);
+
+                await connection.OpenAsync();
+
+                using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync())
+                    {
+                        return new RentalTransactionDTO
+                        {
+                            TransactionID = (int)reader["TransactionID"],
+                            BookingID = (int)reader["BookingID"],
+
+                            ReturnID = reader["ReturnID"] == DBNull.Value ? (int?)null : (int)reader["ReturnID"],
+                            PaymentDetails = (string)reader["PaymentDetails"],
+
+                            PaidInitialTotalDueAmount = (decimal)reader["PaidInitialTotalDueAmount"],
+
+                            ActualTotalDueAmount = reader["ActualTotalDueAmount"] == DBNull.Value ? (decimal?)null : (decimal)reader["ActualTotalDueAmount"],
+                            TotalRemaining = reader["TotalRemaining"] == DBNull.Value ? (decimal?)null : (decimal)reader["TotalRemaining"],
+                            TotalRefundedAmount = reader["TotalRefundedAmount"] == DBNull.Value ? (decimal?)null : (decimal)reader["TotalRefundedAmount"],
+
+                            TransactionDate = (DateTime)reader["TransactionDate"],
+                            UpdatedTransactionDate = reader["UpdatedTransactionDate"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["UpdatedTransactionDate"]
+                        };
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
         public static async Task<bool> IsRentalTransactionExistsAsync(int transactionID)
         {
             bool isFound = false;
@@ -233,5 +272,25 @@ namespace CarRental_DataAccess
 
             return isFound;
         }
+
+        public static async Task<bool> IsBookingReturnedAsync(int BookingID)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand("Transactions.SP_IsBookingReturned", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@BookingID", BookingID);
+
+                await connection.OpenAsync();
+
+                object result = await command.ExecuteScalarAsync();
+                isFound = (result != null);
+            }
+
+            return isFound;
+        }
+
     }
 }
