@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRental_Buisness.Services;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -12,14 +13,22 @@ namespace CarRental.Dashbiard
             InitializeComponent();
         }
 
-        private void frmDashboard_Load(object sender, EventArgs e)
+        private async void frmDashboard_Load(object sender, EventArgs e)
         {
-            // Populate sample values (safe placeholders; adapt when integrating real data)
-            lblTotalCarsValue.Text = "128";
-            lblAvailableValue.Text = "54";
-            lblSoldValue.Text = "74";
-            lblCustomersValue.Text = "45";
-            lblBookingsValue.Text = "18";
+            // Get Dashboard Statistics  
+            var Statistics = await clsDashboardService.GetDashboardStatsAsync();
+
+
+
+            lblTotalCarsValue.Text = Statistics.TotalVehicles.ToString();
+
+            lblAvailableValue.Text = Statistics.AvailableVehicles.ToString();
+
+            lblCustomersValue.Text = Statistics.CustomersCount.ToString();
+
+            lblBookingsValue.Text = Statistics.ActiveBookings.ToString();
+            lblReturnedVehicles.Text = "74";
+
 
             // Configure line chart (monthly revenue)
             var revenue = new[] { 5000, 7200, 6800, 9200, 11500, 9800, 12500, 14000, 13200, 15000, 16000, 17500 };
@@ -32,9 +41,10 @@ namespace CarRental.Dashbiard
             };
             chartOverview.ChartAreas[0].AxisX.Title = "Month";
             chartOverview.ChartAreas[0].AxisY.Title = "USD";
+
             for (int i = 0; i < revenue.Length; i++)
             {
-                series.Points.AddXY(new DateTime(2026, i + 1, 1).ToString("MMM"), revenue[i]);
+                series.Points.AddXY(new DateTime(DateTime.Now.Year, i + 1, 1).ToString("MMM"), revenue[i]);
             }
             chartOverview.Series.Add(series);
 

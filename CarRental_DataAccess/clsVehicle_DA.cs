@@ -347,5 +347,69 @@ namespace CarRental_DataAccess
 
             return Mileage;
         }
+
+        public static async Task<int> GetTotalVehiclesAsync()
+        {
+            int totalVehicles = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+
+            using (SqlCommand command = new SqlCommand("Vehicle.SP_GetTotalVehicles", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    await connection.OpenAsync();
+
+                    object result = await command.ExecuteScalarAsync();
+
+                    if (result != null && int.TryParse(result.ToString(), out int count))
+                    {
+                        totalVehicles = count;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    clsEventLogger.Log("Database Exception: " + ex.Message,
+                        System.Diagnostics.EventLogEntryType.Error);
+
+                    throw;
+                }
+            }
+
+            return totalVehicles;
+        }
+        public static async Task<int> GetAvailableVehiclesCountAsync()
+        {
+            int availableVehiclesCount = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand("Vehicle.SP_GetAvailableVehiclesCount", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    await connection.OpenAsync();
+
+                    object result = await command.ExecuteScalarAsync();
+
+                    if (result != null)
+                    {
+                        availableVehiclesCount = Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    clsEventLogger.Log("Database Exception: " + ex.Message,
+                        System.Diagnostics.EventLogEntryType.Error);
+
+                    throw;
+                }
+            }
+
+            return availableVehiclesCount;
+        }
     }
 }

@@ -284,5 +284,37 @@ namespace CarRental_DataAccess
 
             return isFound;
         }
+
+        public static async Task<int> GetCustomersCountAsync()
+        {
+            int customersCount = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand("Customers.SP_GetCustomersCount", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    await connection.OpenAsync();
+
+                    object result = await command.ExecuteScalarAsync();
+
+                    if (result != null)
+                    {
+                        customersCount = Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    clsEventLogger.Log("Database Exception: " + ex.Message,
+                        System.Diagnostics.EventLogEntryType.Error);
+
+                    throw;
+                }
+            }
+
+            return customersCount;
+        }
     }
 }

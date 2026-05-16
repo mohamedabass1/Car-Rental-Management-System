@@ -138,6 +138,11 @@ namespace CarRental_Buisness
         {
             return await clsCustomer_DA.GetAllCustomersAsync();
         }
+
+        public static async Task<int> GetCustomersCountAsync()
+        {
+            return await clsCustomer_DA.GetCustomersCountAsync();
+        }
     }
 
 

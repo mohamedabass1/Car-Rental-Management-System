@@ -188,6 +188,14 @@ namespace CarRental_Buisness
             return await clsVehicle_DA.GetVehicleMileageAsync(VehicleID);
         }
 
+        public static async Task<int> GetTotalVehiclesCountAsync()
+        {
+            return await clsVehicle_DA.GetTotalVehiclesAsync();
+        }
+        public static async Task<int> GetAvailableVehiclesCountAsync()
+        {
+            return await clsVehicle_DA.GetAvailableVehiclesCountAsync();
+        }
     }
 }
 
