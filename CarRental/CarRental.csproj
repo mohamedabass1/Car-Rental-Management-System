@@ -84,17 +84,23 @@
     <Compile Include="Booking\frmShowBookingDetails.Designer.cs">
       <DependentUpon>frmShowBookingDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.cs">
+    <Compile Include="Customers\Controls\ctrlCustomerInfoCardWithFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.Designer.cs">
+    <Compile Include="Customers\Controls\ctrlCustomerInfoCardWithFilter.Designer.cs">
       <DependentUpon>ctrlCustomerInfoCardWithFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers\ctrlCustomerInfoCard.cs">
+    <Compile Include="Customers\Controls\ctrlCustomerInfoCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Customers\ctrlCustomerInfoCard.Designer.cs">
+    <Compile Include="Customers\Controls\ctrlCustomerInfoCard.Designer.cs">
       <DependentUpon>ctrlCustomerInfoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmCustomerBookingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomerBookingHistory.Designer.cs">
+      <DependentUpon>frmCustomerBookingHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\frmListCustomers.cs">
       <SubType>Form</SubType>
@@ -247,11 +253,14 @@
     <EmbeddedResource Include="Booking\frmShowBookingDetails.resx">
       <DependentUpon>frmShowBookingDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customers\Controols\ctrlCustomerInfoCardWithFilter.resx">
+    <EmbeddedResource Include="Customers\Controls\ctrlCustomerInfoCardWithFilter.resx">
       <DependentUpon>ctrlCustomerInfoCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customers\ctrlCustomerInfoCard.resx">
+    <EmbeddedResource Include="Customers\Controls\ctrlCustomerInfoCard.resx">
       <DependentUpon>ctrlCustomerInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomerBookingHistory.resx">
+      <DependentUpon>frmCustomerBookingHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>

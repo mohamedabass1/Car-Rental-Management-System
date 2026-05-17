@@ -271,5 +271,12 @@ namespace CarRental.Vehciles
                 MessageBox.Show("Vehicle was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+
+        private void showMaintenanceHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int VehicleID = (int)dgvVehciles.CurrentRow.Cells[0].Value;
+            frmVehicleMaintenanceHistory frm = new frmVehicleMaintenanceHistory(VehicleID);
+            frm.ShowDialog();
+        }
     }
 }

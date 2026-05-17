@@ -198,5 +198,14 @@ namespace CarRental.Booking
             frm.ShowDialog();
 
         }
+
+        private async void cmsRentalBooking_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            int bookingID = (int)dgvRentlBooking.CurrentRow.Cells[0].Value;
+
+            bool IsBookingReturned = await clsRentalTransaction.IsBookingReturnedAsync(bookingID);
+
+            returnToolStripMenuItem.Enabled = (!IsBookingReturned);
+        }
     }
 }

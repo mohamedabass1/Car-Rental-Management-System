@@ -40,7 +40,8 @@ namespace CarRental.Vehicles.Controls
 
         private void _FillVehicleInfo()
         {
-            llEditVehicleInfo.Enabled = true;
+
+
             lblVehicleID.Text = _VehicleID.ToString();
             lblMake.Text = _Vehicle.Make;
             lblModel.Text = _Vehicle.Model;
@@ -51,13 +52,18 @@ namespace CarRental.Vehicles.Controls
             lblIsAvilableForRent.Text = _Vehicle.IsAvailableForRent ? "Available" : "Not Available";
             lblMileage.Text = _Vehicle.Mileage.ToString();
             lblPlateNumber.Text = _Vehicle.PlateNumber;
-            lblLastMentainnaceDate.Text = (_Vehicle.LastMaintenanceInfo != null ? _Vehicle.LastMaintenanceInfo.MaintenanceDate.ToShortDateString() : "No Maintenance");
+            lblLastMaintenanceDate.Text = (_Vehicle.LastMaintenanceInfo != null ? _Vehicle.LastMaintenanceInfo.MaintenanceDate.ToShortDateString() : "No Maintenance");
+
+
+            llEditVehicleInfo.Enabled = true;
+            llShowMaintenanceHistory.Enabled = true;
         }
 
         public void ResetPersonInfo()
         {
             _VehicleID = -1;
             llEditVehicleInfo.Enabled = false;
+            llShowMaintenanceHistory.Enabled = false;
 
             lblVehicleID.Text = "[????]";
             lblMake.Text = "[????]";
@@ -68,7 +74,7 @@ namespace CarRental.Vehicles.Controls
             lblCatigory.Text = "[????]";
             lblIsAvilableForRent.Text = "[????]";
             lblMileage.Text = "[????]";
-            lblLastMentainnaceDate.Text = "[????]";
+            lblLastMaintenanceDate.Text = "[????]";
             lblPlateNumber.Text = "[????]";
 
         }
@@ -82,9 +88,10 @@ namespace CarRental.Vehicles.Controls
             await LoadVehicleInfo(_VehicleID);
         }
 
-        private void ctrlVehicleInfoCard_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        private void llShowMaintenanceHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmVehicleMaintenanceHistory frm = new frmVehicleMaintenanceHistory(_VehicleID);
+            frm.ShowDialog();
         }
     }
 }

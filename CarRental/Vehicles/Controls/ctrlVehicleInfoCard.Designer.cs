@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.llShowMaintenanceHistory = new System.Windows.Forms.LinkLabel();
             this.llEditVehicleInfo = new System.Windows.Forms.LinkLabel();
-            this.lblLastMentainnaceDate = new System.Windows.Forms.Label();
+            this.lblLastMaintenanceDate = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lblMileage = new System.Windows.Forms.Label();
@@ -79,8 +80,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.llShowMaintenanceHistory);
             this.groupBox1.Controls.Add(this.llEditVehicleInfo);
-            this.groupBox1.Controls.Add(this.lblLastMentainnaceDate);
+            this.groupBox1.Controls.Add(this.lblLastMaintenanceDate);
             this.groupBox1.Controls.Add(this.pictureBox10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.lblMileage);
@@ -123,12 +125,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehicle Information";
             // 
+            // llShowMaintenanceHistory
+            // 
+            this.llShowMaintenanceHistory.AutoSize = true;
+            this.llShowMaintenanceHistory.Enabled = false;
+            this.llShowMaintenanceHistory.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.llShowMaintenanceHistory.Location = new System.Drawing.Point(569, 28);
+            this.llShowMaintenanceHistory.Name = "llShowMaintenanceHistory";
+            this.llShowMaintenanceHistory.Size = new System.Drawing.Size(252, 23);
+            this.llShowMaintenanceHistory.TabIndex = 150;
+            this.llShowMaintenanceHistory.TabStop = true;
+            this.llShowMaintenanceHistory.Text = "Show Maintenance History";
+            this.llShowMaintenanceHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llShowMaintenanceHistory_LinkClicked);
+            // 
             // llEditVehicleInfo
             // 
             this.llEditVehicleInfo.AutoSize = true;
             this.llEditVehicleInfo.Enabled = false;
             this.llEditVehicleInfo.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.llEditVehicleInfo.Location = new System.Drawing.Point(506, 28);
+            this.llEditVehicleInfo.Location = new System.Drawing.Point(321, 28);
             this.llEditVehicleInfo.Name = "llEditVehicleInfo";
             this.llEditVehicleInfo.Size = new System.Drawing.Size(157, 23);
             this.llEditVehicleInfo.TabIndex = 149;
@@ -136,16 +151,16 @@
             this.llEditVehicleInfo.Text = "Edit Vehicle Info";
             this.llEditVehicleInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llEditVehicleInfo_LinkClicked);
             // 
-            // lblLastMentainnaceDate
+            // lblLastMaintenanceDate
             // 
-            this.lblLastMentainnaceDate.AutoSize = true;
-            this.lblLastMentainnaceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastMentainnaceDate.Location = new System.Drawing.Point(636, 255);
-            this.lblLastMentainnaceDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLastMentainnaceDate.Name = "lblLastMentainnaceDate";
-            this.lblLastMentainnaceDate.Size = new System.Drawing.Size(53, 20);
-            this.lblLastMentainnaceDate.TabIndex = 148;
-            this.lblLastMentainnaceDate.Text = "[????]";
+            this.lblLastMaintenanceDate.AutoSize = true;
+            this.lblLastMaintenanceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastMaintenanceDate.Location = new System.Drawing.Point(636, 255);
+            this.lblLastMaintenanceDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLastMaintenanceDate.Name = "lblLastMaintenanceDate";
+            this.lblLastMaintenanceDate.Size = new System.Drawing.Size(53, 20);
+            this.lblLastMaintenanceDate.TabIndex = 148;
+            this.lblLastMaintenanceDate.Text = "[????]";
             // 
             // pictureBox10
             // 
@@ -166,7 +181,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(227, 23);
             this.label9.TabIndex = 146;
-            this.label9.Text = "Last Mentainnace Date:";
+            this.label9.Text = "Last Maintenance Date:";
             // 
             // lblMileage
             // 
@@ -499,7 +514,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlVehicleInfoCard";
             this.Size = new System.Drawing.Size(890, 324);
-            this.Validating += new System.ComponentModel.CancelEventHandler(this.ctrlVehicleInfoCard_Validating);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -550,9 +564,10 @@
         private System.Windows.Forms.Label lblMileage;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblLastMentainnaceDate;
+        private System.Windows.Forms.Label lblLastMaintenanceDate;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel llEditVehicleInfo;
+        private System.Windows.Forms.LinkLabel llShowMaintenanceHistory;
     }
 }

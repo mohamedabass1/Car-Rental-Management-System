@@ -217,7 +217,8 @@ namespace CarRental.Transactions
             this.cmsRentalTransactions.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.cmsRentalTransactions.RenderStyle.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.cmsRentalTransactions.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cmsRentalTransactions.Size = new System.Drawing.Size(252, 186);
+            this.cmsRentalTransactions.Size = new System.Drawing.Size(252, 208);
+            this.cmsRentalTransactions.Opening += new System.ComponentModel.CancelEventHandler(this.cmsRentalTransactions_Opening);
             // 
             // showBookingDetailsToolStripMenuItem
             // 
@@ -267,10 +268,12 @@ namespace CarRental.Transactions
             // 
             // showReturnDetailsToolStripMenuItem
             // 
+            this.showReturnDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.Return;
             this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
             this.showReturnDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
+            this.showReturnDetailsToolStripMenuItem.Click += new System.EventHandler(this.showReturnDetailsToolStripMenuItem_Click);
             // 
             // guna2PictureBox1
             // 

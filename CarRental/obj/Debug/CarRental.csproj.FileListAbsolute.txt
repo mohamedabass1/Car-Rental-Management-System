@@ -47,3 +47,4 @@ C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.R
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Return.frmManageVehicleReturns.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Return.Controls.ctrlReturnInfoCard.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Return.frmShowReturnDetails.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmCustomerBookingHistory.resources
