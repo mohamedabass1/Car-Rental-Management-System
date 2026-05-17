@@ -59,7 +59,7 @@
             this.btnClose.Image = global::CarRental.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnClose.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnClose.Location = new System.Drawing.Point(799, 559);
+            this.btnClose.Location = new System.Drawing.Point(799, 460);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(151, 45);
             this.btnClose.TabIndex = 121;
@@ -70,10 +70,10 @@
             // 
             this.ctrlCustomerInfoCard1.BackColor = System.Drawing.Color.White;
             this.ctrlCustomerInfoCard1.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.ctrlCustomerInfoCard1.Location = new System.Drawing.Point(20, 62);
+            this.ctrlCustomerInfoCard1.Location = new System.Drawing.Point(24, 66);
             this.ctrlCustomerInfoCard1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlCustomerInfoCard1.Name = "ctrlCustomerInfoCard1";
-            this.ctrlCustomerInfoCard1.Size = new System.Drawing.Size(937, 482);
+            this.ctrlCustomerInfoCard1.Size = new System.Drawing.Size(926, 387);
             this.ctrlCustomerInfoCard1.TabIndex = 122;
             // 
             // frmShowCustomerDetails
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(979, 616);
+            this.ClientSize = new System.Drawing.Size(979, 521);
             this.Controls.Add(this.ctrlCustomerInfoCard1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblTitle);

@@ -40,14 +40,14 @@ namespace CarRental.Transactions
             this.label2 = new System.Windows.Forms.Label();
             this.dgvTransactionsList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsRentalTransactions = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.showReturnDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.showBookingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.showCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.showTransactionDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showVehicleDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showReturnDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionsList)).BeginInit();
             this.cmsRentalTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -65,7 +65,7 @@ namespace CarRental.Transactions
             this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtFilterValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Location = new System.Drawing.Point(343, 278);
+            this.txtFilterValue.Location = new System.Drawing.Point(329, 249);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PlaceholderText = "";
@@ -78,10 +78,10 @@ namespace CarRental.Transactions
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(31, 283);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(17, 254);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 21);
+            this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 103;
             this.label1.Text = "Filter By:";
             // 
@@ -102,7 +102,7 @@ namespace CarRental.Transactions
             "Customer Name",
             "Booking ID",
             "Return ID"});
-            this.cbFilterBy.Location = new System.Drawing.Point(122, 278);
+            this.cbFilterBy.Location = new System.Drawing.Point(108, 249);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(202, 36);
             this.cbFilterBy.TabIndex = 102;
@@ -112,10 +112,10 @@ namespace CarRental.Transactions
             // 
             this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblRecordsCount.Location = new System.Drawing.Point(141, 709);
+            this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.lblRecordsCount.Location = new System.Drawing.Point(119, 744);
             this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(24, 21);
+            this.lblRecordsCount.Size = new System.Drawing.Size(30, 25);
             this.lblRecordsCount.TabIndex = 100;
             this.lblRecordsCount.Text = "??";
             // 
@@ -123,10 +123,10 @@ namespace CarRental.Transactions
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(31, 709);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(9, 744);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 21);
+            this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 99;
             this.label2.Text = "# Records:";
             // 
@@ -143,6 +143,7 @@ namespace CarRental.Transactions
             this.dgvTransactionsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTransactionsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(70)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -163,21 +164,21 @@ namespace CarRental.Transactions
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTransactionsList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTransactionsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.dgvTransactionsList.Location = new System.Drawing.Point(26, 329);
+            this.dgvTransactionsList.Location = new System.Drawing.Point(12, 300);
             this.dgvTransactionsList.MultiSelect = false;
             this.dgvTransactionsList.Name = "dgvTransactionsList";
             this.dgvTransactionsList.ReadOnly = true;
             this.dgvTransactionsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTransactionsList.RowHeadersVisible = false;
             this.dgvTransactionsList.RowTemplate.Height = 44;
-            this.dgvTransactionsList.Size = new System.Drawing.Size(1426, 365);
+            this.dgvTransactionsList.Size = new System.Drawing.Size(1426, 423);
             this.dgvTransactionsList.TabIndex = 97;
             this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
             this.dgvTransactionsList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvTransactionsList.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvTransactionsList.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.dgvTransactionsList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.dgvTransactionsList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(70)))), ((int)(((byte)(229)))));
             this.dgvTransactionsList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -218,35 +219,6 @@ namespace CarRental.Transactions
             this.cmsRentalTransactions.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cmsRentalTransactions.Size = new System.Drawing.Size(252, 186);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
-            // 
-            // showReturnDetailsToolStripMenuItem
-            // 
-            this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
-            this.showReturnDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
-            this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.transaction__1_;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(588, 31);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(241, 178);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 98;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // showBookingDetailsToolStripMenuItem
             // 
             this.showBookingDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_321;
@@ -256,6 +228,11 @@ namespace CarRental.Transactions
             this.showBookingDetailsToolStripMenuItem.Text = "Show Booking Details";
             this.showBookingDetailsToolStripMenuItem.Click += new System.EventHandler(this.showBookingDetailsToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
+            // 
             // showCustomerDetailsToolStripMenuItem
             // 
             this.showCustomerDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.PersonDetails_32;
@@ -264,6 +241,11 @@ namespace CarRental.Transactions
             this.showCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showCustomerDetailsToolStripMenuItem.Text = "Show Customer Details";
             this.showCustomerDetailsToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDetailsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
             // 
             // showTransactionDetailsToolStripMenuItem
             // 
@@ -282,6 +264,25 @@ namespace CarRental.Transactions
             this.showVehicleDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.showVehicleDetailsToolStripMenuItem.Text = "Show Vehicle Details";
             this.showVehicleDetailsToolStripMenuItem.Click += new System.EventHandler(this.showVehicleDetailsToolStripMenuItem_Click);
+            // 
+            // showReturnDetailsToolStripMenuItem
+            // 
+            this.showReturnDetailsToolStripMenuItem.Name = "showReturnDetailsToolStripMenuItem";
+            this.showReturnDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.showReturnDetailsToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
+            this.showReturnDetailsToolStripMenuItem.Text = "Show Return Details";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.transaction__1_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(593, 12);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(241, 178);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 98;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // frmTransactionsList
             // 

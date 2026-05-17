@@ -1,4 +1,8 @@
-﻿namespace CarRental.Customers
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace CarRental.Customers
 {
     partial class frmListCustomers
     {
@@ -33,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCustomersList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsCustomers = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.showCustomerDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addNewCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,66 +63,73 @@
             this.dgvCustomersList.AllowUserToAddRows = false;
             this.dgvCustomersList.AllowUserToDeleteRows = false;
             this.dgvCustomersList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvCustomersList.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.dgvCustomersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCustomersList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCustomersList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dgvCustomersList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCustomersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCustomersList.ColumnHeadersHeight = 40;
-            this.dgvCustomersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCustomersList.ColumnHeadersHeight = 55;
             this.dgvCustomersList.ContextMenuStrip = this.cmsCustomers;
+            this.dgvCustomersList.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomersList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCustomersList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomersList.Location = new System.Drawing.Point(19, 315);
+            this.dgvCustomersList.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvCustomersList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(241)))));
+            this.dgvCustomersList.Location = new System.Drawing.Point(24, 300);
+            this.dgvCustomersList.MultiSelect = false;
             this.dgvCustomersList.Name = "dgvCustomersList";
             this.dgvCustomersList.ReadOnly = true;
             this.dgvCustomersList.RowHeadersVisible = false;
-            this.dgvCustomersList.RowTemplate.Height = 35;
-            this.dgvCustomersList.Size = new System.Drawing.Size(1426, 365);
-            this.dgvCustomersList.TabIndex = 3;
+            this.dgvCustomersList.RowTemplate.Height = 48;
+            this.dgvCustomersList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvCustomersList.Size = new System.Drawing.Size(1426, 423);
+            this.dgvCustomersList.TabIndex = 97;
             this.dgvCustomersList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCustomersList.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvCustomersList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dgvCustomersList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvCustomersList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvCustomersList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCustomersList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomersList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvCustomersList.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.dgvCustomersList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(241)))));
+            this.dgvCustomersList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.dgvCustomersList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCustomersList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dgvCustomersList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.dgvCustomersList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvCustomersList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCustomersList.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvCustomersList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCustomersList.ThemeStyle.HeaderStyle.Height = 55;
             this.dgvCustomersList.ThemeStyle.ReadOnly = true;
             this.dgvCustomersList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCustomersList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCustomersList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dgvCustomersList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvCustomersList.ThemeStyle.RowsStyle.Height = 35;
-            this.dgvCustomersList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomersList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCustomersList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvCustomersList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            this.dgvCustomersList.ThemeStyle.RowsStyle.Height = 48;
+            this.dgvCustomersList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.dgvCustomersList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             // 
             // cmsCustomers
             // 
-            this.cmsCustomers.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.cmsCustomers.ImageScalingSize = new System.Drawing.Size(22, 22);
+            this.cmsCustomers.BackColor = System.Drawing.Color.White;
+            this.cmsCustomers.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.cmsCustomers.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsCustomers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
             this.showCustomerDeToolStripMenuItem,
             this.toolStripSeparator1,
             this.addNewCustomerToolStripMenuItem,
@@ -126,80 +138,102 @@
             this.toolStripSeparator3,
             this.showCuostomerBookingHistoryToolStripMenuItem,
             this.showCustomerTransactionsHistoryToolStripMenuItem});
-            this.cmsCustomers.Name = "guna2ContextMenuStrip1";
-            this.cmsCustomers.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.cmsCustomers.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cmsCustomers.Name = "cmsCustomers";
+            this.cmsCustomers.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmsCustomers.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(130)))), ((int)(((byte)(246)))));
+            this.cmsCustomers.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.cmsCustomers.RenderStyle.ColorTable = null;
             this.cmsCustomers.RenderStyle.RoundedEdges = true;
             this.cmsCustomers.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.cmsCustomers.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.cmsCustomers.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.cmsCustomers.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.cmsCustomers.RenderStyle.SeparatorColor = System.Drawing.Color.Gray;
-            this.cmsCustomers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.cmsCustomers.Size = new System.Drawing.Size(364, 184);
+            this.cmsCustomers.RenderStyle.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.cmsCustomers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.cmsCustomers.Size = new System.Drawing.Size(229, 304);
+         
             // 
             // showCustomerDeToolStripMenuItem
             // 
+            this.showCustomerDeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.showCustomerDeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.showCustomerDeToolStripMenuItem.Image = global::CarRental.Properties.Resources.person_details32;
             this.showCustomerDeToolStripMenuItem.Name = "showCustomerDeToolStripMenuItem";
-            this.showCustomerDeToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.showCustomerDeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.showCustomerDeToolStripMenuItem.Size = new System.Drawing.Size(248, 40);
             this.showCustomerDeToolStripMenuItem.Text = "Show Customer Details";
             this.showCustomerDeToolStripMenuItem.Click += new System.EventHandler(this.showCustomerDeToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(360, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(225, 6);
             // 
             // addNewCustomerToolStripMenuItem
             // 
+            this.addNewCustomerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.addNewCustomerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.addNewCustomerToolStripMenuItem.Image = global::CarRental.Properties.Resources.AddPerson_32;
             this.addNewCustomerToolStripMenuItem.Name = "addNewCustomerToolStripMenuItem";
-            this.addNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
+            this.addNewCustomerToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.addNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(248, 40);
             this.addNewCustomerToolStripMenuItem.Text = "Add New Customer";
             this.addNewCustomerToolStripMenuItem.Click += new System.EventHandler(this.addNewCustomerToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.editToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.editToolStripMenuItem.Image = global::CarRental.Properties.Resources.edit_32;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(248, 40);
+            this.editToolStripMenuItem.Text = "Edit Customer";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
+            this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.deleteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.deleteToolStripMenuItem.Image = global::CarRental.Properties.Resources.Delete_32;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(248, 40);
+            this.deleteToolStripMenuItem.Text = "Delete Customer";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
+            this.toolStripSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(360, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(225, 6);
             // 
             // showCuostomerBookingHistoryToolStripMenuItem
             // 
+            this.showCuostomerBookingHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.showCuostomerBookingHistoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.showCuostomerBookingHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
             this.showCuostomerBookingHistoryToolStripMenuItem.Name = "showCuostomerBookingHistoryToolStripMenuItem";
-            this.showCuostomerBookingHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCuostomerBookingHistoryToolStripMenuItem.Text = "Show Cuostomer Booking History";
+            this.showCuostomerBookingHistoryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.showCuostomerBookingHistoryToolStripMenuItem.Size = new System.Drawing.Size(248, 40);
+            this.showCuostomerBookingHistoryToolStripMenuItem.Text = "Booking History";
             // 
             // showCustomerTransactionsHistoryToolStripMenuItem
             // 
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.showCustomerTransactionsHistoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.showCustomerTransactionsHistoryToolStripMenuItem.Image = global::CarRental.Properties.Resources.Calendar_321;
             this.showCustomerTransactionsHistoryToolStripMenuItem.Name = "showCustomerTransactionsHistoryToolStripMenuItem";
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Size = new System.Drawing.Size(363, 28);
-            this.showCustomerTransactionsHistoryToolStripMenuItem.Text = "Show Customer Transactions History";
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Size = new System.Drawing.Size(248, 40);
+            this.showCustomerTransactionsHistoryToolStripMenuItem.Text = "Transactions History";
             // 
             // lblRecordsCount
             // 
             this.lblRecordsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.lblRecordsCount.Location = new System.Drawing.Point(134, 695);
+            this.lblRecordsCount.Location = new System.Drawing.Point(134, 736);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(32, 22);
             this.lblRecordsCount.TabIndex = 11;
@@ -210,7 +244,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(24, 695);
+            this.label2.Location = new System.Drawing.Point(24, 736);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 23);
             this.label2.TabIndex = 10;
@@ -236,7 +270,7 @@
             "Phone",
             "Email",
             "License No"});
-            this.cbFilterBy.Location = new System.Drawing.Point(115, 264);
+            this.cbFilterBy.Location = new System.Drawing.Point(122, 255);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(202, 36);
             this.cbFilterBy.TabIndex = 94;
@@ -246,7 +280,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(24, 269);
+            this.label1.Location = new System.Drawing.Point(31, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 23);
             this.label1.TabIndex = 95;
@@ -264,7 +298,7 @@
             this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtFilterValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterValue.Location = new System.Drawing.Point(336, 264);
+            this.txtFilterValue.Location = new System.Drawing.Point(343, 255);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PlaceholderText = "";
@@ -280,7 +314,7 @@
             this.btnAddCustomer.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCustomer.Image = global::CarRental.Properties.Resources.Add_Person_40;
-            this.btnAddCustomer.Location = new System.Drawing.Point(1368, 245);
+            this.btnAddCustomer.Location = new System.Drawing.Point(1368, 237);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(76, 55);
             this.btnAddCustomer.TabIndex = 92;
@@ -292,7 +326,7 @@
             this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2PictureBox1.Image = global::CarRental.Properties.Resources.Customers;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(613, 47);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(606, 12);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(249, 166);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -344,5 +378,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbFilterBy;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

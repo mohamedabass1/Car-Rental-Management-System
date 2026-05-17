@@ -135,23 +135,23 @@
             // 
             this.ctrlCustomerInfoCard1.BackColor = System.Drawing.Color.White;
             this.ctrlCustomerInfoCard1.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.ctrlCustomerInfoCard1.Location = new System.Drawing.Point(1, 92);
+            this.ctrlCustomerInfoCard1.Location = new System.Drawing.Point(4, 99);
             this.ctrlCustomerInfoCard1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlCustomerInfoCard1.Name = "ctrlCustomerInfoCard1";
-            this.ctrlCustomerInfoCard1.Size = new System.Drawing.Size(932, 469);
-            this.ctrlCustomerInfoCard1.TabIndex = 0;
+            this.ctrlCustomerInfoCard1.Size = new System.Drawing.Size(926, 387);
+            this.ctrlCustomerInfoCard1.TabIndex = 3;
             // 
             // ctrlCustomerInfoCardWithFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.gbFilter);
             this.Controls.Add(this.ctrlCustomerInfoCard1);
+            this.Controls.Add(this.gbFilter);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ctrlCustomerInfoCardWithFilter";
-            this.Size = new System.Drawing.Size(933, 554);
+            this.Size = new System.Drawing.Size(942, 489);
             this.Load += new System.EventHandler(this.CustomerInfoCardWithFilter_Load);
             this.gbFilter.ResumeLayout(false);
             this.gbFilter.PerformLayout();

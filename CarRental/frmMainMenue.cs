@@ -110,16 +110,28 @@ namespace CarRental
             Application.Exit();
         }
 
+        private void cmsEditProfile_Opening()
+        {
+
+        }
+
 
 
         private void btnMax_Click_1(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
+
+            if (this.WindowState == FormWindowState.Normal)
             {
-                WindowState = FormWindowState.Maximized;
+
+                this.WindowState = FormWindowState.Maximized;
+
+
             }
             else
-                WindowState = FormWindowState.Normal;
+            {
+                this.WindowState = FormWindowState.Normal;
+
+            }
         }
 
         private void btnMin_Click(object sender, EventArgs e)
