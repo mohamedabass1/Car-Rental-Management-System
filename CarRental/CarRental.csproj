@@ -581,5 +581,26 @@
   <ItemGroup>
     <None Include="Resources\transaction %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Return1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fleet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crowd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

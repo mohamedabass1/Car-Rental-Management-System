@@ -127,9 +127,23 @@ namespace CarRental
             WindowState = FormWindowState.Minimized;
         }
 
-        private void cmsEditProfile_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void frmMainMenue_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                panelMenu.Width = 300;
+            }
+            else
+            {
+                panelMenu.Width = 280;
+            }
         }
     }
 }
