@@ -102,6 +102,12 @@
     <Compile Include="Customers\frmCustomerBookingHistory.Designer.cs">
       <DependentUpon>frmCustomerBookingHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customers\frmCustomerTransactionsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomerTransactionsHistory.Designer.cs">
+      <DependentUpon>frmCustomerTransactionsHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customers\frmListCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +177,6 @@
     </Compile>
     <Compile Include="Return\frmVehicleReturn.Designer.cs">
       <DependentUpon>frmVehicleReturn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactions\Controls\ctrlTransactionInfoCard.cs">
       <SubType>UserControl</SubType>
@@ -262,6 +262,9 @@
     <EmbeddedResource Include="Customers\frmCustomerBookingHistory.resx">
       <DependentUpon>frmCustomerBookingHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomerTransactionsHistory.resx">
+      <DependentUpon>frmCustomerTransactionsHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,9 +307,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Return\frmVehicleReturn.resx">
       <DependentUpon>frmVehicleReturn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\Controls\ctrlTransactionInfoCard.resx">
       <DependentUpon>ctrlTransactionInfoCard.cs</DependentUpon>

@@ -431,7 +431,7 @@ namespace CarRental
             // 
             this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::CarRental.Properties.Resources.DefaultMale;
+            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(18, 760);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -470,9 +470,8 @@ namespace CarRental
             this.mainPanal.Location = new System.Drawing.Point(290, 82);
             this.mainPanal.Name = "mainPanal";
             this.mainPanal.Padding = new System.Windows.Forms.Padding(14);
-            this.mainPanal.Size = new System.Drawing.Size(1240, 724);
+            this.mainPanal.Size = new System.Drawing.Size(1240, 738);
             this.mainPanal.TabIndex = 1;
-            this.mainPanal.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanal_Paint);
             // 
             // panel1
             // 
@@ -480,13 +479,12 @@ namespace CarRental
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(1530, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 806);
+            this.panel1.Size = new System.Drawing.Size(10, 820);
             this.panel1.TabIndex = 4;
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
-          // this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(290, 806);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1250, 14);
@@ -606,9 +604,10 @@ namespace CarRental
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainMenue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main Menu";
+            this.Text = "Car Rental Management Systme";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.frmMainMenue_Resize);
             this.cmsEditProfile.ResumeLayout(false);

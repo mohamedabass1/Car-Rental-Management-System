@@ -247,5 +247,11 @@ namespace CarRental_Buisness
         {
             return await clsRentalTransaction_DA.IsBookingReturnedAsync(bookingID);
         }
+
+        public static async Task<DataTable> GetCustomerTransactionsHistoryAsync(int customerID)
+        {
+            return await clsRentalTransaction_DA.GetCustomerTransactionsHistoryAsync(customerID);
+        }
+
     }
 }

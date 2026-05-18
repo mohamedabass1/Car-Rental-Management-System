@@ -210,5 +210,12 @@ namespace CarRental.Customers
             frmCustomerBookingHistory frm = new frmCustomerBookingHistory(CustomerID);
             frm.ShowDialog();
         }
+
+        private void showCustomerTransactionsHistoryToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            int CustomerID = (int)dgvCustomersList.CurrentRow.Cells[0].Value;
+            frmCustomerTransactionsHistory frm = new frmCustomerTransactionsHistory(CustomerID);
+            frm.ShowDialog();
+        }
     }
 }

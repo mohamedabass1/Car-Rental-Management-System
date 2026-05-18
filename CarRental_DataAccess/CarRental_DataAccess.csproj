@@ -49,6 +49,7 @@
     <Compile Include="clsMaintenance_DA.cs" />
     <Compile Include="clsPerson_DA.cs" />
     <Compile Include="clsRentalBooking_DA.cs" />
+    <Compile Include="clsUser_DA.cs" />
     <Compile Include="clsVehicleCategory_DA.cs" />
     <Compile Include="clsVehicleReturn_DA.cs" />
     <Compile Include="clsVehicle_DA.cs" />

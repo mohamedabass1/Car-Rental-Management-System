@@ -74,7 +74,7 @@ namespace CarRental
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            OpenPage(new frmManageVehicleReturns(), "Manage Return", btnReturn);
+            OpenPage(new frmManageVehicleReturns(), "Manage Returns", btnReturn);
 
         }
 
@@ -99,22 +99,10 @@ namespace CarRental
             OpenPage(new frmUsers(), "Manage Users", btnUsers);
 
         }
-
-        private void mainPanal_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void cmsEditProfile_Opening()
-        {
-
-        }
-
 
 
         private void btnMax_Click_1(object sender, EventArgs e)
@@ -122,15 +110,11 @@ namespace CarRental
 
             if (this.WindowState == FormWindowState.Normal)
             {
-
                 this.WindowState = FormWindowState.Maximized;
-
-
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
-
             }
         }
 

@@ -66,7 +66,7 @@ namespace CarRental_Buisness
         }
 
 
-        private PersonDTO _ToDTO()
+        public PersonDTO ToDTO()
         {
             return new PersonDTO
             {
@@ -84,13 +84,13 @@ namespace CarRental_Buisness
         }
         private async Task<bool> _AddNewPersonAsync()
         {
-            this.PersonID = await clsPerson_DA.AddNewPersonAsync(this._ToDTO());
+            this.PersonID = await clsPerson_DA.AddNewPersonAsync(this.ToDTO());
 
             return (this.PersonID != -1);
         }
         private async Task<bool> _UpdateAsync()
         {
-            return await clsPerson_DA.UpdatePersonAsync(this._ToDTO());
+            return await clsPerson_DA.UpdatePersonAsync(this.ToDTO());
         }
 
         public static async Task<clsPerson> FindAsync(int PersonID)

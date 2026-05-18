@@ -21,7 +21,6 @@ C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.U
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\bin\Debug\CarRental_Utilities.dll
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\bin\Debug\CarRental_Utilities.pdb
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.People.frmAddUpdateCustomer.resources
-C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Test.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmListCustomers.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmShowCustomerDetails.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.ctrlCustomerInfoCard.resources
@@ -48,3 +47,4 @@ C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.R
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Return.Controls.ctrlReturnInfoCard.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Return.frmShowReturnDetails.resources
 C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmCustomerBookingHistory.resources
+C:\Users\hp\Desktop\Car Rental Project\CarRental\CarRental\obj\Debug\CarRental.Customers.frmCustomerTransactionsHistory.resources

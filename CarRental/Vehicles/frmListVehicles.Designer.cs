@@ -34,6 +34,7 @@ namespace CarRental.Vehciles
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListVehicles));
             this.label6 = new System.Windows.Forms.Label();
             this.dgvVehciles = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmsVehicles = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
@@ -151,7 +152,6 @@ namespace CarRental.Vehciles
             this.maintenanceToolStripMenuItem,
             this.showMaintenanceHistoryToolStripMenuItem});
             this.cmsVehicles.Name = "guna2ContextMenuStrip1";
-            this.cmsVehicles.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmsVehicles.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(130)))), ((int)(((byte)(246)))));
             this.cmsVehicles.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.cmsVehicles.RenderStyle.ColorTable = null;
@@ -385,7 +385,7 @@ namespace CarRental.Vehciles
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2PictureBox2.Image = global::CarRental.Properties.Resources.vehilcesList;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(610, 18);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(0);

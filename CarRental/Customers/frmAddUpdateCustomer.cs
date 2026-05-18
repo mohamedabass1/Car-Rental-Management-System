@@ -1,5 +1,6 @@
 ﻿using CarRental.Global_Classes;
 using CarRental_Buisness;
+using CarRental_Buisness.Services;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -160,9 +161,23 @@ namespace CarRental.People
             _Customer.PersonInfo.NationalityCountryID = NationalityCountryID;
 
 
-            if (await _Customer.SaveAsync())
+            bool isSaved = false;
+
+            if (_Mode == enMode.AddNew)
+            {
+                isSaved = await clsCustomerRegistrationService
+                    .RegisterCustomerAsync(_Customer) != -1;
+            }
+            else
+            {
+                // update mode
+                isSaved = await _Customer.SaveAsync();
+            }
+
+            if (isSaved)
             {
                 lblCustomerID.Text = _Customer.CustomerID.ToString();
+
                 //change form mode to update.
                 _Mode = enMode.Update;
                 lblTitle.Text = "Update Customer";
@@ -212,7 +227,8 @@ namespace CarRental.People
             else
             {
                 errorProvider1.SetError(txtEmail, null);
-            };
+            }
+            ;
 
         }
 

@@ -36,7 +36,7 @@ namespace CarRental_Buisness
             _Mode = enMode.Update;
         }
 
-        private CustomerDTO _ToDTO()
+        internal CustomerDTO ToDTO()
         {
             return new CustomerDTO { CustomerID = this.CustomerID, PersonID = this.PersonID, DriverLicenseNumber = this.DriverLicenseNumber };
         }
@@ -44,24 +44,23 @@ namespace CarRental_Buisness
         private async Task<bool> _AddNewAsync()
         {
 
-            this.CustomerID = await clsCustomer_DA.AddNewCustomerAsync(this._ToDTO());
+            this.CustomerID = await clsCustomer_DA.AddNewCustomerAsync(this.ToDTO());
 
             return this.CustomerID != -1;
         }
 
         private async Task<bool> _UpdateAsync()
         {
-            return await clsCustomer_DA.UpdateCustomerAsync(this._ToDTO());
+            return await clsCustomer_DA.UpdateCustomerAsync(this.ToDTO());
+        }
+        public void MarkAsSaved()
+        {
+            _Mode = enMode.Update;
         }
 
         public async Task<bool> SaveAsync()
         {
-            if (!await PersonInfo.SaveAsync())
-            {
-                return false;
-            }
 
-            this.PersonID = PersonInfo.PersonID;
 
             switch (_Mode)
             {

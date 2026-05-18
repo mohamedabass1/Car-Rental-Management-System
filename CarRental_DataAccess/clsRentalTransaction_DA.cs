@@ -292,5 +292,28 @@ namespace CarRental_DataAccess
             return isFound;
         }
 
+        public static async Task<DataTable> GetCustomerTransactionsHistoryAsync(int customerID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlCommand command = new SqlCommand("Transactions.SP_GetCustomerTransactionsHistory", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+
+                await connection.OpenAsync();
+
+                using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                        dt.Load(reader);
+                }
+            }
+
+            return dt;
+        }
+
+
     }
 }

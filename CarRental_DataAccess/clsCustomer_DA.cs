@@ -45,6 +45,43 @@ namespace CarRental_DataAccess
 
             return newCustomerID;
         }
+        public static async Task<int> AddNewCustomerAsync(CustomerDTO customer, SqlConnection connection, SqlTransaction dbTransaction)
+        {
+            int newCustomerID = -1;
+
+            using (SqlCommand command = new SqlCommand("Customers.SP_AddNewCustomer", connection, dbTransaction))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@PersonID", customer.PersonID);
+                command.Parameters.AddWithValue("@DriverLicenseNumber", customer.DriverLicenseNumber);
+
+                SqlParameter outputParam = new SqlParameter("@NewCustomerID", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                command.Parameters.Add(outputParam);
+
+                try
+                {
+                    await connection.OpenAsync();
+                    await command.ExecuteNonQueryAsync();
+
+                    newCustomerID = (int)outputParam.Value;
+                }
+                catch (Exception ex)
+                {
+
+                    newCustomerID = -1;
+                    clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
+                }
+
+            }
+
+            return newCustomerID;
+        }
+
 
         public static async Task<CustomerDTO> GetCustomerByIDAsync(int customerID)
         {

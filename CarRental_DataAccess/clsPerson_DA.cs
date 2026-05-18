@@ -71,103 +71,54 @@ namespace CarRental_DataAccess
             }
             return NewPersonID;
         }
-        public static int AddNewPerson(PersonDTO Person)
+        public static async Task<int> AddNewPersonAsync(PersonDTO Person, SqlConnection connection, SqlTransaction dbTransaction)
         {
             int NewPersonID = -1;
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+
+            using (SqlCommand command = new SqlCommand("People.SP_AddNewPerson", connection, dbTransaction))
             {
-                using (SqlCommand command = new SqlCommand("People.SP_AddNewPerson", connection))
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@FirstName", Person.FirstName);
+
+                if (string.IsNullOrWhiteSpace(Person.SecondName))
+                    command.Parameters.AddWithValue("@SecondName", DBNull.Value);
+                else
+                    command.Parameters.AddWithValue("@SecondName", Person.SecondName);
+
+
+                command.Parameters.AddWithValue("@LastName", Person.LastName);
+                command.Parameters.AddWithValue("@DateOfBirth", Person.DateOfBirth);
+                command.Parameters.AddWithValue("@Gendor", Person.Gendor);
+                command.Parameters.AddWithValue("@Address", Person.Address);
+                command.Parameters.AddWithValue("@Phone", Person.Phone);
+
+                if (string.IsNullOrWhiteSpace(Person.Email))
+                    command.Parameters.AddWithValue("@Email", DBNull.Value);
+                else
+                    command.Parameters.AddWithValue("@Email", Person.Email);
+
+                command.Parameters.AddWithValue("@NationalityCountryID", Person.NationalityCountryID);
+
+
+                SqlParameter outputPersonIDParam = new SqlParameter("@NewPersonID", SqlDbType.Int)
                 {
-                    command.CommandType = CommandType.StoredProcedure;
+                    Direction = ParameterDirection.Output
+                };
 
-                    command.Parameters.AddWithValue("@FirstName", Person.FirstName);
+                command.Parameters.Add(outputPersonIDParam);
 
-                    if (string.IsNullOrWhiteSpace(Person.SecondName))
-                        command.Parameters.AddWithValue("@SecondName", DBNull.Value);
-                    else
-                        command.Parameters.AddWithValue("@SecondName", Person.SecondName);
+                // Open connection and execute the command
+                await connection.OpenAsync();
 
-
-                    command.Parameters.AddWithValue("@LastName", Person.LastName);
-                    command.Parameters.AddWithValue("@DateOfBirth", Person.DateOfBirth);
-                    command.Parameters.AddWithValue("@Gendor", Person.Gendor);
-                    command.Parameters.AddWithValue("@Address", Person.Address);
-                    command.Parameters.AddWithValue("@Phone", Person.Phone);
-
-                    if (string.IsNullOrWhiteSpace(Person.Email))
-                        command.Parameters.AddWithValue("@Email", DBNull.Value);
-                    else
-                        command.Parameters.AddWithValue("@Email", Person.Email);
-
-                    command.Parameters.AddWithValue("@NationalityCountryID", Person.NationalityCountryID);
-
-                    SqlParameter outputPersonIDParam = new SqlParameter("@NewPersonID", SqlDbType.Int)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
-
-                    command.Parameters.Add(outputPersonIDParam);
-
-                    // Open connection and execute the command
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    NewPersonID = (int)outputPersonIDParam.Value;
-
-                }
+                await command.ExecuteNonQueryAsync();
+                NewPersonID = (int)outputPersonIDParam.Value;
 
             }
+
             return NewPersonID;
         }
 
-        public static PersonDTO GetPersonByID(int PersonID)
-        {
-            PersonDTO person1;
-
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
-            {
-                using (SqlCommand command = new SqlCommand("People.SP_GetPersonByID", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    command.Parameters.AddWithValue("@PersonID", PersonID);
-
-                    try
-                    {
-                        // Open connection and execute the command
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                person1 = new PersonDTO
-                                {
-                                    PersonID = (int)reader["PersonID"],
-                                    FirstName = (string)reader["FirstName"],
-                                    SecondName = (reader["SecondName"] == DBNull.Value) ? "" : (string)reader["SecondName"],
-                                    LastName = (string)reader["LastName"],
-                                    DateOfBirth = (DateTime)reader["DateOfBirth"],
-                                    Gendor = (byte)reader["Gendor"],
-                                    Address = (string)reader["Address"],
-                                    Phone = (string)reader["Phone"],
-
-                                    Email = (reader["Email"] == DBNull.Value) ? "" : (string)reader["Email"],
-                                    NationalityCountryID = (int)reader["NationalityCountryID"],
-                                };
-                                return person1;
-                            }
-
-                        }
-
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                }
-            }
-
-            return null;
-        }
         public static async Task<PersonDTO> GetPersonByIDAsync(int PersonID)
         {
             PersonDTO person1;
