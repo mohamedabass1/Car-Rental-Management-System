@@ -36,10 +36,10 @@ namespace CarRental.People.Controls
                 return;
             }
 
-            _FillPersonInfo();
+            await _FillPersonInfo();
         }
 
-        private void _FillPersonInfo()
+        private async Task _FillPersonInfo()
         {
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
@@ -48,7 +48,10 @@ namespace CarRental.People.Controls
             lblEmail.Text = _Person.Email;
             lblPhone.Text = _Person.Phone;
             lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
-            lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
+
+            clsCountry countryInfo = await clsCountry.FindAsync(_Person.NationalityCountryID);
+            lblCountry.Text = countryInfo.CountryName;
+
             lblAddress.Text = _Person.Address;
 
 

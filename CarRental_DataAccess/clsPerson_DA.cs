@@ -215,28 +215,6 @@ namespace CarRental_DataAccess
             return dtPeople;
         }
 
-        public static bool DeletePerson(int PeronID)
-        {
-            int rowAffected = 0;
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
-            using (SqlCommand command = new SqlCommand("People.DeletePerson", connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("PersonID", PeronID);
-
-                try
-                {
-                    connection.Open();
-                    rowAffected = (int)command.ExecuteNonQuery();
-
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-            return rowAffected > 0;
-        }
         public static async Task<bool> DeletePersonAsync(int PersonID)
         {
             int rowAffected = 0;
@@ -261,34 +239,6 @@ namespace CarRental_DataAccess
             return rowAffected > 0;
         }
 
-        public static bool IsPersonExists(int PeronID)
-        {
-            bool isFound = false;
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
-            using (SqlCommand command = new SqlCommand("People.SP_CheckPersonExists", connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@PersonID", PeronID);
-
-                try
-                {
-                    connection.Open();
-
-                    object result = command.ExecuteScalar();
-
-                    // if the person dose not exists the the result will be null
-                    isFound = (result != null);
-
-                }
-                catch (Exception)
-                {
-                    isFound = false;
-                    throw;
-                }
-            }
-
-            return isFound;
-        }
 
         public static async Task<bool> IsPersonExistsAsync(int PeronID)
         {
@@ -319,52 +269,6 @@ namespace CarRental_DataAccess
             return isFound;
         }
 
-        public static bool UpdatePerson(PersonDTO person)
-        {
-            int rowsAffected = 0;
-
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
-            using (SqlCommand command = new SqlCommand("People.SP_UpdatePersonInfo", connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.AddWithValue("@PersonID", person.PersonID);
-                command.Parameters.AddWithValue("@FirstName", person.FirstName);
-
-                if (string.IsNullOrWhiteSpace(person.SecondName))
-                    command.Parameters.AddWithValue("@SecondName", DBNull.Value);
-                else
-                    command.Parameters.AddWithValue("@SecondName", person.SecondName);
-
-
-                command.Parameters.AddWithValue("@LastName", person.LastName);
-                command.Parameters.AddWithValue("@DateOfBirth", person.DateOfBirth);
-                command.Parameters.AddWithValue("@Gendor", person.Gendor);
-
-                command.Parameters.AddWithValue("@Address", person.Address);
-                command.Parameters.AddWithValue("@Phone", person.Phone);
-
-                if (string.IsNullOrWhiteSpace(person.Email))
-                    command.Parameters.AddWithValue("@Email", System.DBNull.Value);
-                else
-                    command.Parameters.AddWithValue("@Email", person.Email);
-
-                command.Parameters.AddWithValue("@NationalityCountryID", person.NationalityCountryID);
-
-                try
-                {
-                    connection.Open();
-                    rowsAffected = command.ExecuteNonQuery();
-
-                }
-                catch (Exception ex)
-                {
-                    rowsAffected = 0;
-                    clsEventLogger.Log($"DataBase Exception {ex.Message}", System.Diagnostics.EventLogEntryType.Error);
-                }
-            }
-            return rowsAffected > 0;
-        }
 
         public static async Task<bool> UpdatePersonAsync(PersonDTO person)
         {

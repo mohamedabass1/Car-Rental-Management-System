@@ -26,18 +26,7 @@ namespace CarRental_Buisness
             this.CountryName = CountryName;
         }
 
-        public static clsCountry Find(int ID)
-        {
-            CountryDTO country = clsCountryData.GetCountryByID(ID);
 
-            if (country != null)
-            {
-                return new clsCountry(country.CountryID, country.CountryName);
-            }
-            else
-                return null;
-
-        }
         public static async Task<clsCountry> FindAsync(int ID)
         {
             CountryDTO country = await clsCountryData.GetCountryByIDAsync(ID);
@@ -51,18 +40,6 @@ namespace CarRental_Buisness
 
         }
 
-        public static clsCountry Find(string CountryName)
-        {
-            CountryDTO country = clsCountryData.GetCountryByName(CountryName);
-
-            if (country != null)
-            {
-                return new clsCountry(country.CountryID, country.CountryName);
-            }
-            else
-                return null;
-
-        }
 
         public static async Task<clsCountry> FindAsync(string CountryName)
         {
@@ -77,15 +54,10 @@ namespace CarRental_Buisness
 
         }
 
-        public static DataTable GetAllCountries()
-        {
-            return clsCountryData.GetAllCountries();
-        }
         public static async Task<DataTable> GetAllCountriesAsync()
         {
             return await clsCountryData.GetAllCountriesAsync();
         }
-
 
 
 

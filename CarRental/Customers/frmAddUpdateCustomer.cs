@@ -140,7 +140,11 @@ namespace CarRental.People
                 return;
 
             }
-            int NationalityCountryID = clsCountry.Find(cbCountry.Text).ID;
+
+            clsCountry countryInfo = await clsCountry.FindAsync(cbCountry.Text);
+
+
+            int NationalityCountryID = countryInfo.ID;
 
             _Customer.DriverLicenseNumber = txtLicenseNumber.Text.Trim();
             _Customer.PersonInfo.FirstName = txtFirstName.Text.Trim();

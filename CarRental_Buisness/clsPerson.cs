@@ -60,7 +60,7 @@ namespace CarRental_Buisness
             this.Phone = Phone;
             this.Email = Email;
             this.NationalityCountryID = NationalityCountryID;
-            this.CountryInfo = clsCountry.Find(NationalityCountryID);
+
 
             _Mode = enMode.Update;
         }
@@ -95,19 +95,19 @@ namespace CarRental_Buisness
 
         public static async Task<clsPerson> FindAsync(int PersonID)
         {
-            PersonDTO person = await clsPerson_DA.GetPersonByIDAsync(PersonID);
+            PersonDTO dto = await clsPerson_DA.GetPersonByIDAsync(PersonID);
 
-            if (person == null)
+            if (dto == null)
                 return null;
 
 
-            clsPerson NewPerson = new clsPerson(person.PersonID, person.FirstName, person.SecondName, person.LastName, person.DateOfBirth, person.Gendor
-                , person.Address, person.Phone, person.Email, person.NationalityCountryID);
+            clsPerson Person = new clsPerson(dto.PersonID, dto.FirstName, dto.SecondName, dto.LastName, dto.DateOfBirth, dto.Gendor
+                , dto.Address, dto.Phone, dto.Email, dto.NationalityCountryID);
 
             // load person info Async
-            NewPerson.CountryInfo = await clsCountry.FindAsync(NewPerson.NationalityCountryID);
+            Person.CountryInfo = await clsCountry.FindAsync(Person.NationalityCountryID);
 
-            return NewPerson;
+            return Person;
 
         }
         public async Task<bool> SaveAsync()
