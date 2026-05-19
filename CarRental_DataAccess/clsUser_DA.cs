@@ -89,7 +89,6 @@ namespace CarRental_DataAccess
 
                 try
                 {
-                    await connection.OpenAsync();
 
                     await command.ExecuteNonQueryAsync();
 

@@ -65,7 +65,6 @@ namespace CarRental_DataAccess
 
                 try
                 {
-                    await connection.OpenAsync();
                     await command.ExecuteNonQueryAsync();
 
                     newCustomerID = (int)outputParam.Value;

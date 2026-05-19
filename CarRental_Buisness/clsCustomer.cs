@@ -60,8 +60,6 @@ namespace CarRental_Buisness
 
         public async Task<bool> SaveAsync()
         {
-
-
             switch (_Mode)
             {
                 case enMode.AddNew:

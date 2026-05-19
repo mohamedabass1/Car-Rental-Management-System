@@ -59,7 +59,7 @@ namespace CarRental_Buisness
 
             _Mode = enMode.Update;
         }
-        private RentalBookingDTO _ToDTO()
+        internal RentalBookingDTO ToDTO()
         {
             return new RentalBookingDTO
             {
@@ -78,15 +78,19 @@ namespace CarRental_Buisness
 
         private async Task<bool> _AddNewAsync()
         {
-            this.BookingID = await clsRentalBooking_DA.AddNewRentalBookingAsync(_ToDTO());
+            this.BookingID = await clsRentalBooking_DA.AddNewRentalBookingAsync(ToDTO());
             return this.BookingID != -1;
         }
 
         private async Task<bool> _UpdateAsync()
         {
-            return await clsRentalBooking_DA.UpdateRentalBookingAsync(_ToDTO());
+            return await clsRentalBooking_DA.UpdateRentalBookingAsync(ToDTO());
         }
 
+        public void MarkAsSaved()
+        {
+            _Mode = enMode.Update;
+        }
         public async Task<bool> SaveAsync()
         {
             if (RentalEndDate < RentalStartDate)

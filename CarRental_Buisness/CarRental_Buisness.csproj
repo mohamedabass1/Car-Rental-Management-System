@@ -54,6 +54,7 @@
     <Compile Include="clsVehicleCategory.cs" />
     <Compile Include="clsVehicleReturn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\clsBookingService.cs" />
     <Compile Include="Services\clsCustomerRegistrationService.cs" />
     <Compile Include="Services\clsDashboardService.cs" />
     <Compile Include="Services\clsRentalReturnService.cs" />

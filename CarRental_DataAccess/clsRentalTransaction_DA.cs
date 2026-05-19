@@ -36,6 +36,32 @@ namespace CarRental_DataAccess
 
             return newTransactionID;
         }
+        public static async Task<int> AddNewRentalTransactionAsync(RentalTransactionDTO transaction, SqlConnection connection, SqlTransaction dbTransaction)
+        {
+            int newTransactionID = -1;
+
+            using (SqlCommand command = new SqlCommand("Transactions.SP_AddNewRentalTransaction", connection, dbTransaction))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@BookingID", transaction.BookingID);
+                command.Parameters.AddWithValue("@PaymentDetails", transaction.PaymentDetails);
+                command.Parameters.AddWithValue("@PaidInitialTotalDueAmount", transaction.PaidInitialTotalDueAmount);
+
+                SqlParameter outputParam = new SqlParameter("@NewTransactionID", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                command.Parameters.Add(outputParam);
+
+                await command.ExecuteNonQueryAsync();
+
+                newTransactionID = (int)outputParam.Value;
+            }
+
+            return newTransactionID;
+        }
 
         public static async Task<bool> UpdateRentalTransactionAsync(RentalTransactionDTO transaction)
         {

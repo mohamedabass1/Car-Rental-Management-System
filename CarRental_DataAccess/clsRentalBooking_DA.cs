@@ -47,6 +47,42 @@ namespace CarRental_DataAccess
 
             return newBookingID;
         }
+        public static async Task<int> AddNewRentalBookingAsync(RentalBookingDTO booking, SqlConnection connection, SqlTransaction dbTransaction)
+        {
+            int newBookingID = -1;
+
+            using (SqlCommand command = new SqlCommand("RentalBooking.SP_AddNewRentalBooking", connection, dbTransaction))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@CustomerID", booking.CustomerID);
+                command.Parameters.AddWithValue("@VehicleID", booking.VehicleID);
+                command.Parameters.AddWithValue("@RentalStartDate", booking.RentalStartDate);
+                command.Parameters.AddWithValue("@RentalEndDate", booking.RentalEndDate);
+                command.Parameters.AddWithValue("@PickupLocation", booking.PickupLocation);
+                command.Parameters.AddWithValue("@DropoffLocation", booking.DropOffLocation);
+                command.Parameters.AddWithValue("@RentalPricePerDay", booking.RentalPricePerDay);
+                command.Parameters.AddWithValue("@InitialTotalDueAmount", booking.InitialTotalDueAmount);
+
+                if (string.IsNullOrWhiteSpace(booking.InitialCheckNotes))
+                    command.Parameters.AddWithValue("@InitialCheckNotes", DBNull.Value);
+                else
+                    command.Parameters.AddWithValue("@InitialCheckNotes", booking.InitialCheckNotes);
+
+                SqlParameter outputParam = new SqlParameter("@NewBookingID", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                command.Parameters.Add(outputParam);
+
+                await command.ExecuteNonQueryAsync();
+
+                newBookingID = (int)outputParam.Value;
+            }
+
+            return newBookingID;
+        }
         public static async Task<bool> UpdateRentalBookingAsync(RentalBookingDTO booking)
         {
             int rowsAffected = 0;

@@ -108,8 +108,6 @@ namespace CarRental_DataAccess
 
                 command.Parameters.Add(outputPersonIDParam);
 
-                // Open connection and execute the command
-                await connection.OpenAsync();
 
                 await command.ExecuteNonQueryAsync();
                 NewPersonID = (int)outputPersonIDParam.Value;

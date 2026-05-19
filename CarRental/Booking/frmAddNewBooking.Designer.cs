@@ -32,7 +32,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbCustomerInfo = new System.Windows.Forms.TabPage();
+            this.ctrlCustomerInfoCardWithFilter1 = new CarRental.Customers.Controols.ctrlCustomerInfoCardWithFilter();
             this.tbVehicleInfo = new System.Windows.Forms.TabPage();
+            this.ctrlVehicleInfoCardWithFilter1 = new CarRental.Vehicles.Controls.ctrlVehicleInfoCardWithFilter();
             this.gbBookingInfo = new System.Windows.Forms.GroupBox();
             this.txtPaymentDetails = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -74,8 +76,6 @@
             this.llShowTransactionInfo = new System.Windows.Forms.LinkLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnBooking = new System.Windows.Forms.Button();
-            this.ctrlCustomerInfoCardWithFilter1 = new CarRental.Customers.Controols.ctrlCustomerInfoCardWithFilter();
-            this.ctrlVehicleInfoCardWithFilter1 = new CarRental.Vehicles.Controls.ctrlVehicleInfoCardWithFilter();
             this.guna2TabControl1.SuspendLayout();
             this.tbCustomerInfo.SuspendLayout();
             this.tbVehicleInfo.SuspendLayout();
@@ -149,6 +149,18 @@
             this.tbCustomerInfo.TabIndex = 0;
             this.tbCustomerInfo.Text = "Customer Infomation";
             // 
+            // ctrlCustomerInfoCardWithFilter1
+            // 
+            this.ctrlCustomerInfoCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlCustomerInfoCardWithFilter1.FilterEnabled = true;
+            this.ctrlCustomerInfoCardWithFilter1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.ctrlCustomerInfoCardWithFilter1.Location = new System.Drawing.Point(14, 5);
+            this.ctrlCustomerInfoCardWithFilter1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrlCustomerInfoCardWithFilter1.Name = "ctrlCustomerInfoCardWithFilter1";
+            this.ctrlCustomerInfoCardWithFilter1.Size = new System.Drawing.Size(933, 499);
+            this.ctrlCustomerInfoCardWithFilter1.TabIndex = 0;
+            this.ctrlCustomerInfoCardWithFilter1.OnCustomerSelected += new System.Action<int>(this.ctrlCustomerInfoCardWithFilter1_OnCustomerSelected);
+            // 
             // tbVehicleInfo
             // 
             this.tbVehicleInfo.Controls.Add(this.ctrlVehicleInfoCardWithFilter1);
@@ -160,6 +172,18 @@
             this.tbVehicleInfo.TabIndex = 1;
             this.tbVehicleInfo.Text = "Vehicle Infomation";
             this.tbVehicleInfo.UseVisualStyleBackColor = true;
+            // 
+            // ctrlVehicleInfoCardWithFilter1
+            // 
+            this.ctrlVehicleInfoCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlVehicleInfoCardWithFilter1.FilterEnabled = true;
+            this.ctrlVehicleInfoCardWithFilter1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.ctrlVehicleInfoCardWithFilter1.Location = new System.Drawing.Point(27, 33);
+            this.ctrlVehicleInfoCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlVehicleInfoCardWithFilter1.Name = "ctrlVehicleInfoCardWithFilter1";
+            this.ctrlVehicleInfoCardWithFilter1.Size = new System.Drawing.Size(911, 433);
+            this.ctrlVehicleInfoCardWithFilter1.TabIndex = 0;
+            this.ctrlVehicleInfoCardWithFilter1.OnVehicleSelected += new System.Action<int>(this.ctrlVehicleInfoCardWithFilter1_OnVehicleSelected);
             // 
             // gbBookingInfo
             // 
@@ -709,29 +733,6 @@
             this.btnBooking.Text = "Booking";
             this.btnBooking.UseVisualStyleBackColor = false;
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
-            // 
-            // ctrlCustomerInfoCardWithFilter1
-            // 
-            this.ctrlCustomerInfoCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlCustomerInfoCardWithFilter1.FilterEnabled = true;
-            this.ctrlCustomerInfoCardWithFilter1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.ctrlCustomerInfoCardWithFilter1.Location = new System.Drawing.Point(14, 5);
-            this.ctrlCustomerInfoCardWithFilter1.Margin = new System.Windows.Forms.Padding(5);
-            this.ctrlCustomerInfoCardWithFilter1.Name = "ctrlCustomerInfoCardWithFilter1";
-            this.ctrlCustomerInfoCardWithFilter1.Size = new System.Drawing.Size(933, 499);
-            this.ctrlCustomerInfoCardWithFilter1.TabIndex = 0;
-            // 
-            // ctrlVehicleInfoCardWithFilter1
-            // 
-            this.ctrlVehicleInfoCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlVehicleInfoCardWithFilter1.FilterEnabled = true;
-            this.ctrlVehicleInfoCardWithFilter1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.ctrlVehicleInfoCardWithFilter1.Location = new System.Drawing.Point(27, 33);
-            this.ctrlVehicleInfoCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlVehicleInfoCardWithFilter1.Name = "ctrlVehicleInfoCardWithFilter1";
-            this.ctrlVehicleInfoCardWithFilter1.Size = new System.Drawing.Size(911, 433);
-            this.ctrlVehicleInfoCardWithFilter1.TabIndex = 0;
-            this.ctrlVehicleInfoCardWithFilter1.OnVehicleSelected += new System.Action<int>(this.ctrlVehicleInfoCardWithFilter1_OnVehicleSelected);
             // 
             // frmAddNewBooking
             // 

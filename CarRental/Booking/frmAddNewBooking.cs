@@ -1,5 +1,6 @@
 ﻿using CarRental.Transactions;
 using CarRental_Buisness;
+using CarRental_Buisness.Services;
 using Guna.UI2.WinForms;
 using System;
 using System.ComponentModel;
@@ -78,14 +79,6 @@ namespace CarRental.Booking
             ctrlVehicleInfoCardWithFilter1.FilterFocus();
         }
 
-        private void ctrlCustomerInfoCardWithFilter1_OnCustomerSelected(int customerID)
-        {
-            if (ctrlCustomerInfoCardWithFilter1.SelectedCustomerInfo == null)
-                return;
-
-            lblCustomerID.Text = customerID.ToString();
-            _SelectedCustomer = ctrlCustomerInfoCardWithFilter1.SelectedCustomerInfo;
-        }
         private async void btnBooking_Click(object sender, EventArgs e)
         {
             if (!this.ValidateChildren())
@@ -109,55 +102,82 @@ namespace CarRental.Booking
             _Booking.RentalStartDate = dtpStartDate.Value;
             _Booking.RentalEndDate = dtpEndDate.Value;
 
-            _Booking.PickupLocation = txtPickupLocation.Text;
-            _Booking.DropOffLocation = txtDropOfLocation.Text;
-            _Booking.InitialRentalDays = byte.Parse(lblInitalRentalDays.Text);
-            _Booking.RentalPricePerDay = decimal.Parse(lblRntalPricePerDay.Text);
-            _Booking.InitialTotalDueAmount = decimal.Parse(lblInitalTotalDueAmount.Text);
-            _Booking.InitialCheckNotes = string.IsNullOrEmpty(txtInitalCheckNotes.Text) ? "" : txtInitalCheckNotes.Text;
+            _Booking.PickupLocation = txtPickupLocation.Text.Trim();
+            _Booking.DropOffLocation = txtDropOfLocation.Text.Trim();
+            _Booking.InitialRentalDays = byte.Parse(lblInitalRentalDays.Text.Trim());
+            _Booking.RentalPricePerDay = decimal.Parse(lblRntalPricePerDay.Text.Trim());
+            _Booking.InitialTotalDueAmount = decimal.Parse(lblInitalTotalDueAmount.Text.Trim());
+            _Booking.InitialCheckNotes = string.IsNullOrEmpty(txtInitalCheckNotes.Text) ? "" : txtInitalCheckNotes.Text.Trim();
 
-            if (!await _Booking.SaveAsync())
+
+            // create a complete rental booking operation using transaction  return Tuple value BookingID and TransactionID
+
+            var result = await clsBookingService.CreateRentalBookingAsync(_Booking, txtPaymentDetails.Text.Trim());
+
+            if (result.BookingID == -1)
             {
                 MessageBox.Show("Failed to complete operation!", "Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!await _SelectedVehicle.SetUnavailableAsync())
-            {
-                await clsRentalBooking.DeleteAsync(_Booking.BookingID);
-                MessageBox.Show("Failed to complete operation!", "Failed",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            lblBookingID.Text = result.BookingID.ToString();
 
-            _Transaction = new clsRentalTransaction();
-            _Transaction.BookingID = _Booking.BookingID;
-            _Transaction.PaymentDetails = txtPaymentDetails.Text;
-            _Transaction.PaidInitialTotalDueAmount = _Booking.InitialTotalDueAmount;
-            _Transaction.TransactionDate = DateTime.Now;
+            _TransactionID = result.TransactionID;
 
-            if (await _Transaction.SaveAsync())
-            {
-                _TransactionID = _Transaction.TransactionID;
-                llShowTransactionInfo.Enabled = true;
-                MessageBox.Show("Vehicle rented successfully with transaction ID=" + _TransactionID.ToString(),
-                    "License Issued", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                lblBookingID.Text = _Booking.BookingID.ToString();
-            }
-            else
-            {
-                await clsRentalBooking.DeleteAsync(_Booking.BookingID);
-                await _SelectedVehicle.SetAvailableAsync();
-                MessageBox.Show("Failed to complete operation!", "Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            MessageBox.Show($"Vehicle rented successfully with transaction ID = {_TransactionID}",
+                "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            llShowTransactionInfo.Enabled = true;
 
             btnBooking.Enabled = false;
             ctrlCustomerInfoCardWithFilter1.FilterEnabled = false;
             ctrlVehicleInfoCardWithFilter1.FilterEnabled = false;
+
+
+            //if (!await _Booking.SaveAsync())
+            //{
+            //    MessageBox.Show("Failed to complete operation!", "Failed",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            //if (!await _SelectedVehicle.SetUnavailableAsync())
+            //{
+            //    await clsRentalBooking.DeleteAsync(_Booking.BookingID);
+            //    MessageBox.Show("Failed to complete operation!", "Failed",
+            //    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            //_Transaction = new clsRentalTransaction();
+            //_Transaction.BookingID = _Booking.BookingID;
+            //_Transaction.PaymentDetails = txtPaymentDetails.Text;
+            //_Transaction.PaidInitialTotalDueAmount = _Booking.InitialTotalDueAmount;
+            //_Transaction.TransactionDate = DateTime.Now;
+
+            //if (await _Transaction.SaveAsync())
+            //{
+            //    _TransactionID = _Transaction.TransactionID;
+            //    llShowTransactionInfo.Enabled = true;
+            //    MessageBox.Show("Vehicle rented successfully with transaction ID=" + _TransactionID.ToString(),
+            //        "License Issued", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //    lblBookingID.Text = _Booking.BookingID.ToString();
+            //}
+            //else
+            //{
+            //    await clsRentalBooking.DeleteAsync(_Booking.BookingID);
+            //    await _SelectedVehicle.SetAvailableAsync();
+            //    MessageBox.Show("Failed to complete operation!", "Failed",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            //btnBooking.Enabled = false;
+            //ctrlCustomerInfoCardWithFilter1.FilterEnabled = false;
+            //ctrlVehicleInfoCardWithFilter1.FilterEnabled = false;
         }
 
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
@@ -201,6 +221,15 @@ namespace CarRental.Booking
         {
             frmTransactionDetails frm = new frmTransactionDetails(_TransactionID, frmTransactionDetails.enFindBy.TransactionID);
             frm.ShowDialog();
+        }
+
+        private void ctrlCustomerInfoCardWithFilter1_OnCustomerSelected(int customerID)
+        {
+            if (ctrlCustomerInfoCardWithFilter1.SelectedCustomerInfo == null)
+                return;
+
+            lblCustomerID.Text = customerID.ToString();
+            _SelectedCustomer = ctrlCustomerInfoCardWithFilter1.SelectedCustomerInfo;
         }
     }
 }

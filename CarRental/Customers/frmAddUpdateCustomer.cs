@@ -36,7 +36,7 @@ namespace CarRental.People
             _CustomerID = CustomerID;
         }
 
-        private void _ResetDefualtValues()
+        private void _ResetDefaultValues()
         {
             //this will initialize the reset the defaule values
             _FillCountriesInComoboBox();
@@ -123,7 +123,7 @@ namespace CarRental.People
 
         private void frmAddUpdatePerson_Load(object sender, EventArgs e)
         {
-            _ResetDefualtValues();
+            _ResetDefaultValues();
 
             if (_Mode == enMode.Update)
                 _LoadCustomerData();

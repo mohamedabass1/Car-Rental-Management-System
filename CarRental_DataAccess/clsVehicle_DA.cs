@@ -266,6 +266,30 @@ namespace CarRental_DataAccess
             return AffectedRows != 0;
 
         }
+        public static async Task<bool> SetUnavailableAsync(int VehicleID, SqlConnection connection, SqlTransaction dbTransaction)
+        {
+            int AffectedRows = 0;
+            string query = @"Update Vehicle SET  IsAvailableForRent = 0 Where VehicleID =  @VehicleID;";
+
+
+            using (SqlCommand command = new SqlCommand(query, connection, dbTransaction))
+            {
+                command.Parameters.AddWithValue("@VehicleID", VehicleID);
+
+                try
+                {
+
+                    AffectedRows = await command.ExecuteNonQueryAsync();
+                }
+                catch (Exception ex)
+                {
+                    clsEventLogger.Log("Database exception: " + ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                }
+            }
+
+            return AffectedRows != 0;
+
+        }
 
         public static async Task<bool> SetAvailableAsync(int VehicleID)
         {
