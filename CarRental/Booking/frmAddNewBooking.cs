@@ -51,6 +51,7 @@ namespace CarRental.Booking
 
             if (!ctrlVehicleInfoCardWithFilter1.SelectedVehicleInfo.IsAvailableForRent)
             {
+
                 MessageBox.Show("This car is NOT available for rent now!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnBooking.Enabled = false;
